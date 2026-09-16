@@ -26,7 +26,7 @@ def main() -> None:
     print(f"naive authors  {det.authors_guess}  (wrong: truth has 2)")
     print()
     print("Both local steps are loud, so a within-document z-peak would")
-    print("fire neither. The absolute floor still marks them.")
+    print("fire neither. The first saw plus a two-paragraph recurse marks both.")
 
 
 if __name__ == "__main__":
