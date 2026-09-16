@@ -9,7 +9,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from examscd.cusum import cusum_points
-from examscd.detect import ABS_MIN, pair_distance, threshold_distances
+from examscd.detect import ABS_MIN, detect_document, pair_distance, threshold_distances
 from examscd.evaluate import boundary_report
 from examscd.tokenize import split_units
 
@@ -61,7 +61,7 @@ def compare_methods(text: str, gold: list[int], granularity: str = "sentence") -
         "char-3gram cosine": _from_scores(ngram, gold, abs_min=0.22),
         "16-D style L2": _from_scores(style, gold, abs_min=0.18),
         "CUSUM slope reverse": cusum_pred,
-        "combined (examscd)": _from_scores(combined, gold),
+        "cue-sheet (examscd)": detect_document(text, granularity=granularity).changes,
     }
 
     rows: list[MethodResult] = []

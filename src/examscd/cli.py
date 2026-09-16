@@ -65,7 +65,7 @@ def _print_detect(doc: Path, granularity: str, explain: bool) -> int:
     print(f"file:         {doc}")
     print(f"granularity:  {granularity}")
     print(f"units:        {len(result.units)}")
-    print(f"threshold:    {result.threshold:.3f}")
+    print(f"labels:       {result.labels}")
     print(f"changes:      {result.changes}")
     print(f"authors:      {result.authors}")
     print(f"cusum hits:   {result.cusum_hits}")
@@ -76,9 +76,10 @@ def _print_detect(doc: Path, granularity: str, explain: bool) -> int:
             mark = "CHANGE" if pair.change else "same  "
             cue = "  +cusum" if pair.cusum_hit else ""
             print(
-                f"[{pair.index:02d}] {mark}  d={pair.combined:.3f}  "
-                f"ng={pair.ngram:.3f}  fw={pair.function_l1:.3f}  "
-                f"st={pair.style_l2:.3f}  len={pair.length_jump:.3f}{cue}"
+                f"[{pair.index:02d}] {mark}  {pair.left_label} → {pair.right_label}  "
+                f"d={pair.combined:.3f}  ng={pair.ngram:.3f}  "
+                f"fw={pair.function_l1:.3f}  st={pair.style_l2:.3f}  "
+                f"len={pair.length_jump:.3f}{cue}"
             )
             left = pair.left.replace("\n", " ")
             right = pair.right.replace("\n", " ")
@@ -95,7 +96,7 @@ def _cmd_detect(args: argparse.Namespace) -> int:
             args.output,
             result.changes,
             authors=result.authors,
-            extra={"threshold": result.threshold, "cusum_hits": result.cusum_hits},
+            extra={"labels": result.labels, "cusum_hits": result.cusum_hits},
         )
         print(f"wrote {args.output}")
     return _print_detect(args.document, args.granularity, args.explain)

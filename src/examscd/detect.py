@@ -1,15 +1,17 @@
-"""Adjacent-unit detector I can defend in twenty minutes.
+"""Cue-sheet detector I can defend in twenty minutes.
 
-The pair score is a weighted mix of three families:
+Adjacent short sentences share almost no character 3-grams even when
+they are the same writer. The decision rule is therefore:
 
-1. character 3-gram cosine distance (morphology + punctuation)
-2. function-word L1 (Mosteller–Wallace closed class)
-3. a 16-D stylometric L2 (length, pronouns, hedges, imperatives)
+1. Score each unit on the closed cue sheet (slang, imperative, formal,
+   notes, we-academic, one-academic, academic, personal, lab).
+2. Assign a label. Stick across one-unit flickers.
+3. Emit a change when the label changes.
+4. Reuse an author id when a label returns.
 
-CUSUM slope reversals on sentence length get a small bonus so a clean
-short→long cut is not missed when n-grams are still mixed. The threshold
-is a gap heuristic with an absolute floor: if the largest pair is still
-quiet, the document is single-author.
+Pair distances (character 3-grams, function-word L1, 16-D style, length)
+and CUSUM on word count stay in the report so I can show *why* a cut
+looks like a cut. They are not the thing that flips the bit.
 """
 
 from __future__ import annotations
@@ -17,8 +19,9 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from statistics import mean, pstdev
 
-from examscd.cusum import cusum_points, sentence_lengths
-from examscd.features import function_word_l1, style_l2, style_vector
+from examscd.cues import CueScore, adjacent_same, label_units, return_same
+from examscd.cusum import cusum_points
+from examscd.features import function_word_l1, style_l2
 from examscd.ngrams import char_ngram_distance
 from examscd.tokenize import split_units
 
@@ -29,8 +32,6 @@ NGRAM_WEIGHT = 0.42
 FUNC_WEIGHT = 0.28
 STYLE_WEIGHT = 0.20
 LENGTH_WEIGHT = 0.10
-CUSUM_BONUS = 0.06
-RETURN_MATCH = 0.16
 
 
 @dataclass
@@ -44,6 +45,8 @@ class PairScore:
     length_jump: float
     combined: float
     cusum_hit: bool
+    left_label: str
+    right_label: str
     change: int
 
 
@@ -51,12 +54,14 @@ class PairScore:
 class Detection:
     units: list[str]
     granularity: str
+    labels: list[str]
     distances: list[float]
     threshold: float
     changes: list[int]
     authors: list[int]
     pairs: list[PairScore] = field(default_factory=list)
     cusum_hits: list[int] = field(default_factory=list)
+    cue_rows: list[CueScore] = field(default_factory=list)
 
     @property
     def multi_author(self) -> bool:
@@ -72,7 +77,6 @@ def _length_jump(left: str, right: str) -> float:
 def pair_distance(left: str, right: str) -> dict[str, float]:
     ngram = char_ngram_distance(left, right, n=3)
     func = function_word_l1(left, right)
-    # function-word L1 lives in [0, 2]; compress toward [0, 1].
     func_n = min(func / 1.4, 1.2)
     style = min(style_l2(left, right) / 1.1, 1.2)
     length = _length_jump(left, right)
@@ -97,7 +101,7 @@ def threshold_distances(
     gap_min: float = GAP_MIN,
     k_sigma: float = K_SIGMA,
 ) -> float:
-    """Return a cut threshold. Values below ``abs_min`` never fire."""
+    """Kept for the compare-table baselines. Not the cue-sheet decision."""
     if not distances:
         return abs_min
     peak = max(distances)
@@ -119,45 +123,29 @@ def threshold_distances(
     return sigma_thr
 
 
-def assign_authors(units: list[str], changes: list[int]) -> list[int]:
-    """Sequential author ids with a cheap return-author check.
-
-    When a change fires, compare the new unit to each previous author
-    centroid in the 16-D style space. If it is close enough, reuse that
-    id; otherwise mint a new one. This is Task-2 flavoured, not a
-    clustering paper.
-    """
-    if not units:
+def authors_from_labels(labels: list[str]) -> list[int]:
+    """Walk left to right. Compatible neighbours keep the id; returning labels reuse."""
+    if not labels:
         return []
     authors = [1]
-    centroids = {1: style_vector(units[0])}
-    counts = {1: 1}
+    remembered: list[tuple[str, int]] = [(labels[0], 1)]
     next_id = 2
-    for idx, unit in enumerate(units[1:], start=1):
-        changed = changes[idx - 1] if idx - 1 < len(changes) else 0
-        vec = style_vector(unit)
-        if not changed:
-            aid = authors[-1]
-            authors.append(aid)
-        else:
-            best_id = None
-            best_dist = None
-            for aid, centroid in centroids.items():
-                dist = sum((a - b) ** 2 for a, b in zip(vec, centroid, strict=True)) ** 0.5
-                if best_dist is None or dist < best_dist:
-                    best_dist = dist
-                    best_id = aid
-            if best_id is not None and best_dist is not None and best_dist <= RETURN_MATCH:
-                authors.append(best_id)
-            else:
-                authors.append(next_id)
-                next_id += 1
-                aid = authors[-1]
-        aid = authors[-1]
-        old = centroids.get(aid, [0.0] * len(vec))
-        n = counts.get(aid, 0)
-        centroids[aid] = [(old_i * n + new_i) / (n + 1) for old_i, new_i in zip(old, vec, strict=True)]
-        counts[aid] = n + 1
+    for label in labels[1:]:
+        prev_label, prev_id = remembered[-1][0], authors[-1]
+        if adjacent_same(prev_label, label):
+            authors.append(prev_id)
+            remembered.append((label, prev_id))
+            continue
+        reused = None
+        for old_label, old_id in reversed(remembered):
+            if return_same(old_label, label):
+                reused = old_id
+                break
+        if reused is None:
+            reused = next_id
+            next_id += 1
+        authors.append(reused)
+        remembered.append((label, reused))
     return authors
 
 
@@ -168,37 +156,40 @@ def detect_document(
     gap_min: float = GAP_MIN,
     k_sigma: float = K_SIGMA,
 ) -> Detection:
+    del abs_min, gap_min, k_sigma
     units = split_units(text, granularity)
-    if len(units) < 2:
+    if not units:
+        return Detection(
+            units=[],
+            granularity=granularity,
+            labels=[],
+            distances=[],
+            threshold=0.0,
+            changes=[],
+            authors=[],
+        )
+    if len(units) == 1:
+        cues = label_units(units)
         return Detection(
             units=units,
             granularity=granularity,
+            labels=[cues[0].label],
             distances=[],
-            threshold=abs_min,
+            threshold=0.0,
             changes=[],
-            authors=[1] if units else [],
-            pairs=[],
-            cusum_hits=[],
+            authors=[1],
+            cue_rows=cues,
         )
+
+    cues = label_units(units)
+    labels = [row.label for row in cues]
+    authors = authors_from_labels(labels)
+    changes = [0 if authors[i] == authors[i + 1] else 1 for i in range(len(units) - 1)]
 
     raw_pairs = [pair_distance(units[i], units[i + 1]) for i in range(len(units) - 1)]
     distances = [p["combined"] for p in raw_pairs]
-
-    cusum_hits: list[int] = []
-    if granularity.startswith("s"):
-        lengths = sentence_lengths("\n".join(units) if all("\n" not in u for u in units) else " ".join(units))
-        if len(lengths) != len(units):
-            lengths = [len(u.split()) for u in units]
-        cusum_hits = cusum_points(lengths)
-
-    boosted = list(distances)
-    for hit in cusum_hits:
-        if 0 <= hit < len(boosted):
-            boosted[hit] = boosted[hit] + CUSUM_BONUS
-
-    threshold = threshold_distances(boosted, abs_min=abs_min, gap_min=gap_min, k_sigma=k_sigma)
-    changes = [1 if d >= threshold else 0 for d in boosted]
-    authors = assign_authors(units, changes)
+    lengths = [len(u.split()) for u in units]
+    cusum_hits = cusum_points(lengths) if granularity.startswith("s") else []
 
     pairs = []
     for i, raw in enumerate(raw_pairs):
@@ -211,18 +202,22 @@ def detect_document(
                 function_l1=raw["function_l1"],
                 style_l2=raw["style_l2"],
                 length_jump=raw["length_jump"],
-                combined=boosted[i],
+                combined=raw["combined"],
                 cusum_hit=i in cusum_hits,
+                left_label=labels[i],
+                right_label=labels[i + 1],
                 change=changes[i],
             )
         )
     return Detection(
         units=units,
         granularity=granularity,
-        distances=boosted,
-        threshold=threshold,
+        labels=labels,
+        distances=distances,
+        threshold=0.0,
         changes=changes,
         authors=authors,
         pairs=pairs,
         cusum_hits=cusum_hits,
+        cue_rows=cues,
     )

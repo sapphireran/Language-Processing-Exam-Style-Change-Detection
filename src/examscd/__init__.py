@@ -16,7 +16,7 @@ The public surface is intentionally small:
 
 from examscd.cusum import cusum_points, cusum_series, sentence_lengths
 from examscd.detect import (
-    assign_authors,
+    authors_from_labels,
     detect_document,
     pair_distance,
     threshold_distances,
@@ -31,7 +31,7 @@ from examscd.tokenize import split_paragraphs, split_sentences, split_units
 
 __all__ = [
     "adjusted_rand_index",
-    "assign_authors",
+    "authors_from_labels",
     "boundary_report",
     "cusum_points",
     "cusum_series",
