@@ -1,0 +1,24 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+  ],
+  "author_ids": [
+    "nell",
+    "nell",
+    "nell",
+    "nell",
+    "hale",
+    "hale",
+    "hale"
+  ],
+  "difficulty": "easy",
+  "split": "train",
+  "topic": "bakery dawn \u2192 oven temperatures",
+  "n_sentences": 7
+}

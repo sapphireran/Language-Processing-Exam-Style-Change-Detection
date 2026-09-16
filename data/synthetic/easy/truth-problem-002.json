@@ -1,0 +1,28 @@
+{
+  "authors": 3,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0
+  ],
+  "author_ids": [
+    "jules",
+    "jules",
+    "jules",
+    "nell",
+    "nell",
+    "nell",
+    "mira",
+    "mira",
+    "mira"
+  ],
+  "difficulty": "easy",
+  "split": "train",
+  "topic": "balcony plants \u2192 tram rain \u2192 urban heat",
+  "n_sentences": 9
+}

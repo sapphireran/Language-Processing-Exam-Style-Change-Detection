@@ -1,0 +1,7 @@
+Before the street had a colour, the bakery window was already a soft gold rectangle in the dark.
+Flour hung in the doorway like weather; a tray of loaves ticked as they cooled.
+Someone laughed once in the back room, then the laugh folded itself away.
+I stood long enough for the glass to mist where my breath met it, and the loaves kept their small crackling conversation.
+Deck temperature was 240 C. Steam injection lasted 8 s.
+Load mass was 12.6 kg. Crust colour target was 65 on the bake scale.
+Cooling rack time was 40 min. Internal crumb temperature was 32 C at bag.

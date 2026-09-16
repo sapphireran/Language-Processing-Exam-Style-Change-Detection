@@ -1,0 +1,26 @@
+{
+  "authors": 3,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0
+  ],
+  "author_ids": [
+    "mira",
+    "mira",
+    "mira",
+    "jules",
+    "jules",
+    "jules",
+    "nell",
+    "nell"
+  ],
+  "difficulty": "easy",
+  "split": "val",
+  "topic": "wetland birds \u2192 neighbours \u2192 river fog",
+  "n_sentences": 8
+}

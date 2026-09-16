@@ -1,0 +1,6 @@
+Front stopping distance from 20 km/h was 4.1 m on dry asphalt.
+Lever reach was 3 turns out. Hose length was 900 mm.
+Pad wear was 1.2 mm remaining. Rotor runout was 0.15 mm.
+Emergency stopping performance is often quoted without a wet-surface counterpart, which makes city comparisons relatively fragile.
+However, even a cautious reading suggests that poorly adjusted levers remain a more common limitation than exotic compounds.
+A maintenance reminder may therefore do more than a new specification sheet, although that claim is only modestly supported here.

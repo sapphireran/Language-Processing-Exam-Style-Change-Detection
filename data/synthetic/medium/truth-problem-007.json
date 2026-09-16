@@ -1,0 +1,22 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    0
+  ],
+  "author_ids": [
+    "hale",
+    "hale",
+    "hale",
+    "mira",
+    "mira",
+    "mira"
+  ],
+  "difficulty": "medium",
+  "split": "train",
+  "topic": "city cycling \u2014 brake numbers then policy voice",
+  "n_sentences": 6
+}

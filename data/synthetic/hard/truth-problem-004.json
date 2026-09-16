@@ -1,0 +1,26 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0
+  ],
+  "author_ids": [
+    "hale",
+    "hale",
+    "hale",
+    "mira",
+    "mira",
+    "mira",
+    "hale",
+    "hale"
+  ],
+  "difficulty": "hard",
+  "split": "train",
+  "topic": "pour-over coffee",
+  "n_sentences": 8
+}

@@ -1,0 +1,259 @@
+{
+  "title": "Original synthetic style-change study set",
+  "license": "MIT, texts original to this repository",
+  "problems": {
+    "easy/problem-001.txt": {
+      "key": "easy/problem-001.txt",
+      "split": "train",
+      "difficulty": "easy",
+      "topic": "reef ecology \u2192 ruined dinner \u2192 gear inches",
+      "authors": 3,
+      "n_sentences": 8,
+      "n_changes": 2,
+      "change_rate": 0.286
+    },
+    "easy/problem-002.txt": {
+      "key": "easy/problem-002.txt",
+      "split": "train",
+      "difficulty": "easy",
+      "topic": "balcony plants \u2192 tram rain \u2192 urban heat",
+      "authors": 3,
+      "n_sentences": 9,
+      "n_changes": 2,
+      "change_rate": 0.25
+    },
+    "easy/problem-003.txt": {
+      "key": "easy/problem-003.txt",
+      "split": "train",
+      "difficulty": "easy",
+      "topic": "titration \u2192 library lighting \u2192 missed bus",
+      "authors": 3,
+      "n_sentences": 8,
+      "n_changes": 2,
+      "change_rate": 0.286
+    },
+    "easy/problem-004.txt": {
+      "key": "easy/problem-004.txt",
+      "split": "train",
+      "difficulty": "easy",
+      "topic": "bakery dawn \u2192 oven temperatures",
+      "authors": 2,
+      "n_sentences": 7,
+      "n_changes": 1,
+      "change_rate": 0.167
+    },
+    "easy/problem-005.txt": {
+      "key": "easy/problem-005.txt",
+      "split": "val",
+      "difficulty": "easy",
+      "topic": "wetland birds \u2192 neighbours \u2192 river fog",
+      "authors": 3,
+      "n_sentences": 8,
+      "n_changes": 2,
+      "change_rate": 0.286
+    },
+    "easy/problem-006.txt": {
+      "key": "easy/problem-006.txt",
+      "split": "test",
+      "difficulty": "easy",
+      "topic": "thrift jacket \u2192 dye chemistry \u2192 tensile numbers",
+      "authors": 3,
+      "n_sentences": 8,
+      "n_changes": 2,
+      "change_rate": 0.286
+    },
+    "easy/problem-007.txt": {
+      "key": "easy/problem-007.txt",
+      "split": "train",
+      "difficulty": "easy",
+      "topic": "greenhouse \u2192 basil \u2192 water potential",
+      "authors": 3,
+      "n_sentences": 8,
+      "n_changes": 2,
+      "change_rate": 0.286
+    },
+    "easy/problem-008.txt": {
+      "key": "easy/problem-008.txt",
+      "split": "test",
+      "difficulty": "easy",
+      "topic": "GPS survey \u2192 ridge walk \u2192 getting lost",
+      "authors": 3,
+      "n_sentences": 9,
+      "n_changes": 2,
+      "change_rate": 0.25
+    },
+    "medium/problem-001.txt": {
+      "key": "medium/problem-001.txt",
+      "split": "train",
+      "difficulty": "medium",
+      "topic": "city cycling \u2014 geometry, commute, measurements",
+      "authors": 3,
+      "n_sentences": 8,
+      "n_changes": 2,
+      "change_rate": 0.286
+    },
+    "medium/problem-002.txt": {
+      "key": "medium/problem-002.txt",
+      "split": "train",
+      "difficulty": "medium",
+      "topic": "city cycling \u2014 red light, infrastructure, lock",
+      "authors": 3,
+      "n_sentences": 8,
+      "n_changes": 2,
+      "change_rate": 0.286
+    },
+    "medium/problem-003.txt": {
+      "key": "medium/problem-003.txt",
+      "split": "train",
+      "difficulty": "medium",
+      "topic": "city cycling \u2014 spokes, rain scene, caf\u00e9 stop",
+      "authors": 3,
+      "n_sentences": 7,
+      "n_changes": 2,
+      "change_rate": 0.333
+    },
+    "medium/problem-004.txt": {
+      "key": "medium/problem-004.txt",
+      "split": "train",
+      "difficulty": "medium",
+      "topic": "city cycling \u2014 returning Mira around Hale",
+      "authors": 2,
+      "n_sentences": 6,
+      "n_changes": 2,
+      "change_rate": 0.4
+    },
+    "medium/problem-005.txt": {
+      "key": "medium/problem-005.txt",
+      "split": "val",
+      "difficulty": "medium",
+      "topic": "city cycling \u2014 night ride, scene, lamp spec",
+      "authors": 3,
+      "n_sentences": 7,
+      "n_changes": 2,
+      "change_rate": 0.333
+    },
+    "medium/problem-006.txt": {
+      "key": "medium/problem-006.txt",
+      "split": "test",
+      "difficulty": "medium",
+      "topic": "city cycling \u2014 cargo, groceries, alley",
+      "authors": 3,
+      "n_sentences": 6,
+      "n_changes": 2,
+      "change_rate": 0.4
+    },
+    "medium/problem-007.txt": {
+      "key": "medium/problem-007.txt",
+      "split": "train",
+      "difficulty": "medium",
+      "topic": "city cycling \u2014 brake numbers then policy voice",
+      "authors": 2,
+      "n_sentences": 6,
+      "n_changes": 1,
+      "change_rate": 0.2
+    },
+    "medium/problem-008.txt": {
+      "key": "medium/problem-008.txt",
+      "split": "test",
+      "difficulty": "medium",
+      "topic": "city cycling \u2014 Nell, Jules, Nell again",
+      "authors": 2,
+      "n_sentences": 6,
+      "n_changes": 2,
+      "change_rate": 0.4
+    },
+    "hard/problem-001.txt": {
+      "key": "hard/problem-001.txt",
+      "split": "train",
+      "difficulty": "hard",
+      "topic": "pour-over coffee",
+      "authors": 3,
+      "n_sentences": 8,
+      "n_changes": 2,
+      "change_rate": 0.286
+    },
+    "hard/problem-002.txt": {
+      "key": "hard/problem-002.txt",
+      "split": "train",
+      "difficulty": "hard",
+      "topic": "pour-over coffee",
+      "authors": 2,
+      "n_sentences": 8,
+      "n_changes": 2,
+      "change_rate": 0.286
+    },
+    "hard/problem-003.txt": {
+      "key": "hard/problem-003.txt",
+      "split": "train",
+      "difficulty": "hard",
+      "topic": "pour-over coffee",
+      "authors": 2,
+      "n_sentences": 7,
+      "n_changes": 2,
+      "change_rate": 0.333
+    },
+    "hard/problem-004.txt": {
+      "key": "hard/problem-004.txt",
+      "split": "train",
+      "difficulty": "hard",
+      "topic": "pour-over coffee",
+      "authors": 2,
+      "n_sentences": 8,
+      "n_changes": 2,
+      "change_rate": 0.286
+    },
+    "hard/problem-005.txt": {
+      "key": "hard/problem-005.txt",
+      "split": "val",
+      "difficulty": "hard",
+      "topic": "pour-over coffee \u2014 Mira vs Nell stress pair",
+      "authors": 2,
+      "n_sentences": 8,
+      "n_changes": 2,
+      "change_rate": 0.286
+    },
+    "hard/problem-006.txt": {
+      "key": "hard/problem-006.txt",
+      "split": "test",
+      "difficulty": "hard",
+      "topic": "pour-over coffee",
+      "authors": 3,
+      "n_sentences": 7,
+      "n_changes": 2,
+      "change_rate": 0.333
+    },
+    "hard/problem-007.txt": {
+      "key": "hard/problem-007.txt",
+      "split": "train",
+      "difficulty": "hard",
+      "topic": "pour-over coffee",
+      "authors": 3,
+      "n_sentences": 7,
+      "n_changes": 2,
+      "change_rate": 0.333
+    },
+    "hard/problem-008.txt": {
+      "key": "hard/problem-008.txt",
+      "split": "test",
+      "difficulty": "hard",
+      "topic": "pour-over coffee \u2014 Mira / Nell / Mira",
+      "authors": 2,
+      "n_sentences": 8,
+      "n_changes": 2,
+      "change_rate": 0.286
+    }
+  },
+  "counts": {
+    "documents": 24,
+    "by_difficulty": {
+      "easy": 8,
+      "medium": 8,
+      "hard": 8
+    },
+    "by_split": {
+      "train": 15,
+      "val": 3,
+      "test": 6
+    }
+  }
+}

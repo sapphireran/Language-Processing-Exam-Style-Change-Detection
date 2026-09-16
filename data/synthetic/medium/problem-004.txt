@@ -1,0 +1,6 @@
+Modal share estimates for inner-city cycling remain relatively sensitive to how access trips are counted, although several inventories now attempt a consistent definition.
+A modest rise in winter riding appears in the newer counts, yet weather normalisation is still only partly standardised.
+Count site 4 recorded 612 cycles between 07:00 and 09:00.
+Mean speed on the link was 18.4 km/h. Fifth-percentile speed was 12.1 km/h.
+However, those two numbers should be read against a somewhat wet morning, which generally suppresses discretionary trips.
+The safer claim is simply that the corridor continues to carry a non-trivial commuter load.

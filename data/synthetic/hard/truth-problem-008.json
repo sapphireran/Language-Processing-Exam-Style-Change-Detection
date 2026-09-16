@@ -1,0 +1,26 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0
+  ],
+  "author_ids": [
+    "mira",
+    "mira",
+    "mira",
+    "nell",
+    "nell",
+    "nell",
+    "mira",
+    "mira"
+  ],
+  "difficulty": "hard",
+  "split": "test",
+  "topic": "pour-over coffee \u2014 Mira / Nell / Mira",
+  "n_sentences": 8
+}

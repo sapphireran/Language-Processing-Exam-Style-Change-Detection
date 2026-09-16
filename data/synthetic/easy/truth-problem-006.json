@@ -1,0 +1,26 @@
+{
+  "authors": 3,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0
+  ],
+  "author_ids": [
+    "jules",
+    "jules",
+    "jules",
+    "mira",
+    "mira",
+    "mira",
+    "hale",
+    "hale"
+  ],
+  "difficulty": "easy",
+  "split": "test",
+  "topic": "thrift jacket \u2192 dye chemistry \u2192 tensile numbers",
+  "n_sentences": 8
+}

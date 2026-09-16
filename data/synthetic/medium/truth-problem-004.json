@@ -1,0 +1,22 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0,
+    1,
+    0
+  ],
+  "author_ids": [
+    "mira",
+    "mira",
+    "hale",
+    "hale",
+    "mira",
+    "mira"
+  ],
+  "difficulty": "medium",
+  "split": "train",
+  "topic": "city cycling \u2014 returning Mira around Hale",
+  "n_sentences": 6
+}

@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local model fits and generated reports
+models/*.json
+!models/.gitkeep
+output/
+reports/
+*.html
+!examples/**/*.html
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

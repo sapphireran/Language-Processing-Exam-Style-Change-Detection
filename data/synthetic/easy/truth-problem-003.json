@@ -1,0 +1,26 @@
+{
+  "authors": 3,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0
+  ],
+  "author_ids": [
+    "hale",
+    "hale",
+    "hale",
+    "mira",
+    "mira",
+    "mira",
+    "jules",
+    "jules"
+  ],
+  "difficulty": "easy",
+  "split": "train",
+  "topic": "titration \u2192 library lighting \u2192 missed bus",
+  "n_sentences": 8
+}
