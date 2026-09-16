@@ -1,0 +1,19 @@
+{
+  "changes": [
+    0,
+    1,
+    0,
+    1,
+    0
+  ],
+  "authors": [
+    1,
+    1,
+    2,
+    2,
+    1,
+    1
+  ],
+  "split": "return",
+  "note": "River, Marble, River again. authors=2 but 1+sum(changes)=3. Binary hinges cannot name the return."
+}
