@@ -45,7 +45,10 @@ aggregation.
 
 - `macro_f1` — global pool
 - `mean_doc_macro_f1` — unweighted mean over documents that have at
-  least one pair
+  least one pair. A document that only contains class `0` (or only
+  class `1`) still has both classes forced, so a perfect single-author
+  document scores 0.5, not 1.0. That is why the two headline numbers
+  can diverge even when every pair is correct.
 - `n_pairs`, `n_docs`, `positive_rate`
 
 If those two F1s disagree a lot, a few long documents are dominating.
