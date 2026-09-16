@@ -1,0 +1,9 @@
+Light in the hours after waking appears to stabilise circadian phase, whereas late-evening short-wavelength exposure is associated with delayed sleep onset.
+We report a within-subject protocol in which morning outdoor time was increased by thirty minutes without otherwise altering caffeine or meal schedules.
+Preliminary actigraphy suggests a modest advance in sleep midpoint, although the confidence intervals remain compatible with no effect.
+These findings should be interpreted cautiously until the control week is fully scored.
+09:10 lab: subject 7 late by 12 min, coffee already consumed, note as protocol deviation
+watch battery died on subject 2 so we lost Wednesday, not ideal
+I told them to sit by the courtyard window and they asked if the courtyard counted as outdoor, which is a fair and annoying question
+download tonight, try not to peek at the pretty curves before the scoring rules are locked
+if the midpoint barely moves I will still write the limitation instead of hunting a prettier subset

@@ -1,0 +1,9 @@
+We present a compact protocol for scoring pairwise style change in short English teaching documents.
+The method combines closed-class cosine distance with a document-local Burrows Delta and a conservative threshold.
+On a synthetic split that holds topic still, the change-class F1 declines, which we interpret as evidence that topic is a confound rather than a feature.
+Limitations include unstable type-token ratios on units shorter than twelve tokens.
+I only wrote the caption under Figure 2 and I sat in two meetings.
+They put my name on the first page because the grant likes a longer list and I did not know how to say no without sounding ungrateful.
+The protocol paragraph is not in my voice; I would have used fewer we's and I would have admitted the threshold was guessed.
+If this file is a detector demo, the seam is the point where a contribution becomes a courtesy.
+I am not accusing anyone of a crime; I am saying the author list and the sentences do not tell the same story.

@@ -1,0 +1,312 @@
+{
+  "documents": [
+    {
+      "file": "problem-01-ferns-solo.txt",
+      "truth": "truth/truth-problem-01-ferns-solo.json",
+      "tier": "control",
+      "title": "Single-author fern care",
+      "authors": 1,
+      "voices": [
+        "home_grower"
+      ],
+      "n_units": 10,
+      "n_pairs": 9,
+      "n_changes": 0
+    },
+    {
+      "file": "problem-02-bikes-vellum.txt",
+      "truth": "truth/truth-problem-02-bikes-vellum.json",
+      "tier": "easy",
+      "title": "N\u00f8rrebro bikes then parchment repair",
+      "authors": 2,
+      "voices": [
+        "cycle_chat",
+        "conservator"
+      ],
+      "n_units": 10,
+      "n_pairs": 9,
+      "n_changes": 1
+    },
+    {
+      "file": "problem-03-sourdough-orbit.txt",
+      "truth": "truth/truth-problem-03-sourdough-orbit.json",
+      "tier": "easy",
+      "title": "Sourdough advice then orbital mechanics",
+      "authors": 2,
+      "voices": [
+        "home_baker",
+        "astro_explainer"
+      ],
+      "n_units": 10,
+      "n_pairs": 9,
+      "n_changes": 1
+    },
+    {
+      "file": "problem-04-allotment-chess.txt",
+      "truth": "truth/truth-problem-04-allotment-chess.json",
+      "tier": "easy",
+      "title": "Allotment sulk then chess endgame",
+      "authors": 2,
+      "voices": [
+        "allotment",
+        "chess_coach"
+      ],
+      "n_units": 10,
+      "n_pairs": 9,
+      "n_changes": 1
+    },
+    {
+      "file": "problem-05-ikea-tides.txt",
+      "truth": "truth/truth-problem-05-ikea-tides.json",
+      "tier": "easy",
+      "title": "IKEA assembly then tidal locking",
+      "authors": 2,
+      "voices": [
+        "flatpack",
+        "astro_explainer"
+      ],
+      "n_units": 10,
+      "n_pairs": 9,
+      "n_changes": 1
+    },
+    {
+      "file": "problem-06-knitting-lighthouse.txt",
+      "truth": "truth/truth-problem-06-knitting-lighthouse.json",
+      "tier": "easy",
+      "title": "Knitting gauge then lighthouse optics",
+      "authors": 2,
+      "voices": [
+        "knitter",
+        "lighthouse"
+      ],
+      "n_units": 10,
+      "n_pairs": 9,
+      "n_changes": 1
+    },
+    {
+      "file": "problem-07-cph-rent.txt",
+      "truth": "truth/truth-problem-07-cph-rent.json",
+      "tier": "medium",
+      "title": "Copenhagen rent: briefing then tenant",
+      "authors": 2,
+      "voices": [
+        "housing_analyst",
+        "tenant_chat"
+      ],
+      "n_units": 9,
+      "n_pairs": 8,
+      "n_changes": 1
+    },
+    {
+      "file": "problem-08-circadian.txt",
+      "truth": "truth/truth-problem-08-circadian.json",
+      "tier": "medium",
+      "title": "Circadian light: abstract then lab notes",
+      "authors": 2,
+      "voices": [
+        "paper_we",
+        "lab_notes"
+      ],
+      "n_units": 9,
+      "n_pairs": 8,
+      "n_changes": 1
+    },
+    {
+      "file": "problem-09-library-fines.txt",
+      "truth": "truth/truth-problem-09-library-fines.json",
+      "tier": "medium",
+      "title": "Library fines: policy then plea",
+      "authors": 2,
+      "voices": [
+        "policy_memo",
+        "student_chat"
+      ],
+      "n_units": 9,
+      "n_pairs": 8,
+      "n_changes": 1
+    },
+    {
+      "file": "problem-10-committee-slack.txt",
+      "truth": "truth/truth-problem-10-committee-slack.json",
+      "tier": "medium",
+      "title": "Committee minutes then Slack",
+      "authors": 2,
+      "voices": [
+        "minutes",
+        "slack"
+      ],
+      "n_units": 9,
+      "n_pairs": 8,
+      "n_changes": 1
+    },
+    {
+      "file": "problem-11-gift-authorship.txt",
+      "truth": "truth/truth-problem-11-gift-authorship.json",
+      "tier": "medium",
+      "title": "Gift authorship: house style then first person",
+      "authors": 2,
+      "voices": [
+        "paper_we",
+        "uneasy_coauthor"
+      ],
+      "n_units": 9,
+      "n_pairs": 8,
+      "n_changes": 1
+    },
+    {
+      "file": "problem-12-exam-paste.txt",
+      "truth": "truth/truth-problem-12-exam-paste.json",
+      "tier": "medium",
+      "title": "Exam notes then panic paste",
+      "authors": 2,
+      "voices": [
+        "lecture_notes",
+        "panic"
+      ],
+      "n_units": 9,
+      "n_pairs": 8,
+      "n_changes": 1
+    },
+    {
+      "file": "problem-13-landlord-whatsapp.txt",
+      "truth": "truth/truth-problem-13-landlord-whatsapp.json",
+      "tier": "medium",
+      "title": "Landlord letter then WhatsApp",
+      "authors": 2,
+      "voices": [
+        "formal_tenant",
+        "whatsapp"
+      ],
+      "n_units": 9,
+      "n_pairs": 8,
+      "n_changes": 1
+    },
+    {
+      "file": "problem-14-two-bakers.txt",
+      "truth": "truth/truth-problem-14-two-bakers.json",
+      "tier": "hard",
+      "title": "Two bakers, one rye loaf",
+      "authors": 2,
+      "voices": [
+        "baker_i",
+        "baker_you"
+      ],
+      "n_units": 9,
+      "n_pairs": 8,
+      "n_changes": 1
+    },
+    {
+      "file": "problem-15-tomato-blight.txt",
+      "truth": "truth/truth-problem-15-tomato-blight.json",
+      "tier": "hard",
+      "title": "Two gardeners, one blight",
+      "authors": 2,
+      "voices": [
+        "garden_log",
+        "neighbour_advice"
+      ],
+      "n_units": 9,
+      "n_pairs": 8,
+      "n_changes": 1
+    },
+    {
+      "file": "problem-16-chess-endgame.txt",
+      "truth": "truth/truth-problem-16-chess-endgame.json",
+      "tier": "hard",
+      "title": "Two annotators, one pawn ending",
+      "authors": 2,
+      "voices": [
+        "chess_diary",
+        "chess_card"
+      ],
+      "n_units": 9,
+      "n_pairs": 8,
+      "n_changes": 1
+    },
+    {
+      "file": "problem-17-flora-walk.txt",
+      "truth": "truth/truth-problem-17-flora-walk.json",
+      "tier": "hard",
+      "title": "Two field notes, one flora loop",
+      "authors": 2,
+      "voices": [
+        "timestamp_log",
+        "walk_prose"
+      ],
+      "n_units": 9,
+      "n_pairs": 8,
+      "n_changes": 1
+    },
+    {
+      "file": "problem-18-same-rain.txt",
+      "truth": "truth/truth-problem-18-same-rain.json",
+      "tier": "hard",
+      "title": "Same rain, diary then station note",
+      "authors": 2,
+      "voices": [
+        "rain_diary",
+        "met_note"
+      ],
+      "n_units": 9,
+      "n_pairs": 8,
+      "n_changes": 1
+    },
+    {
+      "file": "problem-19-ferry-solo.txt",
+      "truth": "truth/truth-problem-19-ferry-solo.json",
+      "tier": "control",
+      "title": "Single-author Helsing\u00f8r ferry",
+      "authors": 1,
+      "voices": [
+        "ferry_habit"
+      ],
+      "n_units": 10,
+      "n_pairs": 9,
+      "n_changes": 0
+    },
+    {
+      "file": "problem-20-campus-return.txt",
+      "truth": "truth/truth-problem-20-campus-return.json",
+      "tier": "control",
+      "title": "Single author, kitchen then S-train",
+      "authors": 1,
+      "voices": [
+        "campus_day"
+      ],
+      "n_units": 10,
+      "n_pairs": 9,
+      "n_changes": 0
+    },
+    {
+      "file": "problem-21-housing-collage.txt",
+      "truth": "truth/truth-problem-21-housing-collage.json",
+      "tier": "collage",
+      "title": "Housing thread with a returning analyst",
+      "authors": 4,
+      "voices": [
+        "housing_analyst",
+        "tenant_chat",
+        "minutes",
+        "lawyer"
+      ],
+      "n_units": 12,
+      "n_pairs": 11,
+      "n_changes": 5
+    },
+    {
+      "file": "problem-22-boardgame-three.txt",
+      "truth": "truth/truth-problem-22-boardgame-three.json",
+      "tier": "collage",
+      "title": "Board-game night, three voices, one return",
+      "authors": 3,
+      "voices": [
+        "rules_coach",
+        "snack_diplomat",
+        "house_rules"
+      ],
+      "n_units": 10,
+      "n_pairs": 9,
+      "n_changes": 4
+    }
+  ]
+}

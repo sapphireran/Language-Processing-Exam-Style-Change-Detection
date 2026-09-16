@@ -1,0 +1,2 @@
+# Runtime is stdlib-only. Install pytest for the test suite.
+pytest>=8
