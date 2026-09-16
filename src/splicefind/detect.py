@@ -73,13 +73,58 @@ def pairwise_ngram_distance(paragraphs: Sequence[str], n: int = 3) -> list[float
     ]
 
 
+def _median(values: Sequence[float]) -> float:
+    if not values:
+        return 0.0
+    ordered = sorted(values)
+    mid = len(ordered) // 2
+    if len(ordered) % 2:
+        return ordered[mid]
+    return 0.5 * (ordered[mid - 1] + ordered[mid])
+
+
+def relative_flags(
+    scores: Sequence[float],
+    *,
+    k: float = 1.25,
+    floor: float = 0.08,
+    abs_min: float = 0.55,
+) -> list[int]:
+    """Mark intra-document outliers, plus any globally large score.
+
+    A four-paragraph document has almost no population for z-scores, so
+    the default rule asks two questions: is this boundary unusual *for
+    this document*, and is the raw blend already large in absolute
+    terms? A nearly flat score vector is treated as single-author.
+    """
+    if not scores:
+        return []
+    if len(scores) == 1:
+        return [1 if scores[0] >= min(abs_min, 0.30) else 0]
+    span = max(scores) - min(scores)
+    if span < 0.09:
+        return [0 for _ in scores]
+    med = _median(list(scores))
+    mad = _median([abs(score - med) for score in scores])
+    cut = med + max(k * mad, floor)
+    peak = max(scores)
+    second = sorted(scores, reverse=True)[1] if len(scores) > 1 else 0.0
+    unique_gap = peak - second
+    flags = []
+    for score in scores:
+        is_unique_peak = abs(score - peak) <= 1e-12 and unique_gap >= floor
+        mad_hit = score >= cut and score >= 0.40
+        flags.append(1 if mad_hit or score >= abs_min or is_unique_peak else 0)
+    return flags
+
+
 def ensemble_scores(
     features: DocumentFeatures,
     *,
     ngram_n: int = 3,
-    weight_feature: float = 0.40,
-    weight_delta: float = 0.30,
-    weight_ngram: float = 0.25,
+    weight_feature: float = 3.0,
+    weight_delta: float = 0.15,
+    weight_ngram: float = 0.40,
     weight_cusum: float = 0.05,
 ) -> tuple[list[float], list[float], list[float], list[float], list[float]]:
     feature_d = pairwise_feature_distance(features.vectors)
@@ -87,15 +132,15 @@ def ensemble_scores(
     ngram_d = pairwise_ngram_distance(features.paragraphs, n=ngram_n)
     cusum_d = boundary_scores(paragraph_feature_trace(features.vectors, "avg_sent_len"))
     if len(cusum_d) != len(feature_d):
-        # Sentence-length CUSUM is paragraph-aligned in paragraph_feature_trace.
         cusum_d = cusum_d[: len(feature_d)] + [0.0] * max(0, len(feature_d) - len(cusum_d))
     blended = []
+    ngram_excess = [max(0.0, distance - 0.45) for distance in ngram_d]
     for i in range(len(feature_d)):
         blended.append(
             weight_feature * feature_d[i]
             + weight_delta * delta_d[i]
-            + weight_ngram * ngram_d[i]
-            + weight_cusum * cusum_d[i]
+            + weight_ngram * ngram_excess[i]
+            + weight_cusum * min(cusum_d[i], 1.0)
         )
     return blended, feature_d, delta_d, ngram_d, cusum_d
 
@@ -113,7 +158,7 @@ def _reasons(
     right = features.vectors[left_index + 1]
     notes = [
         f"ensemble={ensemble:.3f} vs threshold={threshold:.3f}",
-        f"scalar cosine distance={feature_d:.3f}",
+        f"register gap={feature_d:.3f}",
         f"function-word Delta={delta_d:.3f}",
         f"char-3gram distance={ngram_d:.3f}",
     ]
@@ -141,7 +186,7 @@ def detect_features(
     features: DocumentFeatures,
     *,
     threshold: float = 0.55,
-    method: str = "ensemble",
+    method: str = "relative",
 ) -> Detection:
     if len(features.paragraphs) < 2:
         return Detection(
@@ -154,24 +199,29 @@ def detect_features(
     blended, feature_d, delta_d, ngram_d, cusum_d = ensemble_scores(features)
     if method == "features":
         scores = feature_d
+        changes = [1 if score >= threshold else 0 for score in scores]
     elif method == "delta":
         scores = delta_d
+        changes = [1 if score >= threshold else 0 for score in scores]
     elif method == "ngram":
         scores = ngram_d
+        changes = [1 if score >= threshold else 0 for score in scores]
     elif method == "cusum":
         scores = cusum_d
+        changes = [1 if score >= threshold else 0 for score in scores]
     elif method == "adaptive":
-        # High relative jumps inside this document, useful when scales drift.
         scores = _minmax(blended)
-        threshold = max(threshold, 0.60)
+        changes = [1 if score >= max(threshold, 0.60) else 0 for score in scores]
+    elif method == "ensemble":
+        scores = blended
+        changes = [1 if score >= threshold else 0 for score in scores]
     else:
         scores = blended
+        changes = relative_flags(blended, abs_min=threshold)
 
     boundaries = []
-    changes = []
     for i, score in enumerate(scores):
-        decision = 1 if score >= threshold else 0
-        changes.append(decision)
+        decision = changes[i]
         boundaries.append(
             Boundary(
                 index=i,
@@ -201,7 +251,7 @@ def detect_text(
     text: str,
     *,
     threshold: float = 0.55,
-    method: str = "ensemble",
+    method: str = "relative",
 ) -> Detection:
     return detect_features(extract_document(text), threshold=threshold, method=method)
 
@@ -210,7 +260,7 @@ def detect_document(
     problem: Problem,
     *,
     threshold: float = 0.55,
-    method: str = "ensemble",
+    method: str = "relative",
 ) -> Detection:
     return detect_text(problem.text, threshold=threshold, method=method)
 
@@ -219,7 +269,7 @@ def detect_paragraphs(
     paragraphs: Sequence[str],
     *,
     threshold: float = 0.55,
-    method: str = "ensemble",
+    method: str = "relative",
 ) -> Detection:
     text = "\n\n".join(paragraphs)
     return detect_text(text, threshold=threshold, method=method)

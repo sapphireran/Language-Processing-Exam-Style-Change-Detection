@@ -222,8 +222,39 @@ def manhattan(left: Sequence[float], right: Sequence[float]) -> float:
     return sum(abs(a - b) for a, b in zip(left, right))
 
 
+REGISTER_NAMES: tuple[str, ...] = (
+    "first_person_rate",
+    "second_person_rate",
+    "impersonal_rate",
+    "contraction_rate",
+    "hedge_rate",
+    "intensifier_rate",
+    "question_rate",
+    "exclaim_rate",
+    "long_word_ratio",
+    "stop_ratio",
+)
+
+
+def register_distance(left: FeatureVector, right: FeatureVector) -> float:
+    """Bounded habit gap. Lives near 0–0.2, unlike z-scored cosine."""
+    gaps = [abs(left.scalars[name] - right.scalars[name]) for name in REGISTER_NAMES]
+    mean_gap = sum(gaps) / len(gaps)
+    sent_left = left.scalars["avg_sent_len"]
+    sent_right = right.scalars["avg_sent_len"]
+    sent_rel = abs(sent_left - sent_right) / (0.5 * (sent_left + sent_right) + 1.0)
+    return mean_gap + 0.12 * min(sent_rel, 1.0)
+
+
 def pairwise_feature_distance(vectors: Sequence[FeatureVector]) -> list[float]:
-    """Cosine distance between adjacent z-scored scalar vectors."""
+    """Register-gap distance between adjacent paragraphs."""
+    if len(vectors) < 2:
+        return []
+    return [register_distance(vectors[i], vectors[i + 1]) for i in range(len(vectors) - 1)]
+
+
+def pairwise_zcosine_distance(vectors: Sequence[FeatureVector]) -> list[float]:
+    """Legacy z-scored cosine. High-D and unstable on 4-paragraph docs."""
     if len(vectors) < 2:
         return []
     rows = zscore_columns([vector.scalar_row() for vector in vectors])

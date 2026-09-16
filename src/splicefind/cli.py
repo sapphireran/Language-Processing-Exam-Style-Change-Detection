@@ -30,8 +30,8 @@ def _add_detect_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--threshold", type=float, default=0.55)
     parser.add_argument(
         "--method",
-        default="ensemble",
-        choices=("ensemble", "features", "delta", "ngram", "cusum", "adaptive"),
+        default="relative",
+        choices=("relative", "ensemble", "features", "delta", "ngram", "cusum", "adaptive"),
     )
     parser.add_argument("--json", action="store_true")
 
@@ -58,14 +58,14 @@ def build_parser() -> argparse.ArgumentParser:
     report.add_argument("--truth", type=Path)
     report.add_argument("--html", type=Path)
     report.add_argument("--threshold", type=float, default=0.55)
-    report.add_argument("--method", default="ensemble")
+    report.add_argument("--method", default="relative")
     report.add_argument("--title", default="style-change report")
 
     batch = sub.add_parser("detect-dir", help="PAN-style directory in, solutions out")
     batch.add_argument("-i", "--input-dir", type=Path, required=True)
     batch.add_argument("-o", "--output-dir", type=Path, required=True)
     batch.add_argument("--threshold", type=float, default=0.55)
-    batch.add_argument("--method", default="ensemble")
+    batch.add_argument("--method", default="relative")
 
     evaluate = sub.add_parser("evaluate", help="score solution JSON against truth JSON")
     evaluate.add_argument("--pred", type=Path, required=True)
@@ -74,11 +74,11 @@ def build_parser() -> argparse.ArgumentParser:
     score = sub.add_parser("score-corpus", help="run the detector on a labelled collection")
     score.add_argument("root", type=Path)
     score.add_argument("--threshold", type=float, default=0.55)
-    score.add_argument("--method", default="ensemble")
+    score.add_argument("--method", default="relative")
 
     calibrate = sub.add_parser("calibrate", help="sweep thresholds on a labelled collection")
     calibrate.add_argument("root", type=Path)
-    calibrate.add_argument("--method", default="ensemble")
+    calibrate.add_argument("--method", default="relative")
 
     generate = sub.add_parser("generate", help="write a tiny synthetic PAN-format split")
     generate.add_argument("-o", "--output-dir", type=Path, required=True)
