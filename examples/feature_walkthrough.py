@@ -18,8 +18,8 @@ SAMPLES = {
         "sparse, although the size of that association varies by street width."
     ),
     "jules": (
-        "I keep meaning to grind the beans before I put the kettle on, and "
-        "then I remember while the water's already roaring."
+        "I don't grind the beans before I put the kettle on, and then I "
+        "remember while the water's already roaring."
     ),
     "hale": "Water mass was 15.0 g. Bloom time was 45 s. Drawdown was recorded at 3:10.",
     "nell": (

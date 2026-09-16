@@ -19,6 +19,10 @@ class FeatureTests(unittest.TestCase):
         self.assertGreater(vector["first_person_rate"], 0.0)
         self.assertGreater(vector["exclamation_rate"], 0.0)
 
+    def test_apostrophe_s_counts_as_contraction(self) -> None:
+        vector = as_dict(extract_sentence("That's the water's fault and I'm late."))
+        self.assertGreaterEqual(vector["contraction_rate"], 2 / 7)
+
     def test_mira_tells(self) -> None:
         vector = as_dict(
             extract_sentence(

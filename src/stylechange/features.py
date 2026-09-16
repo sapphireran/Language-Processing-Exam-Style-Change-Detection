@@ -57,7 +57,9 @@ def _rate(count: float, denom: float) -> float:
 
 def _is_contraction(token: str) -> bool:
     folded = token.replace("\u2019", "'")
-    return any(folded.endswith(tail) or tail.lower() in folded.lower() for tail in ("n't", "'re", "'ll", "'ve", "'d", "'m"))
+    tails = ("n't", "'re", "'ll", "'ve", "'d", "'m", "'s")
+    lowered = folded.lower()
+    return any(lowered.endswith(tail) for tail in tails)
 
 
 def _has_suffix(token: str, suffixes: Iterable[str]) -> bool:

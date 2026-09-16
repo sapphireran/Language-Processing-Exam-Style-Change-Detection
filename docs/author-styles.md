@@ -36,8 +36,8 @@ toolkit, which features should jump at a labelled boundary.
 
 **Sample (original):**
 
-> I keep meaning to grind the beans before I put the kettle on, and
-> then I remember while the water's already roaring.
+> I don't grind the beans before I put the kettle on, and then I
+> remember while the water's already roaring.
 
 ## Dr. Hale — technical terse
 

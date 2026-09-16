@@ -36,7 +36,7 @@ and work forward; do not jump to the logistic regressor.
 | 20 min | Feature catalogue + author cards | `python examples/feature_walkthrough.py` |
 | 20 min | Detectors + evaluation | `python examples/compare_detectors.py` |
 | 20 min | Study notes + pitfalls | `stylechange demo --split hard` |
-| leftover | Worked examples | recompute one pair by hand |
+| leftover | Worked examples + [synthetic results](09-results-on-synthetic.md) | recompute one pair by hand |
 
 ## What is intentionally missing
 

@@ -97,6 +97,7 @@ Start with the notes, then run the examples:
 7. [Worked examples](docs/07-worked-examples.md)
 8. [Pitfalls](docs/08-pitfalls.md)
 9. [Author style cards](docs/author-styles.md)
+10. [Results on the synthetic set](docs/09-results-on-synthetic.md)
 
 ## Toolkit in one paragraph
 
