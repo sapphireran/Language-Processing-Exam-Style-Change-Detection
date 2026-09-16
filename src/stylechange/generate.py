@@ -141,8 +141,8 @@ def _notes(topic: str, rng: random.Random) -> list[str]:
         "constituency parsing": [
             "CFG + CNF. CKY: spans [i,j], binary split k.",
             "score(A -> B C) + score(left) + score(right).",
-            "unary closures separately — don't forget them.",
-            "eval: PARSEVAL bracketing F1, not exact tree match only.",
+            "unary closures first, then binary split.",
+            "eval: PARSEVAL bracketing F1, not exact-tree.",
         ],
         "vector semantics": [
             "co-occur matrix -> PMI / SVD or skip-gram / CBOW.",

@@ -190,3 +190,26 @@ CONTRACTIONS = {
 }
 
 FUNCTION_INDEX = {word: i for i, word in enumerate(FUNCTION_WORDS)}
+
+INFORMAL = {
+    "yeah",
+    "yep",
+    "ok",
+    "okay",
+    "kinda",
+    "sorta",
+    "gonna",
+    "wanna",
+    "gotta",
+    "stuff",
+    "lot",
+    "lots",
+    "pretty",
+    "really",
+    "just",
+    "bit",
+    "maybe",
+    "guess",
+    "honest",
+    "anyway",
+}

@@ -69,7 +69,7 @@ def split_paragraphs(text: str) -> list[str]:
     text = _normalize_newlines(text).strip()
     if not text:
         return []
-    parts = [re.sub(r"[ \t]+", " ", p).strip() for p in _BLANK_SPLIT.split(text)]
+    parts = [re.sub(r"\s+", " ", p).strip() for p in _BLANK_SPLIT.split(text)]
     return [p for p in parts if p]
 
 

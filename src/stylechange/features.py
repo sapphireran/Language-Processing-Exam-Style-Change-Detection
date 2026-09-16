@@ -25,6 +25,7 @@ from .lexicon import (
     FUNCTION_INDEX,
     FUNCTION_WORDS,
     HEDGES,
+    INFORMAL,
     SECOND_PERSON,
     THIRD_PERSON,
 )
@@ -65,6 +66,7 @@ DENSE_NAMES = (
     "coord_ratio",
     "subord_ratio",
     "unique_punct_types",
+    "informal_ratio",
 )
 
 
@@ -170,7 +172,14 @@ def extract_features(text: str) -> FeatureVector:
     short = sum(1 for w in tokens if len(w) <= 3)
     long = sum(1 for w in tokens if len(w) >= 8)
     function_hits = sum(1 for w in tokens if w in FUNCTION_INDEX)
-    first = sum(1 for w in tokens if w in FIRST_PERSON)
+    # English first-person "I" is capitalised. Lowercase "i" is almost
+    # always an index variable in the lecture-note examples.
+    first = 0
+    for original, lowered in zip(words, tokens):
+        if lowered == "i" and original != "I":
+            continue
+        if lowered in FIRST_PERSON:
+            first += 1
     second = sum(1 for w in tokens if w in SECOND_PERSON)
     third = sum(1 for w in tokens if w in THIRD_PERSON)
     hedges = sum(1 for w in tokens if w in HEDGES)
@@ -183,6 +192,7 @@ def extract_features(text: str) -> FeatureVector:
         for w in tokens
         if w in {"because", "although", "though", "while", "if", "when", "unless"}
     )
+    informal = sum(1 for w in tokens if w in INFORMAL)
     syllables = [_syllable_count(w) for w in tokens]
     unique_punct = len(set(punct))
 
@@ -217,6 +227,7 @@ def extract_features(text: str) -> FeatureVector:
         rate(coord, n_words),
         rate(subord, n_words),
         unique_punct / 12.0,
+        rate(informal, n_words),
     ]
 
     function_counts = [0.0] * len(FUNCTION_WORDS)

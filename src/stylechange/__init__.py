@@ -12,6 +12,7 @@ dependency-free baseline that:
 from .detector import StyleChangeDetector, StyleChangePrediction
 from .evaluate import EvaluationResult, evaluate_changes, evaluate_dataset
 from .features import FeatureVector, extract_features
+from .register import register_axes
 from .io import Problem, Solution, load_problem, write_solution
 from .tokenize import split_paragraphs, split_sentences, split_units
 
@@ -26,6 +27,7 @@ __all__ = [
     "evaluate_dataset",
     "extract_features",
     "load_problem",
+    "register_axes",
     "split_paragraphs",
     "split_sentences",
     "split_units",

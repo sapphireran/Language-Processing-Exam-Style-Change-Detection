@@ -35,6 +35,7 @@ def _build_parser() -> argparse.ArgumentParser:
     detect.add_argument("--granularity", choices=("sentence", "paragraph"), default="sentence")
     detect.add_argument("--threshold", type=float, default=None)
     detect.add_argument("--window", type=int, default=2)
+    detect.add_argument("--mode", choices=("segment", "pairwise"), default="segment")
     detect.add_argument("--explain", action="store_true")
     detect.add_argument("--json", action="store_true", dest="as_json")
 
@@ -48,6 +49,7 @@ def _build_parser() -> argparse.ArgumentParser:
     evaluate.add_argument("--granularity", choices=("sentence", "paragraph"), default="sentence")
     evaluate.add_argument("--threshold", type=float, default=None)
     evaluate.add_argument("--window", type=int, default=2)
+    evaluate.add_argument("--mode", choices=("segment", "pairwise"), default="segment")
 
     generate = sub.add_parser("generate", help="print a synthetic labelled exam answer")
     generate.add_argument("--difficulty", choices=("easy", "medium", "hard", "single"), default="easy")
@@ -61,6 +63,8 @@ def _detector_from_args(args: argparse.Namespace) -> StyleChangeDetector:
     kwargs: dict = {"granularity": args.granularity, "window": args.window}
     if getattr(args, "threshold", None) is not None:
         kwargs["threshold"] = args.threshold
+    if getattr(args, "mode", None) is not None:
+        kwargs["mode"] = args.mode
     return StyleChangeDetector(**kwargs)
 
 
@@ -90,8 +94,20 @@ def _cmd_detect(args: argparse.Namespace) -> int:
             print(f"    R: {item.right_text}")
             print(
                 "    parts: "
-                + ", ".join(f"{k}={v:.3f}" for k, v in item.parts.items() if k != "mixed")
+                + ", ".join(
+                    f"{k}={v:.3f}"
+                    for k, v in item.parts.items()
+                    if k in {"register", "function", "personal", "academic", "telegram"}
+                )
             )
+            if item.register_left:
+                print(
+                    "    axis L/R: "
+                    + ", ".join(
+                        f"{name} {item.register_left[name]:.2f}->{item.register_right[name]:.2f}"
+                        for name in ("personal", "academic", "telegram")
+                    )
+                )
             tops = ", ".join(f"{name}={delta:.3f}" for name, delta in item.top_deltas[:3])
             print(f"    top Δ: {tops}")
     return 0
