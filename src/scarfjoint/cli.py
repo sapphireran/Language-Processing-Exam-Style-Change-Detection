@@ -124,8 +124,7 @@ def _cmd_detect(args) -> int:
         tpath = truth_path_for(doc.path)
         if tpath.exists():
             gold = [int(x) for x in load_truth(tpath).get("changes", [])]
-    if args.explain or True:
-        print(format_detection(detection, gold=gold))
+    print(format_detection(detection, gold=gold))
     return 0
 
 
