@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "splicefind"
+version = "0.1.0"
+description = "Personal Language Processing exam toolkit for paragraph-level style-change detection."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Sapphire Ran" }]
+license = { text = "MIT" }
+
+[project.scripts]
+splicefind = "splicefind.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
