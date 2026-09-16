@@ -204,6 +204,11 @@ CASUAL_MARKERS = (
     "bc",
     "cos",
     "cause",
+    "whatever",
+    "anyway",
+    "gosh",
+    "oops",
+    "huh",
 )
 
 HEDGES = (

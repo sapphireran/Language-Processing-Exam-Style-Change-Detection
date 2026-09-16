@@ -117,6 +117,65 @@ def contraction_jumps(features: Sequence[ParagraphFeatures]) -> list[float]:
     ]
 
 
+def _l1(left: Sequence[float], right: Sequence[float]) -> float:
+    return sum(abs(a - b) for a, b in zip(left, right, strict=True))
+
+
+def pronoun_jumps(features: Sequence[ParagraphFeatures]) -> list[float]:
+    """L1 on the (I, we, you, one) signature."""
+    vecs = [
+        (f.pronoun_i, f.pronoun_we, f.pronoun_you, f.pronoun_one)
+        for f in features
+    ]
+    return [_l1(vecs[i], vecs[i + 1]) for i in range(len(vecs) - 1)]
+
+
+def person_flag_jumps(features: Sequence[ParagraphFeatures]) -> list[float]:
+    """L1 on binary person presence. Sparse 'I' / 'we' / 'you' / impersonal one.
+
+    Rates on a 40-word paragraph are tiny; presence is the oral-exam handle
+    ('this paragraph has a we, the next has one may').
+    """
+    flags = [
+        (
+            1.0 if f.pronoun_i > 0 else 0.0,
+            1.0 if f.pronoun_we > 0 else 0.0,
+            1.0 if f.pronoun_you > 0 else 0.0,
+            1.0 if f.pronoun_one > 0 else 0.0,
+        )
+        for f in features
+    ]
+    return [_l1(flags[i], flags[i + 1]) for i in range(len(flags) - 1)]
+
+
+def register_jumps(features: Sequence[ParagraphFeatures]) -> list[float]:
+    """L1 on a small register vector (not content, not raw n-grams)."""
+    vecs = [
+        (
+            f.contraction_rate,
+            f.formal_rate,
+            f.casual_rate,
+            f.pronoun_i,
+            f.pronoun_we,
+            f.pronoun_you,
+            f.pronoun_one,
+            f.question_rate,
+            f.exclaim_rate,
+            f.formality / 2.0,
+        )
+        for f in features
+    ]
+    return [_l1(vecs[i], vecs[i + 1]) for i in range(len(vecs) - 1)]
+
+
+def marker_jumps(features: Sequence[ParagraphFeatures]) -> list[float]:
+    return [
+        abs(features[i].formal_rate - features[i + 1].formal_rate)
+        + abs(features[i].casual_rate - features[i + 1].casual_rate)
+        for i in range(len(features) - 1)
+    ]
+
+
 def topic_jaccard(features: Sequence[ParagraphFeatures]) -> list[float]:
     """Content-word Jaccard *distance* (1 - overlap). Topic confound channel."""
     return [

@@ -54,11 +54,11 @@ def render_document_html(
             "<tr>"
             f"<td>{pair.index + 1}→{pair.index + 2}</td>"
             f"<td class='{'hit' if pair.change else 'miss'}'>{mark}</td>"
-            f"<td>{_bar(pair.delta, 2.2, '#2c6e8a')}</td>"
-            f"<td>{_bar(pair.char, 1.0, '#8a4b2c')}</td>"
-            f"<td>{_bar(pair.formality, 1.6, '#4a7c3a')}</td>"
-            f"<td>{_bar(pair.sentlen, 1.0, '#6b4c9a')}</td>"
-            f"<td>{_bar(pair.cusum, 3.0, '#8a6a2c')}</td>"
+            f"<td>{_bar(pair.formality, 1.2, '#4a7c3a')}</td>"
+            f"<td>{_bar(pair.register, 1.2, '#2c6e8a')}</td>"
+            f"<td>{_bar(pair.person, 2.0, '#6b4c9a')}</td>"
+            f"<td>{_bar(pair.contraction, 0.2, '#8a4b2c')}</td>"
+            f"<td>{_bar(pair.char, 1.0, '#8a6a2c')}</td>"
             f"<td>{_bar(pair.topic, 1.0, '#666')}</td>"
             f"<td>{_esc('; '.join(pair.reasons) or '—')}</td>"
             "</tr>"
@@ -104,7 +104,7 @@ th {{ text-align: left; font-family: Menlo, Consolas, monospace; }}
 {''.join(blocks)}
 <h2>Adjacent channels</h2>
 <table>
-<thead><tr><th>pair</th><th>Δ?</th><th>Delta</th><th>char3</th><th>formality</th><th>sentlen</th><th>CUSUM</th><th>topic</th><th>votes</th></tr></thead>
+<thead><tr><th>pair</th><th>Δ?</th><th>formality</th><th>register</th><th>person</th><th>contr</th><th>char3</th><th>topic</th><th>votes</th></tr></thead>
 <tbody>
 {''.join(rows)}
 </tbody>

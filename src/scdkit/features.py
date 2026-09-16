@@ -28,7 +28,6 @@ from .function_words import (
     FORMAL_CONNECTIVES,
     FUNCTION_WORDS,
     HEDGES,
-    IMPERSONAL_ONE,
     INCLUSIVE_WE,
     SECOND_PERSON,
     SUFFIX_BINS,
@@ -38,6 +37,11 @@ from .tokenize import lowercase_words, split_sentences, split_words
 
 _PUNCT = re.compile(r"[.,;:!?\"'—–-]")
 _CONTENT_RE = re.compile(r"^[a-z]{3,}$")
+_IMPERSONAL_ONE = re.compile(
+    r"\b(?:if\s+one|one's|one\s+(?:may|might|must|should|can|could|would|"
+    r"will|does|is|has|needs|prefers?|hesitate[sd]?|cannot|can't))\b",
+    re.IGNORECASE,
+)
 
 FUNCTION_SET = frozenset(FUNCTION_WORDS)
 CONTRACTION_SET = frozenset(CONTRACTION_TOKENS)
@@ -161,7 +165,7 @@ def extract_features(text: str) -> ParagraphFeatures:
     ttr_damped = max(0.0, min(1.5, ttr_damped))
 
     contraction_rate = _safe_div(
-        sum(1 for w in lower if w in CONTRACTION_SET or "'" in w),
+        sum(1 for w in lower if w in CONTRACTION_SET),
         n_words,
     )
     question_rate = _safe_div(text.count("?"), n_sents)
@@ -178,23 +182,26 @@ def extract_features(text: str) -> ParagraphFeatures:
     pronoun_i = _safe_div(sum(1 for w in lower if w in FIRST_PERSON), n_words)
     pronoun_we = _safe_div(sum(1 for w in lower if w in INCLUSIVE_WE), n_words)
     pronoun_you = _safe_div(sum(1 for w in lower if w in SECOND_PERSON), n_words)
-    pronoun_one = _safe_div(sum(1 for w in lower if w in IMPERSONAL_ONE), n_words)
+    pronoun_one = _safe_div(len(_IMPERSONAL_ONE.findall(text)), n_words)
     formal_rate = _safe_div(sum(1 for w in lower if w in FORMAL_SET), n_words)
     casual_rate = _safe_div(sum(1 for w in lower if w in CASUAL_SET), n_words)
     hedge_rate = _safe_div(sum(1 for w in lower if w in HEDGE_SET), n_words)
 
+    deontic = _safe_div(sum(1 for w in lower if w in {"must", "shall", "should"}), n_words)
     formality = (
-        1.4 * formal_rate
-        + 0.35 * (mean_sent_len / 20.0)
-        + 0.25 * (1.0 - contraction_rate)
-        + 0.8 * semicolon_per_word
-        + 0.4 * pronoun_one
-        + 0.2 * pronoun_we
-        - 1.6 * casual_rate
-        - 1.1 * contraction_rate
-        - 0.9 * pronoun_i
-        - 0.5 * question_rate
-        - 0.4 * exclaim_rate
+        1.8 * formal_rate
+        + 0.45 * (mean_sent_len / 20.0)
+        + 0.35 * (mean_word_len / 6.0)
+        + 0.20 * (1.0 - contraction_rate)
+        + 1.0 * semicolon_per_word
+        + 0.8 * pronoun_one
+        + 0.25 * pronoun_we
+        + 0.6 * deontic
+        - 2.0 * casual_rate
+        - 1.4 * contraction_rate
+        - 1.1 * pronoun_i
+        - 0.6 * question_rate
+        - 0.5 * exclaim_rate
     )
 
     suffix_rates = tuple(

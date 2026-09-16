@@ -20,7 +20,7 @@ def _add_method(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--method",
         default="ensemble",
-        choices=("ensemble", "delta", "char", "formality", "cusum", "numeric"),
+        choices=("ensemble", "delta", "char", "formality", "cusum", "register", "pronoun", "person"),
         help="detector channel (default: ensemble)",
     )
 
@@ -37,8 +37,9 @@ def cmd_detect(args: argparse.Namespace) -> int:
             print(
                 f"{pair.index + 1}->{pair.index + 2}\t{flag}\t"
                 f"Δ={pair.delta:.2f} char={pair.char:.2f} "
-                f"form={pair.formality:.2f} sent={pair.sentlen:.2f} "
-                f"cusum={pair.cusum:.2f} topic={pair.topic:.2f}"
+                f"form={pair.formality:.2f} reg={pair.register:.2f} "
+                f"person={pair.person:.0f} pron={pair.pronoun:.2f} "
+                f"topic={pair.topic:.2f}"
             )
             if pair.reasons:
                 print("    " + "; ".join(pair.reasons))
