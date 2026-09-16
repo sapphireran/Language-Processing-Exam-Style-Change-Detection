@@ -1,0 +1,7 @@
+A tidally locked planet presents the same hemisphere to its star at all times, provided the spin–orbit resonance is stable. The resulting climate is often sketched as a hot dayside, a frozen nightside, and a terminator belt in which liquid water might persist. That sketch is pedagogically useful and dynamically incomplete.
+
+Energy transport by the atmosphere can redistribute heat toward the nightside, narrowing the temperature contrast that the simple sketch assumes. The efficiency of that transport depends on surface pressure, composition, and the presence of condensable species. One therefore cannot infer habitability from orbital period alone.
+
+It is nevertheless common to treat the terminator as a default refuge. The claim is not absurd, but it inherits several unstated boundary conditions, among them a sufficiently dense atmosphere and a stellar spectrum that does not photolyse the proposed solvents. Absent those conditions, the belt is merely a geometric curiosity.
+
+Models that include clouds further complicate the cartoon. Dayside cloud decks raise the albedo and may cool the substellar point even as they suppress vertical mixing. The nightside, far from being a uniform ice sheet, can host cold traps whose location depends on the zonal wind. In short, the locked state is a family of climates rather than a single diagram.

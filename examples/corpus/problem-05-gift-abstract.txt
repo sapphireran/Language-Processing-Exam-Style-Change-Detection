@@ -1,0 +1,7 @@
+We present a compact encoder for nocturnal moth wing-beat audio. The model is trained on a weakly labelled set of garden recordings and a smaller expert set collected at a mercury-vapour sheet. We show that a two-second window is sufficient for family-level decisions when the background is dominated by a single lamp, and we report macro F1 on a held-out week in August.
+
+The architecture follows a conventional convolutional stack with a temporal pooling head. Data augmentation is limited to gain jitter and mild time stretch; we avoid pitch shift because it collides with species-specific frequencies. An ablation without the expert set drops family-level F1 by a wide margin, which suggests that the garden labels are useful only as a pretraining soup.
+
+I put the moths in because I already had the tapes and because the garden committee wanted a poster that was not another bike-lane map. The network is basically last year's bird model with the spectrogram window shortened. I did not invent a compact encoder. I changed a number and asked for the abstract to sound like we meant it.
+
+Limitations include rain, overlapping wing beats, and a lamp that attracts a non-random sample of the local fauna. Future work should move the microphone off the sheet and into the hedge, where the committee is less likely to trip over the cable. Code and splits will be released if the poster survives the wind.

@@ -1,0 +1,114 @@
+{
+  "description": "Original personal exam documents. Not PAN data.",
+  "paragraph_rule": "Blank line between paragraphs. Cuts only at those boundaries.",
+  "documents": [
+    {
+      "id": "01-allotment",
+      "difficulty": "single",
+      "authors": 1,
+      "role": "single-author control"
+    },
+    {
+      "id": "02-lighthouse-origami",
+      "difficulty": "easy",
+      "authors": 2,
+      "role": "topic change with authorship change"
+    },
+    {
+      "id": "03-library-fines",
+      "difficulty": "medium",
+      "authors": 2,
+      "role": "same topic, alternating registers"
+    },
+    {
+      "id": "04-tidally-locked",
+      "difficulty": "hard",
+      "authors": 2,
+      "role": "two academic voices, one climate"
+    },
+    {
+      "id": "05-gift-abstract",
+      "difficulty": "medium",
+      "authors": 2,
+      "role": "gift / reused poster"
+    },
+    {
+      "id": "06-thrift-three",
+      "difficulty": "medium",
+      "authors": 3,
+      "role": "three voices, diary returns"
+    },
+    {
+      "id": "07-committee-return",
+      "difficulty": "medium",
+      "authors": 2,
+      "role": "A-B-A-B returning author"
+    },
+    {
+      "id": "08-minutes-then-chat",
+      "difficulty": "easy",
+      "authors": 2,
+      "role": "minutes versus group chat"
+    },
+    {
+      "id": "09-dino-book",
+      "difficulty": "easy",
+      "authors": 2,
+      "role": "picture book versus palaeontology"
+    },
+    {
+      "id": "10-exam-paste",
+      "difficulty": "medium",
+      "authors": 2,
+      "role": "two exam answers spliced"
+    },
+    {
+      "id": "11-knitting",
+      "difficulty": "easy",
+      "authors": 2,
+      "role": "pattern versus memoir"
+    },
+    {
+      "id": "12-ikea",
+      "difficulty": "easy",
+      "authors": 2,
+      "role": "manual versus essay"
+    },
+    {
+      "id": "13-patch-notes",
+      "difficulty": "easy",
+      "authors": 2,
+      "role": "changelog versus player"
+    },
+    {
+      "id": "14-grandma-and-landlord",
+      "difficulty": "hard",
+      "authors": 2,
+      "role": "same leak, two addressees"
+    },
+    {
+      "id": "15-collage",
+      "difficulty": "easy",
+      "authors": 4,
+      "role": "short four-voice collage"
+    },
+    {
+      "id": "16-tomato-then-train",
+      "difficulty": "topic-shift",
+      "authors": 1,
+      "role": "same author, new topic (confound control)"
+    },
+    {
+      "id": "17-chess",
+      "difficulty": "medium",
+      "authors": 2,
+      "role": "club player versus ECO"
+    },
+    {
+      "id": "18-field-notes-flora",
+      "difficulty": "hard",
+      "authors": 2,
+      "role": "ditch notes versus flora"
+    }
+  ]
+}
