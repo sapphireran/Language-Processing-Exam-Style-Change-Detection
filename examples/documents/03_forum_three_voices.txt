@@ -1,0 +1,12 @@
+omg my laptop just died mid raid and i lost the drop lol
+the fans were screaming and then the screen went black and now it wont even blink
+i already tried the power brick and smacking the side like a caveman
+idk if this is a gpu thing or the board just ragequit
+Please note that hardware diagnosis is outside the warranty script we are allowed to run in this channel.
+A complete power loss with no POST beep is more consistent with a failed PSU or a shorted motherboard than with a graphics-driver crash.
+Kindly provide the exact model number, the age of the unit, and whether any liquid was involved, using complete sentences if possible.
+We cannot process an RMA from an anecdote about a raid.
+Look I just need the thing to last until Friday because the kids have a group project on it.
+I am not trying to win an argument about POST beeps.
+If you can tell me whether it is safe to move the files off the drive I will do that tonight after dinner.
+After that you can have the pedantic version.

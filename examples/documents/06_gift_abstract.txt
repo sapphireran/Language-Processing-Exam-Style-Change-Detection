@@ -1,0 +1,8 @@
+I built a tiny detector that looks at adjacent sentences and asks whether the writer changed.
+The features are deliberately boring: character 3-grams, a closed function-word list, and a handful of length statistics I can compute without a library.
+I tested it on study documents I wrote myself so that I would know the gold boundaries before looking at the scores.
+The code is meant as exam revision, not as a shared-task entry.
+
+The contribution of the second author was to formalise the evaluation protocol and to situate the baseline within the broader authorship-analysis literature.
+A revised theoretical framing was supplied, together with a compact discussion of topic as a confound and of the limitations of macro-F1 on sparse change labels.
+The manuscript was subsequently edited for register consistency.

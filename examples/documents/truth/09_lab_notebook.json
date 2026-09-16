@@ -1,0 +1,8 @@
+{
+  "id": "09_lab_notebook",
+  "granularity": "paragraph",
+  "multi_author": false,
+  "changes": [0, 0, 0, 0],
+  "authors": [1, 1, 1, 1, 1],
+  "notes": "Single-author lab notes, paragraph granularity. Second negative control. multi_author is false in spirit; the flag below follows the authors array."
+}

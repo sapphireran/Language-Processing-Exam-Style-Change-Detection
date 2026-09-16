@@ -1,0 +1,8 @@
+{
+  "id": "10_exam_mashup",
+  "granularity": "sentence",
+  "multi_author": true,
+  "changes": [0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
+  "authors": [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4],
+  "notes": "Four blocks: fragment notes, lecture chat, textbook prose, then fuller personal notes. Three cuts."
+}

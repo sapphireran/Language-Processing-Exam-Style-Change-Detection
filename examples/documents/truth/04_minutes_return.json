@@ -1,0 +1,8 @@
+{
+  "id": "04_minutes_return",
+  "granularity": "sentence",
+  "multi_author": true,
+  "changes": [0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
+  "authors": [1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1],
+  "notes": "Formal chair, intern chat, chair again. Task-2 flavour: the last block reuses author 1."
+}
