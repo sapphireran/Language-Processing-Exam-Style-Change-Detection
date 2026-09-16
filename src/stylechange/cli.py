@@ -33,7 +33,7 @@ def cmd_inspect(args: argparse.Namespace) -> int:
         print(f"--- paragraph {i} ({profile.n_tokens} tokens) ---")
         print(paragraph)
         print()
-        print(format_scalars(profile, SCALAR_NAMES[:12]))
+        print(format_scalars(profile, CORE_SCALAR_NAMES))
         print("function words:", format_top_function_words(profile))
         print()
     if len(problem.paragraphs) >= 2:
