@@ -5,7 +5,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from style_change.detectors import DetectionResult
-from style_change.features import STYLE_AXIS_NAMES, FeatureTable, describe_features
+from style_change.features import DETECTION_FEATURES, STYLE_AXIS_NAMES, FeatureTable, describe_features
 from style_change.tokenize import Document
 
 
@@ -67,10 +67,11 @@ def format_report(
         lines.extend(f"note: {note}" for note in result.notes)
     if table.matrix.shape[0] >= 2:
         lines.append("")
-        lines.append("largest feature gaps between adjacent scored paragraphs")
-        for left in range(table.matrix.shape[0] - 1):
+        lines.append("largest core-feature gaps between adjacent scored paragraphs")
+        core = table.subset(DETECTION_FEATURES) if DETECTION_FEATURES[0] in table.names else table
+        for left in range(core.matrix.shape[0] - 1):
             right = left + 1
-            gaps = table.top_differences(left, right, k=5)
+            gaps = core.top_differences(left, right, k=5)
             marker = "CHANGE" if left < len(result.changes) and result.changes[left] else "same"
             lines.append(
                 f"  {table.paragraph_indices[left]} -> {table.paragraph_indices[right]} [{marker}]"
@@ -90,18 +91,18 @@ def plot_distances(result: DetectionResult, path: str | Path) -> Path:
     destination = Path(path)
     destination.parent.mkdir(parents=True, exist_ok=True)
     xs = list(range(len(result.distances)))
-    fig, ax = plt.subplots(figsize=(8, 3.6))
+    fig, ax = plt.subplots(figsize=(9, 4.2))
     ax.plot(xs, result.distances, marker="o", color="#1f4e79")
     ax.axhline(result.threshold, color="#b42318", linestyle="--", label=f"threshold {result.threshold:.2f}")
     for i, changed in enumerate(result.changes):
         if changed:
             ax.scatter([i], [result.distances[i]], s=80, color="#b42318", zorder=3)
-    ax.set_xlabel("boundary after paragraph")
-    ax.set_ylabel("euclidean distance in style space")
+    ax.set_xlabel("Boundary after paragraph")
+    ax.set_ylabel("Euclidean distance in 4-D style space")
     ax.set_title("Adjacent style distance")
     ax.legend(loc="best")
     ax.set_xticks(xs)
-    fig.tight_layout()
+    fig.tight_layout(pad=1.2)
     fig.savefig(destination, dpi=140)
     plt.close(fig)
     return destination

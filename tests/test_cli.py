@@ -1,3 +1,5 @@
+import subprocess
+import sys
 from pathlib import Path
 
 from style_change.cli import main
@@ -17,3 +19,14 @@ def test_detect_json_and_evaluate(capsys) -> None:
     assert main(["features", str(MIXED)]) == 0
     feats = capsys.readouterr().out
     assert "words_per_sentence" in feats
+
+
+def test_module_entrypoint() -> None:
+    completed = subprocess.run(
+        [sys.executable, "-m", "style_change", "detect", "--json", str(MIXED)],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    assert completed.returncode == 0, completed.stderr
+    assert "multi_author" in completed.stdout
