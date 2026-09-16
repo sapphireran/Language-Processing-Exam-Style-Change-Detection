@@ -1,0 +1,6 @@
+Replace the pour parameter (default 4) before the next rinse.
+Keep the grind at 15 units; log the bed on each pass.
+You really don't need a fancy kettle for this.
+Honestly the pour was a mess and I didn't care.
+Scale the slurry by 4 and write the carafe to disk.
+Call the rinse routine after the filter has been normalized.

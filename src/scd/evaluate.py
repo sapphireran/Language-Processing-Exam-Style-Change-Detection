@@ -84,10 +84,25 @@ def evaluate_directory(
     truth_dir: str | Path,
     *,
     mode: str = "line",
+    id_min: int | None = None,
+    id_max: int | None = None,
 ) -> DirectoryScores:
     truth_dir = Path(truth_dir)
     pred_dir = Path(pred_dir)
     problems = list_problems(truth_dir)
+    if id_min is not None or id_max is not None:
+        filtered = []
+        for problem in problems:
+            pid = problem_id(problem)
+            numeric = int(pid) if pid.isdigit() else None
+            if numeric is None:
+                continue
+            if id_min is not None and numeric < id_min:
+                continue
+            if id_max is not None and numeric > id_max:
+                continue
+            filtered.append(problem)
+        problems = filtered
     if not problems:
         raise FormatError(f"no problem-*.txt files in {truth_dir}")
 

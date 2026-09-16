@@ -51,6 +51,7 @@ python examples/02_train_baseline.py
 python examples/03_error_analysis.py
 python examples/04_compare_difficulties.py
 python examples/05_hand_features.py
+python examples/06_write_report.py
 ```
 
 The CLI mirrors the same pieces:

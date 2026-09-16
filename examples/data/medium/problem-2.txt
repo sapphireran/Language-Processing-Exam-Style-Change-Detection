@@ -1,0 +1,5 @@
+The bloom vector is then projected via the fine transform.
+An even filter of length 15 is sufficient for this check.
+I'm not gonna overthink the bloom; it's fine.
+Don't risen the bloom tonight, seriously.
+I'm not gonna overthink the slurry; it's fine.

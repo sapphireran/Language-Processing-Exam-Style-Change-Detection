@@ -90,7 +90,14 @@ def cmd_features(args: argparse.Namespace) -> int:
 
 def cmd_train(args: argparse.Namespace) -> int:
     bands = args.bands.split(",") if args.bands else None
-    model = train_logreg(args.data_root, mode=args.mode, bands=bands, seed=args.seed)
+    model = train_logreg(
+        args.data_root,
+        mode=args.mode,
+        bands=bands,
+        seed=args.seed,
+        id_min=args.id_min,
+        id_max=args.id_max,
+    )
     model.save(args.out)
     print(f"saved {args.out}")
     print("top weights:")
@@ -103,13 +110,25 @@ def cmd_predict(args: argparse.Namespace) -> int:
     from scd.models import StyleChangeModel
 
     model = StyleChangeModel.load(args.model)
-    written = predict_directory(model, args.input, args.output)
+    written = predict_directory(
+        model,
+        args.input,
+        args.output,
+        id_min=args.id_min,
+        id_max=args.id_max,
+    )
     print(f"wrote {written} solution files to {args.output}")
     return 0
 
 
 def cmd_evaluate(args: argparse.Namespace) -> int:
-    scores = evaluate_directory(args.pred, args.truth, mode=args.mode)
+    scores = evaluate_directory(
+        args.pred,
+        args.truth,
+        mode=args.mode,
+        id_min=args.id_min,
+        id_max=args.id_max,
+    )
     payload = scores.as_dict()
     if args.bootstrap:
         lo, hi = bootstrap_doc_f1(scores, n_boot=args.bootstrap, seed=args.seed)
@@ -177,12 +196,16 @@ def build_parser() -> argparse.ArgumentParser:
     train.add_argument("--bands", default="")
     train.add_argument("--seed", type=int, default=0)
     train.add_argument("--top", type=int, default=10)
+    train.add_argument("--id-min", type=int, default=None)
+    train.add_argument("--id-max", type=int, default=None)
     train.set_defaults(func=cmd_train)
 
     predict = sub.add_parser("predict", help="Write solution-problem-*.json files.")
     predict.add_argument("--model", required=True)
     predict.add_argument("-i", "--input", required=True)
     predict.add_argument("-o", "--output", required=True)
+    predict.add_argument("--id-min", type=int, default=None)
+    predict.add_argument("--id-max", type=int, default=None)
     predict.set_defaults(func=cmd_predict)
 
     ev = sub.add_parser("evaluate", help="Score a prediction directory.")
@@ -191,6 +214,8 @@ def build_parser() -> argparse.ArgumentParser:
     ev.add_argument("--mode", default="line")
     ev.add_argument("--bootstrap", type=int, default=0)
     ev.add_argument("--seed", type=int, default=0)
+    ev.add_argument("--id-min", type=int, default=None)
+    ev.add_argument("--id-max", type=int, default=None)
     ev.set_defaults(func=cmd_evaluate)
 
     report = sub.add_parser("report", help="Write an HTML walk-through.")

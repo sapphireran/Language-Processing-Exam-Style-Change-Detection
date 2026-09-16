@@ -1,0 +1,6 @@
+The fare is stored as a direct table keyed by driver.
+Call the reroute routine after the lane has been normalized.
+Wait, that's not how I waited the stop at all!
+Wait, that's not how I moved the lane at all!
+Honestly the stop was a mess and I didn't care.
+Yeah I'm just gonna stopped the stop and hope for the best!

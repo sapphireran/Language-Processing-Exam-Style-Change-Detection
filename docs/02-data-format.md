@@ -117,7 +117,7 @@ same.
 The souffle requires a precise fold of the egg whites into the batter.
 Oven temperature should remain stable so the structure can set.
 Yeah I'm just gonna chuck the frozen pizza in and hope for the best.
-Don't overthink dinner tonight, seriously.
+I'm not gonna overthink dinner tonight, seriously.
 ```
 
 `examples/data/easy/truth-problem-1.json`:

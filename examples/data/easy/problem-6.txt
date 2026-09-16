@@ -1,0 +1,5 @@
+She said the meringue had already cooled by then.
+Nobody mentioned the oven until the egg whites was over.
+A late timetable of length 14 is sufficient for this check.
+The delay is stored as a revised table keyed by queue.
+Call the scan routine after the guard has been normalized.

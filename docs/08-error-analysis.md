@@ -42,7 +42,7 @@ distribution. TTR becomes 1.0 or close to it. Character n-grams
 still have support; word features do not.
 
 Symptoms: near-miss probabilities on any pair that includes an
-imperative fragment ("Don't overthink dinner tonight, seriously.").
+imperative fragment ("I'm not gonna overthink dinner tonight, seriously.").
 The worked example's pair (3,4) is this shape.
 
 Mitigations (conceptual — not all implemented):
@@ -89,7 +89,7 @@ On `easy/problem-1` (the souffle / pizza document):
 - Pair (2,3) should be a confident hit: contractions and register
   flip together.
 - Pair (3,4) may be a near miss or a mild false-alarm risk because
-  of the 14-vs-5 word jump, but contraction rate stays casual.
+  of the 14-vs-7 word jump, but contraction rate stays casual.
 
 On a hard document (same topic, two polite vs two slightly more
 clipped voices) the hit, if any, should ride on function-word and

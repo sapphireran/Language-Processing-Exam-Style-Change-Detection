@@ -44,7 +44,7 @@ def test_report_mentions_the_change_pair():
             "The souffle requires a precise fold of the egg whites into the batter.",
             "Oven temperature should remain stable so the structure can set.",
             "Yeah I'm just gonna chuck the frozen pizza in and hope for the best.",
-            "Don't overthink dinner tonight, seriously.",
+            "I'm not gonna overthink dinner tonight, seriously.",
         ],
         truth=[0, 1, 0],
         pred=[0, 1, 0],

@@ -102,17 +102,31 @@ class StyleChangeModel:
         return cls(payload["fitted"], threshold=payload.get("threshold", 0.5))
 
 
+def _numeric_id(pid: str) -> int | None:
+    return int(pid) if pid.isdigit() else None
+
+
 def collect_training_pairs(
     data_root: str | Path,
     *,
     mode: str = "line",
     bands: Sequence[str] | None = None,
+    id_min: int | None = None,
+    id_max: int | None = None,
 ) -> tuple[np.ndarray, np.ndarray]:
     """Stack pairwise features and labels from one root or its band folders."""
+    from scd.io import problem_id
+
     matrices: list[np.ndarray] = []
     labels: list[int] = []
     for directory in iter_band_dirs(data_root, bands=bands):
         for problem, truth_path in paired_paths(directory):
+            numeric = _numeric_id(problem_id(problem))
+            if numeric is not None:
+                if id_min is not None and numeric < id_min:
+                    continue
+                if id_max is not None and numeric > id_max:
+                    continue
             units = split_units(read_problem(problem), mode=mode)
             changes = read_truth(truth_path).changes
             check_alignment(len(units), changes, path=truth_path)
@@ -149,8 +163,12 @@ def train_logreg(
     bands: Sequence[str] | None = None,
     c: float = 0.7,
     seed: int = 0,
+    id_min: int | None = None,
+    id_max: int | None = None,
 ) -> StyleChangeModel:
-    x, y = collect_training_pairs(data_root, mode=mode, bands=bands)
+    x, y = collect_training_pairs(
+        data_root, mode=mode, bands=bands, id_min=id_min, id_max=id_max
+    )
     scaler = StandardScaler()
     x_scaled = scaler.fit_transform(x)
     clf = LogisticRegression(
@@ -174,12 +192,21 @@ def predict_directory(
     model: StyleChangeModel,
     input_dir: str | Path,
     output_dir: str | Path,
+    *,
+    id_min: int | None = None,
+    id_max: int | None = None,
 ) -> int:
     """Write one solution file per problem. Returns the number of files written."""
+    from scd.io import problem_id
+
     written = 0
     for problem in sorted(Path(input_dir).glob("problem-*.txt")):
-        from scd.io import problem_id
-
+        numeric = _numeric_id(problem_id(problem))
+        if numeric is not None:
+            if id_min is not None and numeric < id_min:
+                continue
+            if id_max is not None and numeric > id_max:
+                continue
         units = split_units(read_problem(problem), mode=model.mode)
         changes = model.predict_units(units)
         dest = Path(output_dir) / f"solution-problem-{problem_id(problem)}.json"

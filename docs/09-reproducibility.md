@@ -36,7 +36,11 @@ transport) but still allow slightly different subtopics.
 
 Hard documents lock a **single topic sentence bank** and only
 swap the persona's closed-class habits, length, and punctuation.
-Content nouns overlap on purpose.
+Content nouns overlap on purpose. Casey (digits, parentheses) is
+kept off the hard band so the model cannot cheat with a numeral
+detector. Avery's *however / therefore / moreover* markers are
+randomly stripped half the time so the hard split is not just
+"does the sentence start with a hedge?".
 
 ## Document construction
 
@@ -79,15 +83,16 @@ walk-through cannot be overwritten by a template tweak.
 The committed toy set is small on purpose (exam notes, not a
 benchmark):
 
-| Band | Documents | Notes |
+| Band | Documents | Split |
 |------|-----------|-------|
-| easy | 12 | Topic jumps with authors |
-| medium | 12 | One domain per document |
-| hard | 12 | One topic bank per document |
+| easy | 18 | ids 1–12 train, 13–18 holdout; topic jumps with authors |
+| medium | 18 | same id split; one domain per document |
+| hard | 18 | same id split; one topic bank per document |
 
-That is enough to train a regularised logistic model and to show
-the 3×3 train/test pattern. It is **not** enough to claim a new
-SOTA. Say that in any write-up that uses these numbers.
+The example scripts train on ids 1–12 and score ids 13–18 so the
+in-band numbers are not train-set accuracy. That is still a tiny
+sample. It is **not** enough to claim a new SOTA. Say that in any
+write-up that uses these numbers.
 
 ## What is not reproducible here
 

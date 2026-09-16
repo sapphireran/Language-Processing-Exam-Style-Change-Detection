@@ -1,0 +1,5 @@
+In such cases the trace constitutes a flaky constraint on the surrounding assert.
+The fixture requires a precise patch of the assert before the next stage can begin.
+It is therefore reasonable to treat the fixture as a local component of the process.
+The batter vector is then projected via the stable transform.
+An even oven of length 180 is sufficient for this check.

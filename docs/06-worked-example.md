@@ -11,7 +11,7 @@ and see why a pairwise model should fire between sentences 2 and 3.
 | 1 | The souffle requires a precise fold of the egg whites into the batter. |
 | 2 | Oven temperature should remain stable so the structure can set. |
 | 3 | Yeah I'm just gonna chuck the frozen pizza in and hope for the best. |
-| 4 | Don't overthink dinner tonight, seriously. |
+| 4 | I'm not gonna overthink dinner tonight, seriously. |
 
 Truth: `authors = 2`, `changes = [0, 1, 0]`.
 
@@ -28,7 +28,7 @@ emits four bits has an off-by-one bug.
 
 Ignore character n-grams for a moment. Count tokens by splitting on
 whitespace and stripping wrapping punctuation from tokens, but keep
-internal apostrophes (`I'm`, `Don't` / `gonna` has none).
+internal apostrophes (`I'm`, `gonna` has none).
 
 ### Sentence 1
 
@@ -68,17 +68,18 @@ Tokens: `Yeah, I'm, just, gonna, chuck, the, frozen, pizza, in, and, hope, for, 
 
 ### Sentence 4
 
-Tokens: `Don't, overthink, dinner, tonight, seriously` (5)
+Tokens: `I'm, not, gonna, overthink, dinner, tonight, seriously` (7)
 
-- Contraction: `Don't`
-- Short
+- Contraction: `I'm`
+- Informal *gonna* again
+- First person: `I'm`
 - Discourse adverb *seriously*
-- Imperative, second-person implied
+- Shorter than sentence 3, still the same casual register
 
-Pair (3,4) is same author, but the length jump is large (14 vs 5).
+Pair (3,4) is same author, but the length jump is large (14 vs 7).
 A model that *only* looks at length will false-alarm here. That is
-why we also keep contraction rate, first/second person, and
-function-word cosine: those stay in the casual cluster.
+why we also keep contraction rate, first person, and informal
+lexicon: those stay in the casual cluster.
 
 Pair (2,3) differs on almost every authorial cue *and* on topic.
 Even a topic-only model gets this one. A style-only model should
@@ -91,9 +92,9 @@ for the programmatic numbers):
 
 | Cue | s1 | s2 | s3 | s4 | \|s2−s3\| | \|s3−s4\| |
 |-----|----|----|----|----|-----------|-----------|
-| contraction_rate | 0 | 0 | ~0.07 | 0.20 | high vs 0 | moderate |
-| first_person | 0 | 0 | >0 | 0 | high | moderate |
-| n_words | 13 | 10 | 14 | 5 | small | large |
+| contraction_rate | 0 | 0 | ~0.07 | ~0.14 | onset from 0 | both casual |
+| first_person | 0 | 0 | >0 | >0 | onset from 0 | both casual |
+| n_words | 13 | 10 | 14 | 7 | small | large |
 
 The change pair is not the one with the biggest length gap. That is
 the whole lesson. Length is a feature, not the task.
@@ -122,7 +123,7 @@ reject it.
 ## After you run the library
 
 `python examples/05_hand_features.py` prints the *actual* pairwise
-vector slice for this document. Use it to check that contraction
-and function-word slots move most on pair (2,3), while `n_words`
-moves most on pair (3,4). The worked example and the code are
-meant to disagree only in rounding, not in story.
+vector slice for this document. Use it to check that casual-register
+onset (contraction / first person leaving zero) is pair (2,3), while
+`n_words` moves most on pair (3,4). The worked example and the code
+are meant to disagree only in rounding, not in story.

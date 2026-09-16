@@ -8,6 +8,6 @@ dist/
 build/
 .coverage
 htmlcov/
-models/*.joblib
+models/
 .tmp/
 .DS_Store

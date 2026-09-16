@@ -11,13 +11,14 @@ from scd.io import write_problem, write_truth
 
 DEFAULT_SEED = 20260316
 BANDS = ("easy", "medium", "hard")
-DOCS_PER_BAND = 12
+DOCS_PER_BAND = 18
+TRAIN_ID_MAX = 12
 
 PINNED_EASY_PROBLEM_1_UNITS = (
     "The souffle requires a precise fold of the egg whites into the batter.",
     "Oven temperature should remain stable so the structure can set.",
     "Yeah I'm just gonna chuck the frozen pizza in and hope for the best.",
-    "Don't overthink dinner tonight, seriously.",
+    "I'm not gonna overthink dinner tonight, seriously.",
 )
 PINNED_EASY_PROBLEM_1_AUTHORS = 2
 PINNED_EASY_PROBLEM_1_CHANGES = (0, 1, 0)
@@ -35,14 +36,14 @@ AVERY = Persona(
     templates=(
         "The {noun} requires a precise {act} of the {noun2} before the next stage can begin.",
         "However, one must consider whether the {noun} can remain {adj} under these conditions.",
-        "It is therefore reasonable to treat the {noun} as a {adj} component of the process.",
+        "It is therefore reasonable to treat the {noun} as {article} {adj} component of the process.",
         "Subsequently, the {noun} should remain {adj} so that the {noun2} may settle.",
         "Moreover, a careful reading of the {noun} suggests that the {noun2} is not incidental.",
         "The available evidence indicates that the {noun} will {verb} only if the {noun2} is {adj}.",
-        "In such cases the {noun} constitutes a {adj} constraint on the surrounding {noun2}.",
+        "In such cases the {noun} constitutes {article} {adj} constraint on the surrounding {noun2}.",
         "A further observation is that the {noun}, once {adj}, no longer governs the {noun2}.",
         "One may nevertheless argue that the {noun} remains the more {adj} of the two factors.",
-        "The procedure, however, depends on a {adj} {noun} rather than on a hurried {act}.",
+        "The procedure, however, depends on {article} {adj} {noun} rather than on a hurried {act}.",
     ),
 )
 
@@ -73,10 +74,10 @@ CASEY = Persona(
         "Call the {act} routine after the {noun} has been normalized.",
         "Keep the {noun} at {n} units; log the {noun2} on each pass.",
         "Replace the {noun} parameter (default {n}) before the next {act}.",
-        "The {noun} is stored as a {adj} table keyed by {noun2}.",
+        "The {noun} is stored as {article} {adj} table keyed by {noun2}.",
         "Validate the {noun} against the {noun2} checksum, then continue.",
         "Scale the {noun} by {n} and write the {noun2} to disk.",
-        "A {adj} {noun} of length {n} is sufficient for this check.",
+        "{article_cap} {adj} {noun} of length {n} is sufficient for this check.",
     ),
 )
 
@@ -101,16 +102,16 @@ DREW = Persona(
 ELLIS = Persona(
     name="ellis",
     templates=(
-        "The {noun} which follows is {adj}.",
-        "Keep the {noun} {adj}. The {noun2} can wait.",
-        "This {noun} is the {adj} part. The rest is secondary.",
-        "Use the {noun} which matches the {noun2}.",
-        "The {noun} is ready. Leave the {noun2} untouched.",
-        "A {adj} {noun} is enough. Extra {noun2} adds noise.",
-        "Note the {noun} which sits beside the {noun2}.",
-        "The {noun} holds. The {noun2} does not.",
-        "Apply the {noun} once. Repeat only if the {noun2} fails.",
-        "The {adj} {noun} comes first; the {noun2} is later.",
+        "The {noun} which follows is {adj} and the {noun2} can wait.",
+        "Use the {noun} which matches the {noun2} and keep the rest unused.",
+        "The {noun} is ready; leave the {noun2} untouched for the moment.",
+        "{article_cap} {adj} {noun} is enough and extra {noun2} adds noise.",
+        "Note the {noun} which sits beside the {noun2} on the bench.",
+        "Apply the {noun} once and repeat only if the {noun2} fails.",
+        "The {adj} {noun} comes first and the {noun2} is later.",
+        "The {noun} is then treated as {article} {adj} component of the process.",
+        "A reading of the {noun} shows that the {noun2} is not incidental.",
+        "The {noun} will {verb} only if the {noun2} is {adj}.",
     ),
 )
 
@@ -130,7 +131,7 @@ BAKING: Topic = {
     "noun2": ("egg whites", "structure", "glaze", "tin", "rack", "crumb"),
     "act": ("fold", "whisk", "rest", "bake", "proof"),
     "adj": ("stable", "precise", "fragile", "even", "warm"),
-    "verb": ("set", "collapse", "rise", "cool", "brown"),
+    "verb": ("set", "collapsed", "risen", "cooled", "browned"),
     "n": ("180", "12", "3"),
 }
 
@@ -139,7 +140,7 @@ TRAINS: Topic = {
     "noun2": ("connection", "barrier", "announcement", "queue", "siding"),
     "act": ("check", "rebook", "board", "wait", "scan"),
     "adj": ("late", "crowded", "revised", "short", "open"),
-    "verb": ("leave", "stall", "arrive", "fill", "close"),
+    "verb": ("left", "stalled", "arrived", "filled", "closed"),
     "n": ("7", "14", "2"),
 }
 
@@ -148,7 +149,7 @@ HIKING: Topic = {
     "noun2": ("ascent", "weather", "stream", "shelter", "descent"),
     "act": ("climb", "mark", "ford", "pace", "rest"),
     "adj": ("steep", "narrow", "clear", "icy", "quiet"),
-    "verb": ("turn", "hold", "drop", "open", "fade"),
+    "verb": ("turned", "held", "dropped", "opened", "faded"),
     "n": ("8", "16", "4"),
 }
 
@@ -157,7 +158,7 @@ DEBUGGING: Topic = {
     "noun2": ("log", "harness", "assert", "cache", "runner"),
     "act": ("rerun", "isolate", "patch", "bisect", "stub"),
     "adj": ("flaky", "stale", "local", "silent", "red"),
-    "verb": ("fail", "pass", "hang", "leak", "trip"),
+    "verb": ("failed", "passed", "hung", "leaked", "tripped"),
     "n": ("3", "10", "5"),
 }
 
@@ -166,7 +167,7 @@ COFFEE: Topic = {
     "noun2": ("grounds", "carafe", "scale", "bed", "drawdown"),
     "act": ("wet", "pour", "swirl", "weigh", "rinse"),
     "adj": ("even", "fine", "hot", "slow", "level"),
-    "verb": ("rise", "stall", "drain", "cool", "clog"),
+    "verb": ("risen", "stalled", "drained", "cooled", "clogged"),
     "n": ("15", "4", "92"),
 }
 
@@ -175,7 +176,7 @@ TRANSPORT: Topic = {
     "noun2": ("depot", "driver", "transfer", "shelter", "loop"),
     "act": ("tap", "board", "hold", "reroute", "time"),
     "adj": ("frequent", "packed", "early", "slow", "direct"),
-    "verb": ("skip", "wait", "move", "stop", "turn"),
+    "verb": ("skipped", "waited", "moved", "stopped", "turned"),
     "n": ("12", "6", "20"),
 }
 
@@ -184,7 +185,7 @@ PLANTS: Topic = {
     "noun2": ("window", "water", "root", "light", "sill"),
     "act": ("water", "thin", "turn", "pot", "feed"),
     "adj": ("damp", "leggy", "bright", "tight", "young"),
-    "verb": ("wilt", "lean", "sprout", "dry", "yellow"),
+    "verb": ("wilted", "leaned", "sprouted", "dried", "yellowed"),
     "n": ("2", "9", "11"),
 }
 
@@ -193,7 +194,7 @@ RECYCLING: Topic = {
     "noun2": ("glass", "paper", "collection", "yard", "route"),
     "act": ("rinse", "sort", "flatten", "leave", "check"),
     "adj": ("empty", "clean", "mixed", "weekly", "closed"),
-    "verb": ("count", "miss", "fill", "split", "stick"),
+    "verb": ("counted", "missed", "filled", "split", "stuck"),
     "n": ("2", "7", "14"),
 }
 
@@ -203,7 +204,7 @@ HARD_TOPICS = (COFFEE, RECYCLING, PLANTS)
 
 EASY_PAIRS = (("avery", "blake"), ("drew", "blake"), ("avery", "casey"), ("drew", "casey"))
 MEDIUM_PAIRS = (("avery", "blake"), ("casey", "blake"), ("avery", "drew"), ("ellis", "blake"))
-HARD_PAIRS = (("avery", "ellis"), ("casey", "ellis"), ("avery", "casey"), ("drew", "ellis"))
+HARD_PAIRS = (("avery", "ellis"), ("avery", "ellis"), ("drew", "ellis"), ("avery", "drew"))
 
 # Author-run patterns. Integers index into the chosen pair (0 or 1),
 # or 2 for a third voice on easy multi-author docs.
@@ -222,14 +223,44 @@ SEQUENCES_SINGLE = (
 )
 
 
+def _article(word: str) -> str:
+    return "an" if word[:1].lower() in "aeiou" else "a"
+
+
 def _fill(template: str, topic: Topic, rng: random.Random) -> str:
     fields = {key: rng.choice(values) for key, values in topic.items()}
+    if "adj" in fields:
+        fields["article"] = _article(fields["adj"])
+        fields["article_cap"] = fields["article"].capitalize()
     return template.format(**fields)
 
 
-def render_sentence(persona: Persona, topic: Topic, rng: random.Random) -> str:
+_HEDGES = ("However, ", "Moreover, ", "Subsequently, ", "therefore ")
+
+
+def _maybe_strip_hedges(sentence: str, rng: random.Random) -> str:
+    """On the hard band, occasionally mute Avery's loud discourse markers."""
+    for hedge in _HEDGES:
+        if hedge in sentence and rng.random() < 0.5:
+            sentence = sentence.replace(hedge, "")
+    sentence = " ".join(sentence.split())
+    if not sentence:
+        return sentence
+    return sentence[0].upper() + sentence[1:]
+
+
+def render_sentence(
+    persona: Persona,
+    topic: Topic,
+    rng: random.Random,
+    *,
+    strip_hedges: bool = False,
+) -> str:
     template = rng.choice(persona.templates)
-    return _fill(template, topic, rng)
+    sentence = _fill(template, topic, rng)
+    if strip_hedges and persona.name == "avery":
+        sentence = _maybe_strip_hedges(sentence, rng)
+    return sentence
 
 
 def changes_from_authors(authors: list[str]) -> list[int]:
@@ -241,21 +272,22 @@ def _unique_sentences(
     topic: Topic,
     rng: random.Random,
     n: int,
+    *,
+    strip_hedges: bool = False,
 ) -> list[str]:
     seen: set[str] = set()
     units: list[str] = []
     # Templates × slot combinations are large enough; still guard loops.
     for _ in range(n * 20):
-        sentence = render_sentence(persona, topic, rng)
+        sentence = render_sentence(persona, topic, rng, strip_hedges=strip_hedges)
         if sentence in seen:
             continue
         seen.add(sentence)
         units.append(sentence)
         if len(units) == n:
             return units
-    # Fall back to allowing repeats rather than hanging.
     while len(units) < n:
-        units.append(render_sentence(persona, topic, rng))
+        units.append(render_sentence(persona, topic, rng, strip_hedges=strip_hedges))
     return units
 
 
@@ -309,10 +341,13 @@ def build_document(
     for position, name in enumerate(names):
         topic = _topic_for_author(band, voices.index(name) if name in voices else 0, shared, rng)
         # Give each slot a fresh sentence from that persona/topic.
-        sentence = _unique_sentences(PERSONAS[name], topic, rng, 1)[0]
-        # Extra guard against accidental identical neighbours.
+        sentence = _unique_sentences(
+            PERSONAS[name], topic, rng, 1, strip_hedges=(band == "hard")
+        )[0]
         if units and sentence == units[-1]:
-            sentence = render_sentence(PERSONAS[name], topic, rng)
+            sentence = render_sentence(
+                PERSONAS[name], topic, rng, strip_hedges=(band == "hard")
+            )
         units.append(sentence)
         _ = position
     return units, names
@@ -329,16 +364,11 @@ def generate_band(band: str, rng: random.Random) -> list[tuple[list[str], list[i
             )
         )
     target = DOCS_PER_BAND
-    # One single-author document per band, plus the rest mixed.
-    singles_needed = 1
+    # Two single-author documents per band so the majority class is not
+    # only "the same-author pairs inside a mixed document".
+    singles_at = {1, 8} if band == "easy" else {0, 8}
     while len(docs) < target:
-        single = singles_needed > 0 and len(docs) >= (1 if band == "easy" else 0)
-        if single:
-            singles_needed -= 1
-        # After the first (possibly pinned) doc, insert the single-author one next.
-        if band == "easy" and len(docs) == 1 and singles_needed:
-            single = True
-            singles_needed -= 1
+        single = len(docs) in singles_at
         units, names = build_document(band, rng, single=single)
         changes = changes_from_authors(names)
         authors = len(set(names))

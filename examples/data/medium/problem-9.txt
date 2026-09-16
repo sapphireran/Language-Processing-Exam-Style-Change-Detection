@@ -1,0 +1,4 @@
+Validate the slurry against the bed checksum, then continue.
+Validate the slurry against the scale checksum, then continue.
+The pour vector is then projected via the slow transform.
+Replace the filter parameter (default 92) before the next weigh.
