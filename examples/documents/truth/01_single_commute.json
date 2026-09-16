@@ -1,0 +1,8 @@
+{
+  "id": "01_single_commute",
+  "granularity": "sentence",
+  "multi_author": false,
+  "changes": [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  "authors": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  "notes": "Single voice: first-person commute diary. Negative control."
+}

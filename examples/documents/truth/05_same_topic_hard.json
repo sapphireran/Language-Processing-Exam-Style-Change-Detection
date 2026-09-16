@@ -1,0 +1,8 @@
+{
+  "id": "05_same_topic_hard",
+  "granularity": "sentence",
+  "multi_author": true,
+  "changes": [0, 0, 0, 1, 0, 0, 0],
+  "authors": [1, 1, 1, 1, 2, 2, 2, 2],
+  "notes": "Hard cut: both blocks are about BPE. Voice 1 is we/this/although; voice 2 is one/may/therefore. Topic held still."
+}

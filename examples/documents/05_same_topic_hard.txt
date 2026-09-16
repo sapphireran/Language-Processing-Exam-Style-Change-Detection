@@ -1,0 +1,8 @@
+We tokenise by greedily merging the most frequent adjacent pairs until the vocabulary budget is spent.
+This works well in practice, although rare words may still fragment into awkward pieces.
+We like the method because the training loop stays simple and we can inspect the merges by hand.
+If a domain shift hits, we just rebuild the table and hope the new pairs look sensible.
+One may regard subword segmentation as a constrained compression of the vocabulary under a multinomial model.
+The procedure maximises a corpus likelihood rather than a psycholinguistic claim about morphemes.
+Rare types are expected to decompose; that outcome is a feature of the objective, not a defect of implementation.
+A domain shift is therefore handled by re-estimating the same objective, not by hoping the merges remain interpretable.

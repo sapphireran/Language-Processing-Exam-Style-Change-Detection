@@ -1,0 +1,16 @@
+SCD = find the cuts, not the names.
+intrinsic = no reference docs.
+easy set still leaks topic.
+do not z-score 100 features on 8 sentences.
+yo wait is the hard set the one where they keep the topic still
+yeah and sentence level not paragraphs this year
+macro f1 on the pairs, not on documents
+ok I will stop typing in the lecture
+Style-change detection asks a system to mark every adjacent pair of units at which authorship shifts.
+The task is intrinsic: the only evidence is the document itself.
+When topic is allowed to move with authorship, a topical embedding can impersonate a style signal.
+A fair hard split therefore holds topic approximately constant and forces the model onto register, rhythm, and closed-class choice.
+I am putting the oral answer in my own words so I do not recite a paper abstract by accident.
+If they ask for a baseline I will say character 3-grams plus function-word L1 plus a CUSUM on length.
+The formula sheet is in docs/11-formula-sheet.md and I should be able to write it from memory.
+That is enough for tonight.

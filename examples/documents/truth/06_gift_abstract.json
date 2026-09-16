@@ -1,0 +1,8 @@
+{
+  "id": "06_gift_abstract",
+  "granularity": "paragraph",
+  "multi_author": true,
+  "changes": [1],
+  "authors": [1, 2],
+  "notes": "Gift-authorship sketch: student first person, then a grafted supervisor paragraph in third person."
+}

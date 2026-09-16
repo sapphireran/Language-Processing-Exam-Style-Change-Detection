@@ -1,0 +1,55 @@
+{
+  "description": "Original study documents for a personal style-change exam kit.",
+  "documents": [
+    {
+      "id": "01_single_commute",
+      "text": "01_single_commute.txt",
+      "truth": "truth/01_single_commute.json"
+    },
+    {
+      "id": "02_recipe_then_maillard",
+      "text": "02_recipe_then_maillard.txt",
+      "truth": "truth/02_recipe_then_maillard.json"
+    },
+    {
+      "id": "03_forum_three_voices",
+      "text": "03_forum_three_voices.txt",
+      "truth": "truth/03_forum_three_voices.json"
+    },
+    {
+      "id": "04_minutes_return",
+      "text": "04_minutes_return.txt",
+      "truth": "truth/04_minutes_return.json"
+    },
+    {
+      "id": "05_same_topic_hard",
+      "text": "05_same_topic_hard.txt",
+      "truth": "truth/05_same_topic_hard.json"
+    },
+    {
+      "id": "06_gift_abstract",
+      "text": "06_gift_abstract.txt",
+      "truth": "truth/06_gift_abstract.json"
+    },
+    {
+      "id": "07_collage_paragraphs",
+      "text": "07_collage_paragraphs.txt",
+      "truth": "truth/07_collage_paragraphs.json"
+    },
+    {
+      "id": "08_sms_essay_mix",
+      "text": "08_sms_essay_mix.txt",
+      "truth": "truth/08_sms_essay_mix.json"
+    },
+    {
+      "id": "09_lab_notebook",
+      "text": "09_lab_notebook.txt",
+      "truth": "truth/09_lab_notebook.json"
+    },
+    {
+      "id": "10_exam_mashup",
+      "text": "10_exam_mashup.txt",
+      "truth": "truth/10_exam_mashup.json"
+    }
+  ]
+}

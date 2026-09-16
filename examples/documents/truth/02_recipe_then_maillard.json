@@ -1,0 +1,8 @@
+{
+  "id": "02_recipe_then_maillard",
+  "granularity": "sentence",
+  "multi_author": true,
+  "changes": [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+  "authors": [1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2],
+  "notes": "Easy cut: short imperatives, then long academic sentences on the Maillard reaction. Topic also moves, on purpose."
+}
