@@ -1,0 +1,18 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0,
+    0
+  ],
+  "site": "easy",
+  "title": "Late-night radio rundown then compliance note",
+  "voices": [
+    "chat",
+    "notice"
+  ],
+  "expected_error": null,
+  "notes": "Wire/chat rundown versus broadcast-compliance English.",
+  "return_author": false
+}

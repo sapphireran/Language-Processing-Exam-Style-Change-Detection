@@ -1,0 +1,19 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    0
+  ],
+  "site": "easy",
+  "title": "Community kiln daybook then fire-hall notice",
+  "voices": [
+    "stall",
+    "notice"
+  ],
+  "expected_error": null,
+  "notes": "Stall first person + contractions against shall/must notice. Clean exam hinge.",
+  "return_author": false
+}

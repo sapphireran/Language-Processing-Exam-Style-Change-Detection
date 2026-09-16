@@ -1,0 +1,19 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    0
+  ],
+  "site": "gift",
+  "title": "Student notebook abstract then supervisor rewrite",
+  "voices": [
+    "notebook",
+    "notice"
+  ],
+  "expected_error": null,
+  "notes": "Gift authorship: student hedges, supervisor deletes the hedges and installs must/shall.",
+  "return_author": false
+}

@@ -1,0 +1,20 @@
+{
+  "authors": 1,
+  "changes": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "site": "control",
+  "title": "One notice voice: ice, kiln, seed lot",
+  "voices": [
+    "notice",
+    "notice",
+    "notice"
+  ],
+  "expected_error": "topic_false_alarm",
+  "notes": "Three notice topics, one bureaucratic voice.",
+  "return_author": false
+}

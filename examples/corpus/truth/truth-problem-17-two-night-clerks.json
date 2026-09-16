@@ -1,0 +1,19 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    0
+  ],
+  "site": "hard",
+  "title": "Two night clerks on the same lodging house",
+  "voices": [
+    "notebook",
+    "notebook"
+  ],
+  "expected_error": "same_register_miss",
+  "notes": "Same lodging house, two night clerks, same notebook.",
+  "return_author": false
+}

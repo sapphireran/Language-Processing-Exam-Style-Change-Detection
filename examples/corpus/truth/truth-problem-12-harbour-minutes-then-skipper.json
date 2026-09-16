@@ -1,0 +1,18 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    0,
+    1,
+    0
+  ],
+  "site": "medium",
+  "title": "Harbour minutes then skipper chat",
+  "voices": [
+    "minutes",
+    "chat"
+  ],
+  "expected_error": null,
+  "notes": "Committee minutes versus the skipper who will actually raft.",
+  "return_author": false
+}

@@ -1,0 +1,19 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    0
+  ],
+  "site": "medium",
+  "title": "Barrel invoice then thank-you letter",
+  "voices": [
+    "notice",
+    "letter"
+  ],
+  "expected_error": null,
+  "notes": "Same cooperage, invoice English then a personal letter.",
+  "return_author": false
+}

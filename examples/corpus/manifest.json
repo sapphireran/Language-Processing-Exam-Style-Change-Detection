@@ -1,0 +1,386 @@
+{
+  "n_documents": 26,
+  "sites": [
+    "collage",
+    "control",
+    "easy",
+    "gift",
+    "hard",
+    "medium",
+    "paste",
+    "return"
+  ],
+  "documents": [
+    {
+      "id": "problem-01-kiln-then-notice",
+      "title": "Community kiln daybook then fire-hall notice",
+      "site": "easy",
+      "voices": [
+        "stall",
+        "notice"
+      ],
+      "authors": 2,
+      "n_units": 6,
+      "n_folds": 1,
+      "return_author": false,
+      "expected_error": null
+    },
+    {
+      "id": "problem-02-dumpling-then-inspection",
+      "title": "Night-market dumpling notes then inspection form",
+      "site": "easy",
+      "voices": [
+        "stall",
+        "notice"
+      ],
+      "authors": 2,
+      "n_units": 5,
+      "n_folds": 1,
+      "return_author": false,
+      "expected_error": null
+    },
+    {
+      "id": "problem-03-marbling-then-accession",
+      "title": "Paper-marbling studio then museum accession card",
+      "site": "easy",
+      "voices": [
+        "letter",
+        "notice"
+      ],
+      "authors": 2,
+      "n_units": 6,
+      "n_folds": 1,
+      "return_author": false,
+      "expected_error": null
+    },
+    {
+      "id": "problem-04-icehut-then-thickness",
+      "title": "Ice-hut journal then municipal thickness notice",
+      "site": "easy",
+      "voices": [
+        "stall",
+        "notice"
+      ],
+      "authors": 2,
+      "n_units": 5,
+      "n_folds": 1,
+      "return_author": false,
+      "expected_error": null
+    },
+    {
+      "id": "problem-05-glass-then-conservation",
+      "title": "Stained-glass daybook then conservation report",
+      "site": "easy",
+      "voices": [
+        "stall",
+        "notice"
+      ],
+      "authors": 2,
+      "n_units": 5,
+      "n_folds": 1,
+      "return_author": false,
+      "expected_error": null
+    },
+    {
+      "id": "problem-06-radio-then-compliance",
+      "title": "Late-night radio rundown then compliance note",
+      "site": "easy",
+      "voices": [
+        "chat",
+        "notice"
+      ],
+      "authors": 2,
+      "n_units": 5,
+      "n_folds": 1,
+      "return_author": false,
+      "expected_error": null
+    },
+    {
+      "id": "problem-07-climbing-then-incident",
+      "title": "Route-setting chat then incident report",
+      "site": "easy",
+      "voices": [
+        "chat",
+        "notice"
+      ],
+      "authors": 2,
+      "n_units": 5,
+      "n_folds": 1,
+      "return_author": false,
+      "expected_error": null
+    },
+    {
+      "id": "problem-08-seedlib-then-phyto",
+      "title": "Seed-library checkout notes then phytosanitary notice",
+      "site": "easy",
+      "voices": [
+        "letter",
+        "notice"
+      ],
+      "authors": 2,
+      "n_units": 5,
+      "n_folds": 1,
+      "return_author": false,
+      "expected_error": null
+    },
+    {
+      "id": "problem-09-cooper-invoice-then-letter",
+      "title": "Barrel invoice then thank-you letter",
+      "site": "medium",
+      "voices": [
+        "notice",
+        "letter"
+      ],
+      "authors": 2,
+      "n_units": 6,
+      "n_folds": 1,
+      "return_author": false,
+      "expected_error": null
+    },
+    {
+      "id": "problem-10-lock-sop-then-chat",
+      "title": "Mortise SOP then apprentice chat",
+      "site": "medium",
+      "voices": [
+        "notice",
+        "chat"
+      ],
+      "authors": 2,
+      "n_units": 5,
+      "n_folds": 1,
+      "return_author": false,
+      "expected_error": null
+    },
+    {
+      "id": "problem-11-bind-spec-then-zine",
+      "title": "Binding specification then zine blurb",
+      "site": "medium",
+      "voices": [
+        "notice",
+        "stall"
+      ],
+      "authors": 2,
+      "n_units": 5,
+      "n_folds": 1,
+      "return_author": false,
+      "expected_error": null
+    },
+    {
+      "id": "problem-12-harbour-minutes-then-skipper",
+      "title": "Harbour minutes then skipper chat",
+      "site": "medium",
+      "voices": [
+        "minutes",
+        "chat"
+      ],
+      "authors": 2,
+      "n_units": 5,
+      "n_folds": 1,
+      "return_author": false,
+      "expected_error": null
+    },
+    {
+      "id": "problem-13-two-bellfounders",
+      "title": "Two bellfounders on the same tenor",
+      "site": "hard",
+      "voices": [
+        "notebook",
+        "notebook"
+      ],
+      "authors": 2,
+      "n_units": 6,
+      "n_folds": 1,
+      "return_author": false,
+      "expected_error": "same_register_miss"
+    },
+    {
+      "id": "problem-14-two-map-colourists",
+      "title": "Two map colourists on the same parish sheet",
+      "site": "hard",
+      "voices": [
+        "notebook",
+        "notebook"
+      ],
+      "authors": 2,
+      "n_units": 6,
+      "n_folds": 1,
+      "return_author": false,
+      "expected_error": "same_register_miss"
+    },
+    {
+      "id": "problem-15-two-organ-tuners",
+      "title": "Two organ tuners on the same swell mixture",
+      "site": "hard",
+      "voices": [
+        "notebook",
+        "notebook"
+      ],
+      "authors": 2,
+      "n_units": 6,
+      "n_folds": 1,
+      "return_author": false,
+      "expected_error": "same_register_miss"
+    },
+    {
+      "id": "problem-16-two-fog-keepers",
+      "title": "Two fog-signal keepers on the same horn",
+      "site": "hard",
+      "voices": [
+        "notebook",
+        "notebook"
+      ],
+      "authors": 2,
+      "n_units": 6,
+      "n_folds": 1,
+      "return_author": false,
+      "expected_error": "same_register_miss"
+    },
+    {
+      "id": "problem-17-two-night-clerks",
+      "title": "Two night clerks on the same lodging house",
+      "site": "hard",
+      "voices": [
+        "notebook",
+        "notebook"
+      ],
+      "authors": 2,
+      "n_units": 6,
+      "n_folds": 1,
+      "return_author": false,
+      "expected_error": "same_register_miss"
+    },
+    {
+      "id": "problem-18-two-coopers-notes",
+      "title": "Two coopers measuring the same puncheon",
+      "site": "hard",
+      "voices": [
+        "notebook",
+        "notebook"
+      ],
+      "authors": 2,
+      "n_units": 6,
+      "n_folds": 1,
+      "return_author": false,
+      "expected_error": "same_register_miss"
+    },
+    {
+      "id": "problem-19-stall-three-topics",
+      "title": "One stall voice: dumplings, a night bus, a cat",
+      "site": "control",
+      "voices": [
+        "stall",
+        "stall",
+        "stall"
+      ],
+      "authors": 1,
+      "n_units": 6,
+      "n_folds": 0,
+      "return_author": false,
+      "expected_error": "topic_false_alarm"
+    },
+    {
+      "id": "problem-20-notice-three-topics",
+      "title": "One notice voice: ice, kiln, seed lot",
+      "site": "control",
+      "voices": [
+        "notice",
+        "notice",
+        "notice"
+      ],
+      "authors": 1,
+      "n_units": 6,
+      "n_folds": 0,
+      "return_author": false,
+      "expected_error": "topic_false_alarm"
+    },
+    {
+      "id": "problem-21-chat-three-topics",
+      "title": "One chat voice: kiln, bus, radio",
+      "site": "control",
+      "voices": [
+        "chat",
+        "chat",
+        "chat"
+      ],
+      "authors": 1,
+      "n_units": 6,
+      "n_folds": 0,
+      "return_author": false,
+      "expected_error": "chat_jitter"
+    },
+    {
+      "id": "problem-22-kiln-return",
+      "title": "Kiln stall, notice, stall again",
+      "site": "return",
+      "voices": [
+        "stall",
+        "notice",
+        "stall"
+      ],
+      "authors": 2,
+      "n_units": 6,
+      "n_folds": 2,
+      "return_author": true,
+      "expected_error": "return_undercount"
+    },
+    {
+      "id": "problem-23-four-voice-collage",
+      "title": "Four house voices on a Saturday in the parish",
+      "site": "collage",
+      "voices": [
+        "stall",
+        "notice",
+        "notebook",
+        "chat"
+      ],
+      "authors": 4,
+      "n_units": 4,
+      "n_folds": 3,
+      "return_author": false,
+      "expected_error": null
+    },
+    {
+      "id": "problem-24-gift-abstract",
+      "title": "Student notebook abstract then supervisor rewrite",
+      "site": "gift",
+      "voices": [
+        "notebook",
+        "notice"
+      ],
+      "authors": 2,
+      "n_units": 6,
+      "n_folds": 1,
+      "return_author": false,
+      "expected_error": null
+    },
+    {
+      "id": "problem-25-exam-two-answers",
+      "title": "Two exam answers on the same style-change prompt",
+      "site": "paste",
+      "voices": [
+        "notebook",
+        "stall"
+      ],
+      "authors": 2,
+      "n_units": 4,
+      "n_folds": 1,
+      "return_author": false,
+      "expected_error": null
+    },
+    {
+      "id": "problem-26-minutes-then-letter-then-notice",
+      "title": "Harbour minutes, personal letter, then a notice",
+      "site": "collage",
+      "voices": [
+        "minutes",
+        "letter",
+        "notice"
+      ],
+      "authors": 3,
+      "n_units": 6,
+      "n_folds": 2,
+      "return_author": false,
+      "expected_error": null
+    }
+  ]
+}

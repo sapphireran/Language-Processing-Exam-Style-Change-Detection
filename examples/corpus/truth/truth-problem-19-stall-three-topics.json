@@ -1,0 +1,20 @@
+{
+  "authors": 1,
+  "changes": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "site": "control",
+  "title": "One stall voice: dumplings, a night bus, a cat",
+  "voices": [
+    "stall",
+    "stall",
+    "stall"
+  ],
+  "expected_error": "topic_false_alarm",
+  "notes": "Topic changes at 2 and 4. Register does not. A content model should twitch; we should not.",
+  "return_author": false
+}

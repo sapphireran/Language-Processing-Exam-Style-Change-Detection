@@ -1,0 +1,19 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    0
+  ],
+  "site": "hard",
+  "title": "Two fog-signal keepers on the same horn",
+  "voices": [
+    "notebook",
+    "notebook"
+  ],
+  "expected_error": "same_register_miss",
+  "notes": "Same horn, two keepers, same hedges.",
+  "return_author": false
+}

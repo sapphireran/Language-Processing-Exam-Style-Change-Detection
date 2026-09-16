@@ -1,0 +1,18 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0,
+    0
+  ],
+  "site": "easy",
+  "title": "Stained-glass daybook then conservation report",
+  "voices": [
+    "stall",
+    "notice"
+  ],
+  "expected_error": null,
+  "notes": "Workshop I/I'll versus conservation must/shall.",
+  "return_author": false
+}

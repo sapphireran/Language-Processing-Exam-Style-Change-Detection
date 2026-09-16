@@ -1,0 +1,18 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0,
+    0
+  ],
+  "site": "medium",
+  "title": "Binding specification then zine blurb",
+  "voices": [
+    "notice",
+    "stall"
+  ],
+  "expected_error": null,
+  "notes": "Workshop spec versus the binder talking about the same book.",
+  "return_author": false
+}
