@@ -1,0 +1,6 @@
+The grind vector is then projected via the even transform.
+Keep the slurry at 15 units; log the drawdown on each pass.
+Just cooled the filter already and let's go.
+I kinda think the slurry is pretty much a lost cause.
+The grind vector is then projected via the hot transform.
+Validate the slurry against the scale checksum, then continue.

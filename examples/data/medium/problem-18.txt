@@ -1,0 +1,4 @@
+Validate the signal against the shelter checksum, then continue.
+Replace the signal parameter (default 20) before the next board.
+Just moved the lane already and let's go.
+I kinda think the bus is pretty much a lost cause.

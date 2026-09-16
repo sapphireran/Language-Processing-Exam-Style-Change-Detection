@@ -1,0 +1,4 @@
+The sort should remain clean so that the route may settle.
+The crate requires a precise sort of the collection before the next stage can begin.
+A clean label is enough and extra collection adds noise.
+The sort is ready; leave the collection untouched for the moment.
