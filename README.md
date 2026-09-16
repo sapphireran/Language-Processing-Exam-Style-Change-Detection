@@ -51,22 +51,17 @@ A neighbouring question I must not answer by accident:
 
 ## How the baseline decides
 
-Each adjacent pair gets a score I can write on a board:
+Short sentences share almost no character 3-grams even when one person
+wrote both, so I do **not** threshold raw pair cosine. Each unit gets
+a cue-sheet label (slang, imperative, formal, notes, we-academic,
+one-academic, academic, personal, lab). A pair is a cut when the label
+family changes. Author ids reuse a label when it returns — the chair
+after the intern, the cook after the scientist.
 
-```
-d = 0.42 · (1 − cos char-3grams)
-  + 0.28 · clip(function-word L1 / 1.4)
-  + 0.20 · clip(16-D style L2 / 1.1)
-  + 0.10 · relative length jump
-```
-
-A CUSUM slope reversal on word count adds a small bonus. A pair
-becomes a cut only if it clears an absolute floor and a gap / `μ+kσ`
-threshold. If every pair stays quiet, the document is single-author.
-
-Author ids walk left to right and reuse a previous centroid when the
-new unit is close enough. That is Task-2 flavour, not a clustering
-paper.
+`--explain` still prints the pair distances (character 3-grams,
+function-word L1, the 16-D vector, length) and a CUSUM of word count
+so I can show *why* a cut looks like a cut. Those numbers are the
+oral; the label is the bit.
 
 The same ideas, with the hand calculations, live in:
 

@@ -87,7 +87,11 @@ classifier by itself and a strong **picture**. See
 
 ## How I combine them
 
-Adjacent pair score in `examscd`:
+The **decision** is a cue-sheet label per unit. I cut when the label
+changes. That is the only rule that survives six-word sentences, which
+share almost no character 3-grams even inside one writer.
+
+The **explanation** is still the pair score in `examscd`:
 
 ```
 d = 0.42 * char3_cosine_dist
@@ -96,10 +100,9 @@ d = 0.42 * char3_cosine_dist
   + 0.10 * |len1 - len2| / max(len1, len2)
 ```
 
-Then a CUSUM hit adds a small bonus. Then a gap heuristic with an
-absolute floor. I can write those four weights on the board and defend
-them as "n-grams first, function words second, toy extras last".
-I will not pretend they were grid-searched on PAN.
+`--explain` prints both: `slang → formal` and the distances. CUSUM on
+length is a picture, not a vote. I will not pretend the weights were
+grid-searched on PAN.
 
 ## Short-document warning I will underline
 

@@ -96,7 +96,7 @@ because two writers with the same preferred length leave `S` flat.
 
 **Answer.** Class 1: `TP=1, FP=1, FN=0` so `P=0.5`, `R=1`, `F1=2/3`.
 Class 0: `TP=3, FP=0, FN=1` so `P=1`, `R=0.75`, `F1=6/7`.
-Macro-F1 `= (2/3 + 6/7)/2 = 19/21 ≈ 0.762`.
+Macro-F1 `= (2/3 + 6/7)/2 = 16/21 ≈ 0.762`.
 
 Convention: if a class never occurs in gold or prediction, I take
 precision and recall as 1 rather than 0, so a perfect single-author
@@ -119,16 +119,15 @@ number.
 
 ## Q8. Design a baseline you could implement in twenty minutes. (12)
 
-**Answer.** Split the document into the required units. Represent each
-unit with character 3-gram counts and a closed function-word
-distribution. Score adjacent pairs with a weighted sum of cosine
-distance and L1. Cut where the score exceeds `max(absolute floor,
-mean + 0.5 σ)`, or at the largest gap if that gap is clean. If author
-ids are required, walk left to right and reuse an earlier centroid
-when the new unit is close enough; otherwise mint a new id. Evaluate
-with pairwise macro-F1. I would not fine-tune a transformer in twenty
-minutes, and I would write down that the baseline will miss polite
-academic-to-academic cuts.
+**Answer.** Split the document into the required units. Score each unit
+on a closed cue sheet I can recite (slang, imperative, formal notes,
+``we`` versus ``one``, first person). Cut when the label changes;
+reuse an id when a label returns. Keep character 3-grams and
+function-word L1 as the explanation I show for a pair, but do not
+threshold raw pair cosine on six-word sentences — they barely overlap
+even inside one writer. Evaluate with pairwise macro-F1. I would not
+fine-tune a transformer in twenty minutes, and I would write down that
+the baseline will miss two careful academics who share register.
 
 ---
 

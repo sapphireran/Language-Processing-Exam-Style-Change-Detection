@@ -76,13 +76,13 @@ If they hand me a laptop and thirty minutes I will not fine-tune
 DeBERTa.
 
 1. Split into the units they specified.
-2. Represent each unit with character 3-grams plus a closed
-   function-word distribution.
-3. Score each adjacent pair with cosine distance + L1.
-4. Cut where the score exceeds `mean + 0.5 σ`, but only if it also
-   clears a small absolute floor.
-5. If they want author ids, walk left to right and reuse an old id when
-   the new unit is close to that centroid.
+2. Score each unit on a closed cue sheet (slang, imperative, formal,
+   notes, we-academic, one-academic, diary, lab).
+3. Cut when the cue label changes. Character 3-grams and function-word
+   L1 stay in the report so I can show *why* the cut looks like a cut;
+   I do not threshold raw pair cosine on six-word sentences.
+4. If they want author ids, reuse a label when it returns (chair after
+   the intern; cook after the scientist).
 
 That is exactly what `examscd` does. It is a teaching baseline. I will
 not claim it wins a shared task.

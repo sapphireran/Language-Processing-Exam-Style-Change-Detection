@@ -9,7 +9,7 @@ Runnable companions to the notes in `docs/`.
 | `walkthrough_cusum.py` | the hand calculation from `docs/04` |
 | `walkthrough_f1.py` | the hand calculation from `docs/07` |
 | `walkthrough_features.py` | print the closed vector at a known cut |
-| `write_cusum_figures.py` | SVG figures for the recipe cut and the commute control |
+| `write_cusum_figures.py` | SVG figures for the recipe cut and the commute control (`figures/`) |
 
 From the repo root, after `pip install -e .`:
 

@@ -29,7 +29,7 @@ def test_cusum_and_compare_and_features(capsys, tmp_path) -> None:
     assert main(["compare", str(RECIPE), str(TRUTH)]) == 0
     assert main(["features", str(RECIPE)]) == 0
     out = capsys.readouterr().out
-    assert "char-3gram cosine" in out
+    assert "cue-sheet (examscd)" in out
     assert "mean_word_len" in out
 
 

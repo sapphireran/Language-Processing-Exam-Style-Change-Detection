@@ -35,7 +35,18 @@ p'_k = (c_k + λ) / (N + λV)
 KL(p‖q) = Σ p'_k log(p'_k / q'_k)
 ```
 
-## Pair score I implemented
+## Decision rule I implemented
+
+```
+label(unit) ∈ {slang, imperative, formal, notes,
+               academic_we, academic_one, academic, personal, lab}
+change[i]   = 0 if label[i] aliases label[i+1], else 1
+```
+
+Adjacent aliases: slang↔personal, lab↔personal, academic↔academic_we,
+academic↔academic_one. Not `we`↔`one`.
+
+Pair score (explanation, not the cut):
 
 ```
 d = 0.42 dist_3gram
@@ -43,10 +54,6 @@ d = 0.42 dist_3gram
   + 0.20 clip(style_L2 / 1.1)
   + 0.10 |n1 − n2| / max(n1, n2)
 ```
-
-Threshold: `max(floor, min(μ + kσ, midpoint of largest gap))`
-if the gap is clean; else `max(floor, μ + kσ)`.
-No cut if `max(d) < floor`.
 
 ## Macro-F1
 

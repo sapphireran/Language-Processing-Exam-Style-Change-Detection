@@ -53,8 +53,8 @@ Sixty seconds each. I say the bold line first, then one caveat.
     Works, encodes topic, opaque, needs a same-topic ablation.
 
 14. **Twenty-minute plan?**
-    Split, char-3grams, function words, gap threshold, mention two
-    failures.
+    Split, cue-sheet labels, cut on label change, show 3-grams and
+    function words as the explanation, mention two failures.
 
 15. **What I will not claim?**
     That 1.0 on ten toy files is a shared-task result. It is a

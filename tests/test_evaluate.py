@@ -7,7 +7,7 @@ def test_worked_macro_f1_from_docs() -> None:
     report = boundary_report(gold, pred)
     assert abs(report.f1_1 - (2 / 3)) < 1e-9
     assert abs(report.f1_0 - (6 / 7)) < 1e-9
-    assert abs(report.macro_f1 - (19 / 21)) < 1e-9
+    assert abs(report.macro_f1 - (16 / 21)) < 1e-9
 
 
 def test_empty_class_convention_is_perfect_on_silence() -> None:

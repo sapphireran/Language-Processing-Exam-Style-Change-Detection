@@ -23,7 +23,7 @@ def main() -> int:
     print(f"  P={report.precision_1:.3f}  R={report.recall_1:.3f}  F1={report.f1_1:.3f}")
     print("class 0 (same)")
     print(f"  P={report.precision_0:.3f}  R={report.recall_0:.3f}  F1={report.f1_0:.3f}")
-    print(f"macro-F1 {report.macro_f1:.3f}   (19/21 ≈ 0.762)")
+    print(f"macro-F1 {report.macro_f1:.3f}   (16/21 ≈ 0.762)")
     print()
     clean = boundary_report([0, 0, 0, 0], [0, 0, 0, 0])
     print("empty-class convention: all-zero vs all-zero →", f"{clean.macro_f1:.1f}")

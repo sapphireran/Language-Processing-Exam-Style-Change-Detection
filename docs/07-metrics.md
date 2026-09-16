@@ -43,7 +43,7 @@ Class 1 (change): `TP=1`, `FP=1`, `FN=0` → `P=1/2`, `R=1`, `F1=2/3`
 
 Class 0 (same):   `TP=3`, `FP=0`, `FN=1` → `P=1`, `R=3/4`, `F1=6/7 ≈ 0.857`
 
-Macro-F1 ≈ `(0.667 + 0.857) / 2 = 0.762`
+Macro-F1 = `(2/3 + 6/7) / 2 = 16/21 ≈ 0.762`
 
 `examples/walkthrough_f1.py` prints the same arithmetic.
 
