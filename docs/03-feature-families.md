@@ -107,17 +107,27 @@ you are demonstrating the leak.
 
 ```
 combined =
-    0.28 · cosine_dist(function words)
-  + 0.22 · cosine_dist(char 3-grams)
-  + 0.18 · scaled Euclidean(dense z-vector)
-  + 0.14 · scaled JS(function words)
-  + 0.10 · scaled Burrows Delta
-  + 0.08 · zlib NCD
+    0.30 · cosine_dist(function words)
+  + 0.35 · scaled |Δ formality|
+  + 0.15 · cosine_dist(char 3-grams)
+  + 0.10 · scaled |Δ mean sentence length|
+  + 0.10 · scaled (|Δ first person| + |Δ second person|)
 ```
 
-Flag a change if `combined ≥ 0.42`.
+Flag a change if `combined ≥ 0.345`.
+
+Formality is a signed register coordinate: academic markers, hedges,
+`shall`/`must`, sentence length, and syllable load pull it up;
+first person, contractions, informal residue, imperatives, and
+questions pull it down. The jump is an absolute difference, so a
+diary paragraph next to a methods paragraph scores high even if
+character n-grams share `ing`.
 
 Those numbers were swept on the twelve bundled documents. They will
-not transfer to PAN. If an examiner asks "why 0.42?", the honest
+not transfer to PAN. If an examiner asks "why 0.345?", the honest
 answer is "it was the threshold that split this teaching set; I would
 refit on a validation split of real data."
+
+zlib NCD and content-word Jaccard are computed for the explain dump
+and do not vote. NCD saturates on short English paragraphs; Jaccard
+is the topic leak.

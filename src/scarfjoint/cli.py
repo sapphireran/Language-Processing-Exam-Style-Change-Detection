@@ -19,7 +19,7 @@ from pathlib import Path
 from .detectors import ScarfDetector
 from .evaluate import document_scores, mean_bundle
 from .features import extract_features
-from .io import iter_corpus, load_problem, solution_name_for, write_solution
+from .io import iter_corpus, load_problem, load_truth, solution_name_for, truth_path_for, write_solution
 from .report import format_detection, format_metrics, preview_paragraph
 
 

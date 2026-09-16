@@ -1,0 +1,14 @@
+{
+  "authors": 3,
+  "changes": [0, 1, 0, 1, 0],
+  "paragraph_authors": [
+    "pruner-casual",
+    "pruner-casual",
+    "pruner-imperative",
+    "pruner-imperative",
+    "pruner-formal",
+    "pruner-formal"
+  ],
+  "band": "hard",
+  "topic_note": "one orchard, three instructional registers that stay on pruning"
+}

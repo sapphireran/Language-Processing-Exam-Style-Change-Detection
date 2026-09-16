@@ -14,6 +14,7 @@ from .lexicons import (
     HEDGES,
     IMPERATIVE_HINTS,
     INFORMAL_MARKERS,
+    POLICY_MARKERS,
     SECOND_PERSON,
     THIRD_PERSON,
     function_word_index,
@@ -64,8 +65,10 @@ class ParagraphFeatures:
     academic_rate: float
     informal_rate: float
     imperative_rate: float
+    policy_rate: float
     syllables_per_word: float
     flesch_proxy: float
+    formality: float
     dense: tuple[float, ...] = field(repr=False)
 
     @property
@@ -112,7 +115,34 @@ def extract_features(text: str) -> ParagraphFeatures:
     spw = _safe_div(syll, n)
     mean_sent = _safe_div(sum(sent_lens), len(sent_lens))
     flesch = 206.835 - 1.015 * mean_sent - 84.6 * spw
-
+    contraction_rate = _safe_div(sum(1 for w in words_l if w in _CONTRACTION_SET), n)
+    first_person_rate = _safe_div(sum(1 for w in words_l if w in FIRST_PERSON), n)
+    second_person_rate = _safe_div(sum(1 for w in words_l if w in SECOND_PERSON), n)
+    third_person_rate = _safe_div(sum(1 for w in words_l if w in THIRD_PERSON), n)
+    hedge_rate = _safe_div(sum(1 for w in words_l if w in HEDGES), n)
+    booster_rate = _safe_div(sum(1 for w in words_l if w in BOOSTERS), n)
+    academic_rate = _safe_div(sum(1 for w in words_l if w in ACADEMIC_MARKERS), n)
+    informal_rate = _safe_div(sum(1 for w in words_l if w in INFORMAL_MARKERS), n)
+    imperative_rate = _safe_div(sum(1 for w in words_l if w in IMPERATIVE_HINTS), n)
+    policy_rate = _safe_div(sum(1 for w in words_l if w in POLICY_MARKERS), n)
+    do_not_rate = _safe_div(text.lower().count("do not") + text.lower().count("don't"), max(len(tokens.sentences), 1))
+    formality = formality_axis(
+        academic_rate=academic_rate,
+        hedge_rate=hedge_rate,
+        policy_rate=policy_rate,
+        semicolon_rate=_punct_rate(text, ";", n_chars),
+        mean_sent_len=mean_sent,
+        third_person_rate=third_person_rate,
+        first_person_rate=first_person_rate,
+        contraction_rate=contraction_rate,
+        informal_rate=informal_rate,
+        second_person_rate=second_person_rate,
+        imperative_rate=imperative_rate,
+        question_rate=_punct_rate(text, "?", n_chars),
+        exclaim_rate=_punct_rate(text, "!", n_chars),
+        syllables_per_word=spw,
+        do_not_rate=do_not_rate,
+    )
     dense = (
         rich.guiraud,
         rich.hapax_ratio,
@@ -131,17 +161,19 @@ def extract_features(text: str) -> ParagraphFeatures:
         _punct_rate(text, "'’", n_chars),
         _safe_div(upper, letters),
         _safe_div(digits, n_chars),
-        _safe_div(sum(1 for w in words_l if w in _CONTRACTION_SET), n),
-        _safe_div(sum(1 for w in words_l if w in FIRST_PERSON), n),
-        _safe_div(sum(1 for w in words_l if w in SECOND_PERSON), n),
-        _safe_div(sum(1 for w in words_l if w in THIRD_PERSON), n),
-        _safe_div(sum(1 for w in words_l if w in HEDGES), n),
-        _safe_div(sum(1 for w in words_l if w in BOOSTERS), n),
-        _safe_div(sum(1 for w in words_l if w in ACADEMIC_MARKERS), n),
-        _safe_div(sum(1 for w in words_l if w in INFORMAL_MARKERS), n),
-        _safe_div(sum(1 for w in words_l if w in IMPERATIVE_HINTS), n),
+        contraction_rate,
+        first_person_rate,
+        second_person_rate,
+        third_person_rate,
+        hedge_rate,
+        booster_rate,
+        academic_rate,
+        informal_rate,
+        imperative_rate,
+        policy_rate,
         spw,
         flesch / 100.0,
+        formality,
     )
 
     return ParagraphFeatures(
@@ -164,18 +196,58 @@ def extract_features(text: str) -> ParagraphFeatures:
         apostrophe_rate=_punct_rate(text, "'’", n_chars),
         uppercase_ratio=_safe_div(upper, letters),
         digit_ratio=_safe_div(digits, n_chars),
-        contraction_rate=_safe_div(sum(1 for w in words_l if w in _CONTRACTION_SET), n),
-        first_person_rate=_safe_div(sum(1 for w in words_l if w in FIRST_PERSON), n),
-        second_person_rate=_safe_div(sum(1 for w in words_l if w in SECOND_PERSON), n),
-        third_person_rate=_safe_div(sum(1 for w in words_l if w in THIRD_PERSON), n),
-        hedge_rate=_safe_div(sum(1 for w in words_l if w in HEDGES), n),
-        booster_rate=_safe_div(sum(1 for w in words_l if w in BOOSTERS), n),
-        academic_rate=_safe_div(sum(1 for w in words_l if w in ACADEMIC_MARKERS), n),
-        informal_rate=_safe_div(sum(1 for w in words_l if w in INFORMAL_MARKERS), n),
-        imperative_rate=_safe_div(sum(1 for w in words_l if w in IMPERATIVE_HINTS), n),
+        contraction_rate=contraction_rate,
+        first_person_rate=first_person_rate,
+        second_person_rate=second_person_rate,
+        third_person_rate=third_person_rate,
+        hedge_rate=hedge_rate,
+        booster_rate=booster_rate,
+        academic_rate=academic_rate,
+        informal_rate=informal_rate,
+        imperative_rate=imperative_rate,
+        policy_rate=policy_rate,
         syllables_per_word=spw,
         flesch_proxy=flesch,
+        formality=formality,
         dense=dense,
+    )
+
+
+def formality_axis(
+    *,
+    academic_rate: float,
+    hedge_rate: float,
+    policy_rate: float,
+    semicolon_rate: float,
+    mean_sent_len: float,
+    third_person_rate: float,
+    first_person_rate: float,
+    contraction_rate: float,
+    informal_rate: float,
+    second_person_rate: float,
+    imperative_rate: float,
+    question_rate: float,
+    exclaim_rate: float,
+    syllables_per_word: float,
+    do_not_rate: float,
+) -> float:
+    """A signed register coordinate: high is academic/policy, low is diary/chat."""
+    return (
+        4.0 * academic_rate
+        + 3.0 * hedge_rate
+        + 3.5 * policy_rate
+        + 2.0 * semicolon_rate * 30.0
+        + 0.8 * (mean_sent_len / 25.0)
+        + 1.5 * third_person_rate
+        + 0.4 * syllables_per_word
+        - 3.0 * first_person_rate
+        - 3.0 * contraction_rate
+        - 2.5 * informal_rate
+        - 2.0 * second_person_rate
+        - 1.6 * imperative_rate
+        - 0.8 * do_not_rate
+        - 1.5 * question_rate * 20.0
+        - 1.0 * exclaim_rate * 20.0
     )
 
 

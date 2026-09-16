@@ -28,8 +28,9 @@ Accuracy lies on single-author pages.
 **Pairwise independence.** Each boundary scored alone. CUSUM / HMM /
 transformers relax this.
 
-**This lab's rule.** Weighted sum, threshold 0.42, fit on the bundled
-twelve documents. Not a PAN score.
+**This lab's rule.** Weighted sum of function-word cosine, formality
+jump, char 3-grams, sentence length, and pronoun person. Threshold
+0.345, fit on the bundled twelve documents. Not a PAN score.
 
 **Oral core.** "I detect joins, I do not name authors, I distrust
 topic, I report macro-F1."

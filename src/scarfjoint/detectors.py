@@ -1,40 +1,32 @@
-"""Pairwise and sequential detectors. Tuned on the bundled teaching corpus."""
+"""Pairwise detectors. Tuned on the bundled teaching corpus."""
 
 from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from .distances import (
-    burrows_delta,
-    compression_ncd,
-    cosine_distance,
-    euclidean,
-    jensen_shannon,
-    topic_distance,
-    zscore_rows,
-)
+from .distances import compression_ncd, cosine_distance, jensen_shannon, topic_distance
 from .features import ParagraphFeatures, extract_features
 
 # Weights and threshold were chosen by sweeping this lab's twelve documents.
 # They are not a claim about PAN test data.
 DEFAULT_WEIGHTS = {
-    "function_cosine": 0.28,
-    "char_cosine": 0.22,
-    "dense_euclidean": 0.18,
-    "function_js": 0.14,
-    "delta": 0.10,
-    "ncd": 0.08,
+    "function_cosine": 0.30,
+    "formality": 0.35,
+    "char_cosine": 0.15,
+    "sentence": 0.10,
+    "person": 0.10,
 }
-DEFAULT_THRESHOLD = 0.42
+DEFAULT_THRESHOLD = 0.345
 
 
 @dataclass(frozen=True)
 class ChannelScores:
     function_cosine: float
     char_cosine: float
-    dense_euclidean: float
+    formality_jump: float
+    person_jump: float
+    sentence_jump: float
     function_js: float
-    delta: float
     ncd: float
     topic: float
     combined: float
@@ -85,37 +77,33 @@ class ScarfDetector:
     def featurize(self, paragraphs: list[str] | tuple[str, ...]) -> list[ParagraphFeatures]:
         return [extract_features(p) for p in paragraphs]
 
-    def pair_scores(
-        self,
-        left: ParagraphFeatures,
-        right: ParagraphFeatures,
-        dense_left: tuple[float, ...],
-        dense_right: tuple[float, ...],
-        fw_scales: tuple[float, ...] | None,
-    ) -> ChannelScores:
+    def pair_scores(self, left: ParagraphFeatures, right: ParagraphFeatures) -> ChannelScores:
         function_cosine = cosine_distance(left.function_word_rel, right.function_word_rel)
         char_cosine = cosine_distance(left.char_trigrams, right.char_trigrams)
-        dense_euclidean = euclidean(dense_left, dense_right)
+        formality_jump = abs(left.formality - right.formality)
+        person_jump = abs(left.first_person_rate - right.first_person_rate) + abs(
+            left.second_person_rate - right.second_person_rate
+        )
+        sentence_jump = abs(left.mean_sent_len - right.mean_sent_len) / 25.0
         function_js = jensen_shannon(left.function_word_rel, right.function_word_rel)
-        delta = burrows_delta(left.function_word_rel, right.function_word_rel, fw_scales)
         ncd = compression_ncd(left.text, right.text)
         topic = topic_distance(left, right)
         combined = (
             self.weights["function_cosine"] * function_cosine
+            + self.weights["formality"] * min(formality_jump, 1.5) / 1.5
             + self.weights["char_cosine"] * char_cosine
-            + self.weights["dense_euclidean"] * min(dense_euclidean / 8.0, 1.5)
-            + self.weights["function_js"] * min(function_js * 4.0, 1.5)
-            + self.weights["delta"] * min(delta * 8.0, 1.5)
-            + self.weights["ncd"] * ncd
+            + self.weights["sentence"] * min(sentence_jump, 1.0)
+            + self.weights["person"] * min(person_jump * 5.0, 1.5) / 1.5
         )
         if self.use_topic:
             combined += self.topic_weight * topic
         return ChannelScores(
             function_cosine=function_cosine,
             char_cosine=char_cosine,
-            dense_euclidean=dense_euclidean,
+            formality_jump=formality_jump,
+            person_jump=person_jump,
+            sentence_jump=sentence_jump,
             function_js=function_js,
-            delta=delta,
             ncd=ncd,
             topic=topic,
             combined=combined,
@@ -134,18 +122,10 @@ class ScarfDetector:
                 notes=["fewer than two paragraphs; nothing to decide"],
             )
         feats = self.featurize(paras)
-        dense_z = zscore_rows([f.dense for f in feats])
-        fw_scales = _column_stds([f.function_word_rel for f in feats])
         boundaries: list[DetectedBoundary] = []
         changes: list[int] = []
         for i in range(len(feats) - 1):
-            scores = self.pair_scores(
-                feats[i],
-                feats[i + 1],
-                dense_z[i],
-                dense_z[i + 1],
-                fw_scales,
-            )
+            scores = self.pair_scores(feats[i], feats[i + 1])
             predicted = 1 if scores.combined >= self.threshold else 0
             reasons = _reasons(scores, self.threshold, predicted)
             boundaries.append(
@@ -159,7 +139,9 @@ class ScarfDetector:
             changes.append(predicted)
         notes = [
             f"threshold={self.threshold:.3f}",
-            "topic channel is diagnostic only" if not self.use_topic else "topic channel is voting (leakage mode)",
+            "topic channel is diagnostic only"
+            if not self.use_topic
+            else "topic channel is voting (leakage mode)",
         ]
         return Detection(
             paragraphs=paras,
@@ -171,29 +153,14 @@ class ScarfDetector:
         )
 
 
-def _column_stds(rows: list[tuple[float, ...]]) -> tuple[float, ...]:
-    if not rows:
-        return ()
-    dim = len(rows[0])
-    n = len(rows)
-    out = []
-    for j in range(dim):
-        col = [row[j] for row in rows]
-        mean = sum(col) / n
-        var = sum((x - mean) ** 2 for x in col) / n
-        out.append(var**0.5 if var > 1e-12 else 1.0)
-    return tuple(out)
-
-
 def _reasons(scores: ChannelScores, threshold: float, predicted: int) -> tuple[str, ...]:
     ranked = sorted(
         [
             ("function-word cosine", scores.function_cosine),
+            ("formality jump", min(scores.formality_jump, 1.5) / 1.5),
             ("char 3-gram cosine", scores.char_cosine),
-            ("dense euclidean", min(scores.dense_euclidean / 8.0, 1.5)),
-            ("function-word JS", min(scores.function_js * 4.0, 1.5)),
-            ("Burrows delta", min(scores.delta * 8.0, 1.5)),
-            ("NCD", scores.ncd),
+            ("sentence-length jump", min(scores.sentence_jump, 1.0)),
+            ("person jump", min(scores.person_jump * 5.0, 1.5) / 1.5),
         ],
         key=lambda kv: kv[1],
         reverse=True,
