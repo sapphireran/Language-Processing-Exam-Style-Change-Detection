@@ -1,0 +1,426 @@
+{
+  "name": "quoin-personal-exam-bank",
+  "description": "Original documents for a personal style-change exam lab. Not PAN data.",
+  "documents": [
+    {
+      "file": "problem-01-press-then-notice.txt",
+      "stem": "problem-01-press-then-notice",
+      "title": "Letterpress diary, then a noise ordinance",
+      "band": "easy",
+      "note": "Register and topic both jump after paragraph 2.",
+      "n_paragraphs": 4,
+      "n_changes": 1,
+      "authors": [
+        "press",
+        "press",
+        "notice",
+        "notice"
+      ]
+    },
+    {
+      "file": "problem-02-bees-then-claim.txt",
+      "stem": "problem-02-bees-then-claim",
+      "title": "Hive inspection, then an insurance claim",
+      "band": "easy",
+      "note": "Field first-person versus policy English.",
+      "n_paragraphs": 4,
+      "n_changes": 1,
+      "authors": [
+        "field",
+        "field",
+        "claim",
+        "claim"
+      ]
+    },
+    {
+      "file": "problem-03-funicular-then-complaint.txt",
+      "stem": "problem-03-funicular-then-complaint",
+      "title": "Funicular night log, then a passenger complaint",
+      "band": "easy",
+      "note": "Operations log versus first-person complaint.",
+      "n_paragraphs": 4,
+      "n_changes": 1,
+      "authors": [
+        "log",
+        "log",
+        "complaint",
+        "complaint"
+      ]
+    },
+    {
+      "file": "problem-04-darkroom-then-invoice.txt",
+      "stem": "problem-04-darkroom-then-invoice",
+      "title": "Darkroom notes, then a gallery invoice",
+      "band": "easy",
+      "note": "Craft process versus billing English.",
+      "n_paragraphs": 4,
+      "n_changes": 1,
+      "authors": [
+        "darkroom",
+        "darkroom",
+        "invoice",
+        "invoice"
+      ]
+    },
+    {
+      "file": "problem-05-smokehouse-then-menu.txt",
+      "stem": "problem-05-smokehouse-then-menu",
+      "title": "Smokehouse log, then menu copy",
+      "band": "easy",
+      "note": "Process log versus fragmentary restaurant copy.",
+      "n_paragraphs": 4,
+      "n_changes": 1,
+      "authors": [
+        "smoke",
+        "smoke",
+        "menu",
+        "menu"
+      ]
+    },
+    {
+      "file": "problem-06-planetarium-then-procurement.txt",
+      "stem": "problem-06-planetarium-then-procurement",
+      "title": "Planetarium script, then a procurement email",
+      "band": "easy",
+      "note": "Spoken public science versus office procurement.",
+      "n_paragraphs": 4,
+      "n_changes": 1,
+      "authors": [
+        "script",
+        "script",
+        "procure",
+        "procure"
+      ]
+    },
+    {
+      "file": "problem-07-thatcher-then-insurance.txt",
+      "stem": "problem-07-thatcher-then-insurance",
+      "title": "Thatching notes, then a roof insurance letter",
+      "band": "medium",
+      "note": "Same roof, two houses: craft versus insurer.",
+      "n_paragraphs": 4,
+      "n_changes": 1,
+      "authors": [
+        "thatch",
+        "thatch",
+        "insurance",
+        "insurance"
+      ]
+    },
+    {
+      "file": "problem-08-tesserae-then-conservation.txt",
+      "stem": "problem-08-tesserae-then-conservation",
+      "title": "Mosaic inventory, then a conservation report",
+      "band": "medium",
+      "note": "Workshop inventory versus conservation-speak, same object.",
+      "n_paragraphs": 4,
+      "n_changes": 1,
+      "authors": [
+        "mosaic",
+        "mosaic",
+        "conserve",
+        "conserve"
+      ]
+    },
+    {
+      "file": "problem-09-ropewalk-then-bulletin.txt",
+      "stem": "problem-09-ropewalk-then-bulletin",
+      "title": "Ropewalk diary, then a safety bulletin",
+      "band": "medium",
+      "note": "Craft diary versus mandatory safety voice.",
+      "n_paragraphs": 4,
+      "n_changes": 1,
+      "authors": [
+        "rope",
+        "rope",
+        "bulletin",
+        "bulletin"
+      ]
+    },
+    {
+      "file": "problem-10-cheese-then-copy.txt",
+      "stem": "problem-10-cheese-then-copy",
+      "title": "Cheese-cave log, then marketing copy",
+      "band": "medium",
+      "note": "Aging notes versus promotional second person.",
+      "n_paragraphs": 4,
+      "n_changes": 1,
+      "authors": [
+        "cave",
+        "cave",
+        "copy",
+        "copy"
+      ]
+    },
+    {
+      "file": "problem-11-wind-tunnel-then-blog.txt",
+      "stem": "problem-11-wind-tunnel-then-blog",
+      "title": "Wind-tunnel notes, then a popular-science blog",
+      "band": "medium",
+      "note": "Lab notes versus blog second-person energy.",
+      "n_paragraphs": 4,
+      "n_changes": 1,
+      "authors": [
+        "lab",
+        "lab",
+        "blog",
+        "blog"
+      ]
+    },
+    {
+      "file": "problem-12-puppet-then-program.txt",
+      "stem": "problem-12-puppet-then-program",
+      "title": "Marionette rigging notes, then a festival program",
+      "band": "medium",
+      "note": "Workshop first person versus festival present tense.",
+      "n_paragraphs": 4,
+      "n_changes": 1,
+      "authors": [
+        "puppet",
+        "puppet",
+        "program",
+        "program"
+      ]
+    },
+    {
+      "file": "problem-13-two-pewtersmiths.txt",
+      "stem": "problem-13-two-pewtersmiths",
+      "title": "Two pewtersmiths on the same tankard",
+      "band": "hard",
+      "note": "Same topic. A is periodic and reflective; B is clipped bench talk.",
+      "n_paragraphs": 4,
+      "n_changes": 1,
+      "authors": [
+        "pewter_a",
+        "pewter_a",
+        "pewter_b",
+        "pewter_b"
+      ]
+    },
+    {
+      "file": "problem-14-two-typesetters.txt",
+      "stem": "problem-14-two-typesetters",
+      "title": "Two typesetters on the same invitation",
+      "band": "hard",
+      "note": "Same job. A is hot-metal diary; B is modern production chat.",
+      "n_paragraphs": 4,
+      "n_changes": 1,
+      "authors": [
+        "type_a",
+        "type_a",
+        "type_b",
+        "type_b"
+      ]
+    },
+    {
+      "file": "problem-15-two-thatchers.txt",
+      "stem": "problem-15-two-thatchers",
+      "title": "Two thatchers on the same ridge",
+      "band": "hard",
+      "note": "Same roof. A writes in long clauses; B writes in short site notes.",
+      "n_paragraphs": 4,
+      "n_changes": 1,
+      "authors": [
+        "thatch_a",
+        "thatch_a",
+        "thatch_b",
+        "thatch_b"
+      ]
+    },
+    {
+      "file": "problem-16-two-lantern-makers.txt",
+      "stem": "problem-16-two-lantern-makers",
+      "title": "Two lantern-makers on the same commission",
+      "band": "hard",
+      "note": "Same object. A is essayistic; B is a shop list with asides.",
+      "n_paragraphs": 4,
+      "n_changes": 1,
+      "authors": [
+        "lantern_a",
+        "lantern_a",
+        "lantern_b",
+        "lantern_b"
+      ]
+    },
+    {
+      "file": "problem-17-two-tram-drivers.txt",
+      "stem": "problem-17-two-tram-drivers",
+      "title": "Two tram drivers on the same diversion",
+      "band": "hard",
+      "note": "Same shift event. A is full sentences; B is radio-short.",
+      "n_paragraphs": 4,
+      "n_changes": 1,
+      "authors": [
+        "tram_a",
+        "tram_a",
+        "tram_b",
+        "tram_b"
+      ]
+    },
+    {
+      "file": "problem-18-two-cave-agers.txt",
+      "stem": "problem-18-two-cave-agers",
+      "title": "Two affineurs on the same wheel",
+      "band": "hard",
+      "note": "Same cave. A is unhurried prose; B is slate-talk.",
+      "n_paragraphs": 4,
+      "n_changes": 1,
+      "authors": [
+        "cave_a",
+        "cave_a",
+        "cave_b",
+        "cave_b"
+      ]
+    },
+    {
+      "file": "problem-19-press-three-topics.txt",
+      "stem": "problem-19-press-three-topics",
+      "title": "One compositor, three subjects",
+      "band": "trap",
+      "note": "Same press voice on ink, rent, and a bicycle. Must not fire.",
+      "n_paragraphs": 4,
+      "n_changes": 0,
+      "authors": [
+        "press",
+        "press",
+        "press",
+        "press"
+      ]
+    },
+    {
+      "file": "problem-20-notice-three-topics.txt",
+      "stem": "problem-20-notice-three-topics",
+      "title": "One clerk, three notices",
+      "band": "trap",
+      "note": "Same municipal voice on dogs, bins, and scaffolding.",
+      "n_paragraphs": 4,
+      "n_changes": 0,
+      "authors": [
+        "notice",
+        "notice",
+        "notice",
+        "notice"
+      ]
+    },
+    {
+      "file": "problem-21-chat-three-topics.txt",
+      "stem": "problem-21-chat-three-topics",
+      "title": "One chatty voice, three subjects",
+      "band": "trap",
+      "note": "Same informal voice on lunch, a game, and a flat. Must not fire.",
+      "n_paragraphs": 4,
+      "n_changes": 0,
+      "authors": [
+        "chat",
+        "chat",
+        "chat",
+        "chat"
+      ]
+    },
+    {
+      "file": "problem-22-press-return.txt",
+      "stem": "problem-22-press-return",
+      "title": "Compositor, clerk, compositor again",
+      "band": "return",
+      "note": "Author A returns. Two hinges, not three voices.",
+      "n_paragraphs": 4,
+      "n_changes": 2,
+      "authors": [
+        "press",
+        "press",
+        "notice",
+        "press"
+      ]
+    },
+    {
+      "file": "problem-23-four-voice-collage.txt",
+      "stem": "problem-23-four-voice-collage",
+      "title": "Four houses in one file",
+      "band": "collage",
+      "note": "press, notice, chat, menu. Three hinges.",
+      "n_paragraphs": 4,
+      "n_changes": 3,
+      "authors": [
+        "press",
+        "notice",
+        "chat",
+        "menu"
+      ]
+    },
+    {
+      "file": "problem-24-gift-abstract.txt",
+      "stem": "problem-24-gift-abstract",
+      "title": "Student notes with a gifted abstract",
+      "band": "trap",
+      "note": "One formal paragraph inserted in a student voice. Mark only those hinges.",
+      "n_paragraphs": 4,
+      "n_changes": 2,
+      "authors": [
+        "student",
+        "student",
+        "gift",
+        "student"
+      ]
+    },
+    {
+      "file": "problem-25-exam-two-answers.txt",
+      "stem": "problem-25-exam-two-answers",
+      "title": "Two exam answers on the same prompt",
+      "band": "medium",
+      "note": "Same question, two students. One hinge in the middle.",
+      "n_paragraphs": 4,
+      "n_changes": 1,
+      "authors": [
+        "answer_a",
+        "answer_a",
+        "answer_b",
+        "answer_b"
+      ]
+    },
+    {
+      "file": "problem-26-minutes-letter-notice.txt",
+      "stem": "problem-26-minutes-letter-notice",
+      "title": "Minutes, then a letter, then a notice",
+      "band": "collage",
+      "note": "Three civic registers in order.",
+      "n_paragraphs": 4,
+      "n_changes": 2,
+      "authors": [
+        "minutes",
+        "minutes",
+        "letter",
+        "notice"
+      ]
+    },
+    {
+      "file": "problem-27-solo-press.txt",
+      "stem": "problem-27-solo-press",
+      "title": "Single compositor, one job",
+      "band": "control",
+      "note": "All zeros. The never-fire baseline should look perfect here.",
+      "n_paragraphs": 4,
+      "n_changes": 0,
+      "authors": [
+        "press",
+        "press",
+        "press",
+        "press"
+      ]
+    },
+    {
+      "file": "problem-28-solo-bees.txt",
+      "stem": "problem-28-solo-bees",
+      "title": "Single beekeeper, one inspection",
+      "band": "control",
+      "note": "All zeros. Same field voice the whole way.",
+      "n_paragraphs": 4,
+      "n_changes": 0,
+      "authors": [
+        "field",
+        "field",
+        "field",
+        "field"
+      ]
+    }
+  ]
+}

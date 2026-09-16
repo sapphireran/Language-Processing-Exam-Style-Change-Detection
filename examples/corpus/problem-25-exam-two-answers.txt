@@ -1,0 +1,7 @@
+Style-change detection is intrinsic when the system cannot compare the disputed text to an external corpus of candidate authors. I would define a style change as a systematic shift in features that are more about how someone writes than about what they write: function words, punctuation habits, sentence length, maybe character n-grams. I would not treat a new named entity as proof of a new author, because a single author can change topic on purpose.
+
+If I had to pick a metric I would pick macro-F1 over accuracy. Most paragraph boundaries in a document are not changes, so a system that never fires looks accurate and is useless. I would also want to see a never-fire baseline on the same table so the number means something. For the oral I would add that hard documents, where topic is controlled, are the ones that tell you whether you measured style.
+
+ok definition first: intrinsic = no extra docs from the suspected writers, you only look inside the file. a style change is when the 'how' jumps. i care about function words and compression distance because they are less about nouns. if the nouns change and the habits don't, i don't call it a new author. that's the topic trap and i don't want to fall in it in the exam.
+
+metric: f1, and i'll say why accuracy is a trap if they let me. i'd show never-fire vs always-fire vs the actual system. if never-fire wins on accuracy i've made the point. for hard data i expect my thing to drop and i'll just say that instead of hiding it. also i'd mention gift authorship as a reason the task exists outside the shared task.

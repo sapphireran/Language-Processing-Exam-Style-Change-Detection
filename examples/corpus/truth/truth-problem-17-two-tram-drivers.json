@@ -1,0 +1,16 @@
+{
+  "changes": [
+    0,
+    1,
+    0
+  ],
+  "authors": [
+    "tram_a",
+    "tram_a",
+    "tram_b",
+    "tram_b"
+  ],
+  "band": "hard",
+  "title": "Two tram drivers on the same diversion",
+  "note": "Same shift event. A is full sentences; B is radio-short."
+}
