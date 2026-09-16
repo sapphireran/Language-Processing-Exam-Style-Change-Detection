@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scarfjoint"
+version = "0.1.0"
+description = "Personal exam lab for intrinsic, paragraph-level style-change detection."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Sapphire Ran" }]
+
+[project.optional-dependencies]
+dev = []
+
+[project.scripts]
+scarfjoint = "scarfjoint.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
