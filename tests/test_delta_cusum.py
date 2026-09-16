@@ -18,7 +18,7 @@ def test_delta_identical_is_zero() -> None:
 
 def test_identical_ngrams_have_zero_distance() -> None:
     profile = l2_normalize(char_ngrams("the same string"))
-    assert cosine_distance(profile, profile) == 0.0
+    assert abs(cosine_distance(profile, profile)) < 1e-9
 
 
 def test_cusum_ends_near_zero() -> None:
