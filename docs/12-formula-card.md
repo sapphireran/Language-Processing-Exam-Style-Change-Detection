@@ -26,8 +26,11 @@ pretending to know a degree of freedom.
 ## Jump
 
 ```
-z_{i,f} = (x_{i,f} − x_{i+1,f}) / (s_f + 10^{-6})
+scale_f = max(s_f, prior_f)
+z_{i,f} = (x_{i,f} − x_{i+1,f}) / (scale_f + 10^{-6})
 ```
+
+`n_words` and `mean_word_len` do not vote.
 
 ## Mark
 

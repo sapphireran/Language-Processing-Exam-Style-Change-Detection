@@ -9,7 +9,7 @@ a style change the same way: each closed-class rate draws its own
 1-D map, and a hinge fires only when several maps agree.
 
 ```
-z_{i,f} = (x_{i,f} − x_{i+1,f}) / (s_f + ε)
+z_{i,f} = (x_{i,f} − x_{i+1,f}) / (max(s_f, prior_f) + ε)
 mark_{i,f} = 1[ |z_{i,f}| ≥ max(ζ, ρ · peak_f) ]
 change_i = 1[ votes_i ≥ k ]
 ```

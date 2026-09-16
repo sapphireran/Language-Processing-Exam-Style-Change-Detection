@@ -59,15 +59,16 @@ def read_text(path: Path) -> str:
 
 def _truth_candidates(problem_path: Path, ident: str) -> list[Path]:
     parent = problem_path.parent
-    return [
+    candidates = [
         parent / f"truth-problem-{ident}.json",
         parent / "truth" / f"truth-problem-{ident}.json",
         parent / f"truth-problem-{ident.zfill(2)}.json",
         *sorted(parent.glob(f"truth-problem-{ident}*.json")),
-        *sorted((parent / "truth").glob(f"truth-problem-{ident}*.json"))
-        if (parent / "truth").is_dir()
-        else [],
     ]
+    truth_dir = parent / "truth"
+    if truth_dir.is_dir():
+        candidates.extend(sorted(truth_dir.glob(f"truth-problem-{ident}*.json")))
+    return candidates
 
 
 def read_truth(problem_path: Path, ident: str) -> dict | None:

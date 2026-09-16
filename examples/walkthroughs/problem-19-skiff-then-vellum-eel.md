@@ -20,12 +20,14 @@ python3 -m isogloss inspect \
   examples/corpus/problem-19-skiff-then-vellum-eel.txt --features
 ```
 
-## After
+## After (live)
 
-Fill in from the live table:
+```
+i votes  max|z|    pred   gold  top channels
+0     0    0.74    same   same  the_rate, i_rate
+1     4    2.25  CHANGE CHANGE  formal_rate, contraction_rate, oral_rate, i_rate
+2     0    0.89    same   same  we_rate
+```
 
-- votes at hinge 1:
-- pred:
-- any fp/fn:
-
+pred `[0, 1, 0]`. Four maps at the join, none of them nouns.
 This page is the oral for "show me a hard file".

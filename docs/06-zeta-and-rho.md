@@ -3,12 +3,13 @@
 I am not allowed to treat defaults as nature. They are knobs
 with jobs.
 
-## ζ — absolute silence
+## The prior is the first silence
 
-If every jump in a control file is `|z| < 0.9`, no channel
-marks, no hinge fires. That is what I want on a single-house
-walk. ζ is the claim that **a dialect border has to be loud
-in this room**, not merely the tallest molehill.
+Without a prior, a four-paragraph Skiff file has a tiny `s_f`.
+A 0.02 twitch in *I* becomes a 5-sigma event and the relative
+peak rule marks it. The prior is the claim that **a quiet
+room cannot invent a border**. ζ then asks whether the
+scaled jump is still loud.
 
 If I drop ζ to 0.3, traps start to vote on *n_words* and
 *the*. If I raise it to 2.5, hard same-topic house changes

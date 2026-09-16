@@ -2,14 +2,17 @@
 
 Let `x_{i,f}` be channel `f` on unit `i`. Let `s_f` be the
 population standard deviation of that channel inside this
-document. Adjacent jump:
+document. Let `prior_f` be a floor I chose so a quiet
+single-house file cannot manufacture sigma. Adjacent jump:
 
 ```
-z_{i,f} = (x_{i,f} − x_{i+1,f}) / (s_f + ε)
+z_{i,f} = (x_{i,f} − x_{i+1,f}) / (max(s_f, prior_f) + ε)
 ```
 
-`ε` is `1e-6` so a dead channel (all zeros) does not explode.
-A dead channel has `s_f = 0` and `x` constant, so `z = 0`.
+`ε` is `1e-6` so a dead channel does not explode. A dead
+channel with constant `x` still has `z = 0`. Shape channels
+(`n_words`, `mean_word_len`) are shown on inspect tables and
+**do not vote**.
 
 Let `peak_f = max_j |z_{j,f}|`. Mark:
 
@@ -24,6 +27,9 @@ change_i = 1[ Σ_f mark_{i,f} ≥ k ]
 ```
 
 Defaults I will say out loud: `ζ = 0.90`, `ρ = 0.70`, `k = 3`.
+Rate priors sit around `0.03`–`0.05`; `digit_rate` is `0.14`
+because Flint twitches; `the_rate` is `0.08` because articles
+wander.
 
 ## Why adjacent, not a window
 

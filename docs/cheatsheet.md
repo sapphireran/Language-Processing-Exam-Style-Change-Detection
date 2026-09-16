@@ -4,8 +4,8 @@
 - Output: `changes` has length `n_units - 1`. `1` means a new hand.
 - Features: person, contractions, deontics, hedges, formal/oral
   connectives, *the*, digits, shape. **No nouns.**
-- Jump: `z_i,f = (x_i,f − x_{i+1,f}) / (s_f + ε)`
-- Mark: `|z| ≥ max(ζ, ρ · peak_f)`
+- Jump: `z = (x_i − x_{i+1}) / (max(s, prior) + ε)`
+- Mark: `|z| ≥ max(ζ, ρ · peak_f)` (shape channels do not vote)
 - Fire: at least `k` marks. Default `ζ=0.90`, `ρ=0.70`, `k=3`.
 - Quote **macro-F1**, not accuracy. Never-fire lies.
 - Easy: house and topic move. Hard: only the house. Trap: only the topic.

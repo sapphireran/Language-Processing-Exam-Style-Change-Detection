@@ -458,10 +458,10 @@ DOCUMENTS: list[Document] = [
                 "brine",
                 "peat",
                 """
-                A face that sheds water shall be preferred to a face that
-                looks even. Turves must be laid dry-side out on the windward
-                wall. No person shall climb a finished stack. The inspector
-                shall photograph the cap from two angles.
+                The face that sheds water shall be preferred to the face that
+                looks even. The turves must be laid dry-side out on the
+                windward wall. No person shall climb the finished stack. The
+                inspector shall photograph the cap from the two named angles.
                 """,
             ),
             _b(
@@ -813,7 +813,7 @@ DOCUMENTS: list[Document] = [
                 You'll want to walk the tables before the sun is high, maybe
                 once more if last night was a bit damp. Don't scrape to the
                 board; you can leave a skin. Your back will tell you when
-                you've done enough. Can you feel the grit change?
+                you have done enough. Can you feel the grit change?
                 """,
             ),
             _b(
@@ -1343,10 +1343,9 @@ DOCUMENTS: list[Document] = [
                 "twine",
                 "salt",
                 """
-                You don't need to finish the whole table. You'll do the
-                west first and you'll watch the cloud. If your eyes sting
-                you'll step off. A bit of water on the wrists helps. Can
-                you taste how far it's gone?
+                You'll walk the east table the same way. Don't scrape the
+                board if it is a bit damp. You can leave the last skin.
+                Maybe that is enough for the light you have?
                 """,
             ),
         ],
