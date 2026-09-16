@@ -10,7 +10,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Iterable
 
-from .text import contraction_count, lower_words, split_sentences, words
+from .text import contraction_count, split_sentences, words
 
 # High-frequency closed-class items. Order is part of the public vector.
 FUNCTION_WORDS: tuple[str, ...] = (
@@ -145,6 +145,18 @@ class FeatureVector:
     def names(self) -> list[str]:
         return [name for name, _, _ in self.as_weighted()]
 
+    def saw_values(self) -> list[float]:
+        """Short house-fingerprint used by the saw.
+
+        The long vector is for inspection. The saw only gets the handful
+        of rates that actually name the six houses: person, deontics,
+        contractions, hedges, dashes, questions, sentence length.
+        """
+        return [self.rates.get(name, 0.0) * weight for name, weight in SAW_WEIGHTS]
+
+    def saw_names(self) -> list[str]:
+        return [name for name, _ in SAW_WEIGHTS]
+
 
 # Pronouns and deontic verbs carry the house voices in this toy bank.
 # Content-ish leftovers stay at weight 1 so they can still move a little.
@@ -195,6 +207,32 @@ SHAPE_WEIGHTS: tuple[tuple[str, float], ...] = (
 
 def _fw_weight(word: str) -> float:
     return _HEAVY.get(word, 1.0)
+
+
+# Compact axis for binary segmentation. Order is part of the public saw.
+SAW_WEIGHTS: tuple[tuple[str, float], ...] = (
+    ("first_person", 3.0),
+    ("second_person", 3.2),
+    ("fw:we", 2.8),
+    ("fw:i", 2.2),
+    ("fw:you", 2.6),
+    ("fw:your", 2.4),
+    ("fw:shall", 3.6),
+    ("fw:must", 2.8),
+    ("fw:however", 2.8),
+    ("fw:anyway", 3.0),
+    ("fw:honestly", 3.0),
+    ("fw:any", 2.0),
+    ("fw:such", 2.0),
+    ("fw:the", 1.2),
+    ("fw:was", 1.4),
+    ("contraction", 3.6),
+    ("question", 2.2),
+    ("dash", 2.2),
+    ("hedge", 2.8),
+    ("mean_sent", 1.1),
+    ("digit", 1.2),
+)
 
 
 def extract(paragraph: str) -> FeatureVector:

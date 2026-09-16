@@ -17,11 +17,14 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from .distance import euclidean
-from .features import FeatureVector, mean_vector
+from .features import FeatureVector
 
 # Frozen on the toy bank after looking at same-house vs cross-house
 # split scores. Not a trained model. See docs/14-live-results.md.
-DEFAULT_PENALTY = 0.42
+# Recursion is stricter: a two-paragraph piece always looks sharper.
+DEFAULT_PENALTY = 0.22
+DEFAULT_RECURSE_PENALTY = 0.40
+DEFAULT_ADJ_ABS = 0.40
 DEFAULT_ADJ_Z = 1.35
 
 
@@ -33,11 +36,15 @@ class SplitView:
     best_score: float
 
 
+def _saw(vectors: list[FeatureVector]) -> list[list[float]]:
+    return [v.saw_values() for v in vectors]
+
+
 def split_scores(vectors: list[FeatureVector]) -> list[float]:
     n = len(vectors)
     if n < 2:
         return []
-    values = [v.values() for v in vectors]
+    values = _saw(vectors)
     out: list[float] = []
     for k in range(1, n):
         left = _col_mean(values[:k])
@@ -49,7 +56,7 @@ def split_scores(vectors: list[FeatureVector]) -> list[float]:
 
 
 def adjacent_scores(vectors: list[FeatureVector]) -> list[float]:
-    values = [v.values() for v in vectors]
+    values = _saw(vectors)
     return [euclidean(a, b) for a, b in zip(values, values[1:])]
 
 
@@ -70,20 +77,32 @@ def inspect_splits(vectors: list[FeatureVector]) -> SplitView:
 def binary_segment(
     vectors: list[FeatureVector],
     penalty: float = DEFAULT_PENALTY,
+    recurse_penalty: float = DEFAULT_RECURSE_PENALTY,
     min_span: int = 1,
 ) -> list[int]:
     """Return 0-based hinge indices (between paragraph i and i+1)."""
     n = len(vectors)
     if n < 2:
         return []
-    return sorted(_segment(vectors, penalty, min_span, offset=0))
+    return sorted(
+        _segment(
+            vectors,
+            penalty=penalty,
+            recurse_penalty=recurse_penalty,
+            min_span=min_span,
+            offset=0,
+            depth=0,
+        )
+    )
 
 
 def _segment(
     vectors: list[FeatureVector],
     penalty: float,
+    recurse_penalty: float,
     min_span: int,
     offset: int,
+    depth: int,
 ) -> set[int]:
     n = len(vectors)
     if n < 2 * min_span:
@@ -91,7 +110,6 @@ def _segment(
     scores = split_scores(vectors)
     if not scores:
         return set()
-    # Disallow cuts that would leave a side shorter than min_span.
     legal = [
         (i, s)
         for i, s in enumerate(scores)
@@ -100,14 +118,24 @@ def _segment(
     if not legal:
         return set()
     best_i, best = max(legal, key=lambda t: t[1])
-    if best < penalty:
+    need = penalty if depth == 0 else recurse_penalty
+    if best < need:
         return set()
     cuts = {offset + best_i}
     left = vectors[: best_i + 1]
     right = vectors[best_i + 1 :]
-    cuts |= _segment(left, penalty, min_span, offset)
-    cuts |= _segment(right, penalty, min_span, offset + best_i + 1)
+    cuts |= _segment(left, penalty, recurse_penalty, min_span, offset, depth + 1)
+    cuts |= _segment(right, penalty, recurse_penalty, min_span, offset + best_i + 1, depth + 1)
     return cuts
+
+
+def adjacent_absolute(vectors: list[FeatureVector], floor: float = DEFAULT_ADJ_ABS) -> list[int]:
+    """Hinges whose neighbouring step clears an absolute floor.
+
+    Used for ABA returns: both steps can be loud, so neither is a
+    within-document z-peak. Controls stay under the floor.
+    """
+    return [i for i, value in enumerate(adjacent_scores(vectors)) if value >= floor]
 
 
 def adjacent_peaks(vectors: list[FeatureVector], z_thresh: float = DEFAULT_ADJ_Z) -> list[int]:

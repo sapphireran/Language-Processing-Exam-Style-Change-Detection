@@ -81,13 +81,13 @@ def score_detection(det: Detection, gold: list[int]) -> HingeScores:
 def score_directory(
     directory: str | Path,
     penalty: float | None = None,
-    adj_z: float | None = None,
+    adj_abs: float | None = None,
 ) -> dict[str, object]:
     kwargs = {}
     if penalty is not None:
         kwargs["penalty"] = penalty
-    if adj_z is not None:
-        kwargs["adj_z"] = adj_z
+    if adj_abs is not None:
+        kwargs["adj_abs"] = adj_abs
     rows: list[dict[str, object]] = []
     pred_all: list[int] = []
     gold_all: list[int] = []

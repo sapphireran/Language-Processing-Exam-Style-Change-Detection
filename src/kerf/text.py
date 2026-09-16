@@ -10,8 +10,9 @@ _ABBREV = re.compile(
 )
 _SENT_SPLIT = re.compile(r"(?<=[.!?])\s+(?=[A-Z\"“])")
 _WORD = re.compile(r"[A-Za-z]+(?:'[A-Za-z]+)?|\d+(?:\.\d+)?")
+# Possessive 's is not a house cue. Count only spoken contractions.
 _CONTRACTION = re.compile(
-    r"\b(?:(?:[A-Za-z]+)'(?:t|re|ve|ll|d|s|m)|n't)\b",
+    r"\b(?:(?:it|that|there|what|he|she|who|let)'s|(?:[A-Za-z]+)'(?:t|re|ve|ll|d|m)|won't|can't)\b",
     re.IGNORECASE,
 )
 

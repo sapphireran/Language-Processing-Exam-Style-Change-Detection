@@ -6,9 +6,10 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from .changepoint import (
-    DEFAULT_ADJ_Z,
+    DEFAULT_ADJ_ABS,
     DEFAULT_PENALTY,
-    adjacent_peaks,
+    DEFAULT_RECURSE_PENALTY,
+    adjacent_absolute,
     adjacent_scores,
     binary_segment,
     inspect_splits,
@@ -40,7 +41,8 @@ class Detection:
 def detect_paragraphs(
     paragraphs: list[str],
     penalty: float = DEFAULT_PENALTY,
-    adj_z: float = DEFAULT_ADJ_Z,
+    recurse_penalty: float = DEFAULT_RECURSE_PENALTY,
+    adj_abs: float = DEFAULT_ADJ_ABS,
     use_adjacent: bool = True,
 ) -> Detection:
     features = extract_many(paragraphs)
@@ -48,19 +50,18 @@ def detect_paragraphs(
     changes = [0] * max(0, n - 1)
     reasons = [""] * max(0, n - 1)
     view = inspect_splits(features)
-    cuts = set(binary_segment(features, penalty=penalty))
+    cuts = set(
+        binary_segment(features, penalty=penalty, recurse_penalty=recurse_penalty)
+    )
     for i in cuts:
         if 0 <= i < len(changes):
             changes[i] = 1
             reasons[i] = "split"
-    if use_adjacent and n >= 3:
-        for i in adjacent_peaks(features, z_thresh=adj_z):
+    if use_adjacent:
+        for i in adjacent_absolute(features, floor=adj_abs):
             if 0 <= i < len(changes) and not changes[i]:
-                # Only promote a peak if it is also a respectable absolute step.
-                # This stops a quiet control from promoting its least-quiet hinge.
-                if view.adjacent and view.adjacent[i] >= 0.55:
-                    changes[i] = 1
-                    reasons[i] = "adjacent-peak"
+                changes[i] = 1
+                reasons[i] = "adjacent-floor"
     return Detection(
         paragraphs=list(paragraphs),
         features=features,
