@@ -1,0 +1,7 @@
+{
+  "authors": 3,
+  "changes": [0, 0, 1, 0, 0, 1, 0, 0],
+  "difficulty": "easy",
+  "voices": ["textbook-ngrams", "student-pos", "notes-parsing"],
+  "note": "Topic and register both change at the two marked boundaries."
+}

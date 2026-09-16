@@ -1,0 +1,6 @@
+Morphological analysis decomposes surface forms into stems and inflectional or derivational affixes.
+Finite-state transducers are therefore a classical implementation of concatenative morphology.
+Nevertheless, non-concatenative processes such as templatic morphology complicate a purely concatenative account.
+A gold analysis typically records lemma, part of speech, and a structured feature bundle.
+Irregular verbs are stored as listed exceptions rather than being derived by a general rule.
+Evaluation may report both full-form accuracy and a feature-wise F1 over the morphosyntactic bundle.

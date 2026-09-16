@@ -1,0 +1,5 @@
+This section of the essay is written the way I actually talk in office hours. I keep circling back to the same worry: if two people wrote a take-home exam together, and we do not have extra comparison texts, can we still see the join? I think the honest answer is "sometimes", and only if the registers are different enough that a stylometric profile jumps.
+
+A subsequent contribution, however, adopts a markedly different register. Gift authorship and unacknowledged collaboration are treated as intrinsic authorship problems: in the absence of candidate documents, the only available signal is a change in the writing style itself. Accordingly, the analysis proceeds sentence by sentence, asking whether the stylometric profile of the material before a boundary is incompatible with the profile after it.
+
+short take: no comparison docs => intrinsic only. windowed cosine on function words + char 3-grams. threshold ~0.34. don't trust a one-word sentence on its own.

@@ -1,0 +1,8 @@
+Distributional semantics represents lexical meaning as a vector derived from co-occurrence statistics.
+Thus words that occur in similar contexts obtain similar embeddings.
+Cosine similarity is the conventional geometric proxy for relatedness in that space.
+However, static embeddings cannot distinguish the several senses of an ambiguous token.
+Word vectors are the "you shall know a word by the company it keeps" thing.
+I always picture king - man + woman and hope the joke still lands.
+Cosine is just the angle, not the raw distance, which I definitely mixed up once.
+Static vectors can't do bank-the-river vs bank-the-money and that's the whole point.
