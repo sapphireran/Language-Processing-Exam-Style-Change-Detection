@@ -1,0 +1,7 @@
+{
+  "authors": 2,
+  "changes": [0, 0, 0, 1, 0, 0, 0],
+  "difficulty": "hard",
+  "voices": ["textbook", "textbook", "textbook", "textbook", "notes", "notes", "notes", "notes"],
+  "note": "Close topic (transition-based parsing). The cut is full sentences versus labelled lecture notes."
+}

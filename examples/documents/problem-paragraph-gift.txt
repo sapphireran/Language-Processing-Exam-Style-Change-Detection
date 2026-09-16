@@ -1,0 +1,7 @@
+I still get lost when the notes jump from HMMs to CRFs, so I am writing this in the order I actually revised. For me the HMM is the one where each label only looks at the previous label and then emits a word. I think the bit I always forget is that the emission is local, so it cannot wait for the end of the sentence.
+
+Conditional random fields specify a globally normalised distribution over label sequences, thereby avoiding the label-bias problem of locally normalised MEMMs. The partition function sums over all label sequences and is computed with a forward–backward recurrence. Parameter estimation maximises the conditional likelihood of the annotated paths.
+
+CRF: P(y|x) ∝ exp Σ_t w · f(y_t, y_{t-1}, x, t)
+Z(x): forward-backward
+train: L-BFGS on NLL + λ||w||²

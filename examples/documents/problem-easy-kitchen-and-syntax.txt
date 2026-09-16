@@ -1,0 +1,9 @@
+Preheat the oven to 180C and just chuck the butter in a pan.
+Don't worry if it looks a bit messy — it always does.
+Yeah, I keep stirring until it smells nutty and then I'm done.
+A constituency tree recursively groups words into nested phrases such as NP and VP.
+The resulting structure makes subject–predicate relations explicit for a parser.
+Agreement features are subsequently percolated from the head to the phrasal node.
+CFG: S -> NP VP
+NP -> Det N | N
+VP -> V NP | V

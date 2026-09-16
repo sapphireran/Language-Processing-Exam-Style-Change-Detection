@@ -1,0 +1,7 @@
+{
+  "authors": 2,
+  "changes": [0, 0, 1, 0, 0],
+  "difficulty": "medium",
+  "voices": ["chat", "chat", "chat", "textbook", "textbook", "textbook"],
+  "note": "Socratic tutor questions versus declarative textbook exposition, same LM topic."
+}

@@ -1,0 +1,7 @@
+{
+  "authors": 3,
+  "changes": [0, 0, 1, 0, 0, 0, 1, 0, 0],
+  "difficulty": "exam",
+  "voices": ["student", "student", "student", "textbook", "textbook", "textbook", "textbook", "notes", "notes", "notes"],
+  "note": "Take-home mash-up: first-person revision notes, a pasted textbook block, then lecture shorthand."
+}

@@ -1,0 +1,6 @@
+Inflectional morphology realises grammatical contrasts such as tense, number, and case without creating a new lexeme.
+A derivational affix, by contrast, typically changes category or adds a substantial meaning component.
+Irregular forms must be listed in the lexicon because they do not follow a productive rule.
+Allomorphy is the systematic variation of a single morpheme's surface shape in different contexts.
+Suppletion is the extreme case in which two stems that share a paradigm have no phonological relation.
+These distinctions matter for a morphological analyser because only the productive rules can be applied to unseen stems.
