@@ -121,14 +121,9 @@ def _cmd_detect(args) -> int:
         return 0
     gold = doc.gold_changes
     if gold is None:
-        tpath = doc.path.with_name(
-            f"truth-problem-{doc.path.name[len('problem-'):-4]}.json"
-            if doc.path.name.startswith("problem-")
-            else f"truth-{doc.path.stem}.json"
-        )
+        tpath = truth_path_for(doc.path)
         if tpath.exists():
-            gold = json.loads(tpath.read_text(encoding="utf-8")).get("changes")
-            gold = [int(x) for x in gold] if gold is not None else None
+            gold = [int(x) for x in load_truth(tpath).get("changes", [])]
     if args.explain or True:
         print(format_detection(detection, gold=gold))
     return 0
