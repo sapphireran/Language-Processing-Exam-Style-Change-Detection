@@ -1,0 +1,24 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0
+  ],
+  "houses": [
+    "vellum",
+    "vellum",
+    "roll",
+    "roll"
+  ],
+  "topics": [
+    "granite",
+    "granite",
+    "granite",
+    "granite"
+  ],
+  "difficulty": "hard",
+  "title": "Same granite setts, Vellum then Roll",
+  "holdout": false,
+  "slug": "vellum-then-roll-setts"
+}

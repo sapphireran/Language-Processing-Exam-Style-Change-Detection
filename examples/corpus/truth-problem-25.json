@@ -1,0 +1,24 @@
+{
+  "authors": 1,
+  "changes": [
+    0,
+    0,
+    0
+  ],
+  "houses": [
+    "skiff",
+    "skiff",
+    "skiff",
+    "skiff"
+  ],
+  "topics": [
+    "eel",
+    "eel",
+    "hop",
+    "hop"
+  ],
+  "difficulty": "trap",
+  "title": "Same Skiff, eel weir then hop garden",
+  "holdout": false,
+  "slug": "skiff-eel-then-skiff-hop"
+}

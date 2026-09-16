@@ -1,0 +1,24 @@
+{
+  "authors": 1,
+  "changes": [
+    0,
+    0,
+    0
+  ],
+  "houses": [
+    "vellum",
+    "vellum",
+    "vellum",
+    "vellum"
+  ],
+  "topics": [
+    "millrace",
+    "millrace",
+    "millrace",
+    "millrace"
+  ],
+  "difficulty": "control",
+  "title": "Vellum stays on the millrace",
+  "holdout": true,
+  "slug": "vellum-millrace-control"
+}

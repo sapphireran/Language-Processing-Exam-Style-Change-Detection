@@ -1,0 +1,24 @@
+{
+  "authors": 1,
+  "changes": [
+    0,
+    0,
+    0
+  ],
+  "houses": [
+    "flint",
+    "flint",
+    "flint",
+    "flint"
+  ],
+  "topics": [
+    "cider",
+    "cider",
+    "charcoal",
+    "charcoal"
+  ],
+  "difficulty": "trap",
+  "title": "Same Flint, cider press then charcoal clamp",
+  "holdout": false,
+  "slug": "flint-cider-then-flint-charcoal"
+}

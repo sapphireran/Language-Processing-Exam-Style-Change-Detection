@@ -1,0 +1,24 @@
+{
+  "authors": 1,
+  "changes": [
+    0,
+    0,
+    0
+  ],
+  "houses": [
+    "roll",
+    "roll",
+    "roll",
+    "roll"
+  ],
+  "topics": [
+    "lime",
+    "lime",
+    "millrace",
+    "millrace"
+  ],
+  "difficulty": "trap",
+  "title": "Same Roll, lime kiln then millrace",
+  "holdout": true,
+  "slug": "roll-lime-then-roll-millrace"
+}

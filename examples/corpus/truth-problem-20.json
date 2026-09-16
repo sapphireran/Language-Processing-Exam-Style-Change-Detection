@@ -1,0 +1,24 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0
+  ],
+  "houses": [
+    "roll",
+    "roll",
+    "flint",
+    "flint"
+  ],
+  "topics": [
+    "hop",
+    "hop",
+    "hop",
+    "hop"
+  ],
+  "difficulty": "hard",
+  "title": "Same hop oast, Roll then Flint",
+  "holdout": false,
+  "slug": "roll-then-flint-oast"
+}

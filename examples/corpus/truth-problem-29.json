@@ -1,0 +1,30 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0,
+    1,
+    0
+  ],
+  "houses": [
+    "skiff",
+    "skiff",
+    "roll",
+    "roll",
+    "skiff",
+    "skiff"
+  ],
+  "topics": [
+    "eel",
+    "eel",
+    "hop",
+    "hop",
+    "willow",
+    "willow"
+  ],
+  "difficulty": "return",
+  "title": "ABA: Skiff eel, Roll hop, Skiff willow",
+  "holdout": false,
+  "slug": "skiff-eel-roll-hop-skiff-willow"
+}

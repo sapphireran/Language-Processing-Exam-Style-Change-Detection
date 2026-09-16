@@ -1,0 +1,24 @@
+{
+  "authors": 4,
+  "changes": [
+    1,
+    1,
+    1
+  ],
+  "houses": [
+    "flint",
+    "brine",
+    "twine",
+    "vellum"
+  ],
+  "topics": [
+    "salt",
+    "peat",
+    "lime",
+    "millrace"
+  ],
+  "difficulty": "collage",
+  "title": "Flint salt, Brine peat, Twine kiln, Vellum millrace",
+  "holdout": true,
+  "slug": "four-house-collage"
+}

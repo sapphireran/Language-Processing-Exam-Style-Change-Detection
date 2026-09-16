@@ -1,0 +1,24 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0
+  ],
+  "houses": [
+    "roll",
+    "roll",
+    "skiff",
+    "skiff"
+  ],
+  "topics": [
+    "hop",
+    "hop",
+    "willow",
+    "willow"
+  ],
+  "difficulty": "easy",
+  "title": "Roll hop minutes, then Skiff willow beds",
+  "holdout": true,
+  "slug": "roll-hop-then-skiff-willow"
+}
