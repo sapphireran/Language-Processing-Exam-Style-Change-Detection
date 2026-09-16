@@ -167,11 +167,36 @@ def function_l1(left: FeatureVector, right: FeatureVector) -> float:
     return l1_distance(left.function, right.function)
 
 
+def register_vector(vec: FeatureVector) -> dict[str, float]:
+    """A short 'house' axis: formality, length, and a few mouth-feel rates.
+
+    This is the channel I trust more than NCD on 80-word original paragraphs.
+    zlib saturates there; a handful of register knobs still move.
+    """
+    return {
+        "sent": vec.shape["mean_sentence"] / 40.0,
+        "contr": vec.shape["contraction"] * 8.0,
+        "informal": vec.shape["informal"] * 10.0,
+        "formal": vec.shape["formal"] * 8.0,
+        "semi": vec.shape["semicolon"] * 15.0,
+        "question": vec.shape["question"] * 8.0,
+        "exclaim": vec.shape["exclaim"] * 8.0,
+        "ttr": vec.shape["ttr"],
+    }
+
+
+def register_l1(left: FeatureVector, right: FeatureVector) -> float:
+    a = register_vector(left)
+    b = register_vector(right)
+    return sum(abs(a[key] - b[key]) for key in a)
+
+
 def pairwise_feature_distance(left: FeatureVector, right: FeatureVector) -> dict[str, float]:
     return {
         "char_cosine": cosine_distance(left.ngrams, right.ngrams),
         "function_l1": function_l1(left, right),
         "shape_l1": shape_l1(left, right),
+        "register_l1": register_l1(left, right),
     }
 
 

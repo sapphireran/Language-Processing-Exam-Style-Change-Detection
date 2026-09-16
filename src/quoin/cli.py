@@ -52,11 +52,12 @@ def cmd_features(args: argparse.Namespace) -> int:
         )
     print()
     detector = _detector_from_args(args)
-    print(f"{'b':>3} {'quoin':>7} {'ncd':>7} {'char':>7} {'func':>7} {'shape':>7} pred")
+    print(f"{'b':>3} {'quoin':>7} {'ncd':>7} {'char':>7} {'func':>7} {'shape':>7} {'reg':>7} {'res':>7} pred")
     for row in detector.boundaries(problem.paragraphs):
         print(
             f"{row.index:3d} {row.quoin:7.3f} {row.ncd:7.3f} {row.char_cosine:7.3f} "
-            f"{row.function_l1:7.3f} {row.shape_l1:7.3f} {row.pred:4d}"
+            f"{row.function_l1:7.3f} {row.shape_l1:7.3f} {row.register_l1:7.3f} "
+            f"{row.residual:7.3f} {row.pred:4d}"
         )
     return 0
 
@@ -136,7 +137,12 @@ def build_parser() -> argparse.ArgumentParser:
         prog="quoin",
         description="Personal exam lab for intrinsic style-change detection.",
     )
-    parser.add_argument("--threshold", type=float, default=0.34, help="Quoin decision threshold")
+    parser.add_argument(
+        "--threshold",
+        type=float,
+        default=0.72,
+        help="Absolute high-jump cutoff (peak rule still applies below this)",
+    )
     sub = parser.add_subparsers(dest="command", required=True)
 
     score = sub.add_parser("score", help="Score the example corpus")

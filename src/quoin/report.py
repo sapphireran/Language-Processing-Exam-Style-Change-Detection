@@ -76,9 +76,10 @@ def render_markdown(corpus: Corpus, detector: QuoinDetector | None = None) -> st
     lines = [
         "# Quoin live results",
         "",
-        f"Threshold `{detector.threshold}`. Weights: NCD `{detector.w_ncd}`, "
-        f"char `{detector.w_char}`, function `{detector.w_function}`, "
-        f"shape `{detector.w_shape}`.",
+        f"Absolute threshold `{detector.threshold}`, rel-margin `{detector.rel_margin}`, "
+        f"floor `{detector.floor}`. Weights: NCD `{detector.w_ncd}` (computed, "
+        f"usually silent), char `{detector.w_char}`, function `{detector.w_function}`, "
+        f"shape `{detector.w_shape}`, register `{detector.w_register}`.",
         "",
         f"- documents: {int(summary['n_docs'])}",
         f"- boundaries: {int(summary['n_boundaries'])}",

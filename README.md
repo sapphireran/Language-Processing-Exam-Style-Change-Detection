@@ -78,15 +78,17 @@ score the bank, ablate channels, watch the topic confound).
 
 ## The detector in one paragraph
 
-For paragraphs \(p_i\) and \(p_{i+1}\) the **Quoin score** is a weighted sum
-of four distances: zlib Normalized Compression Distance, cosine distance on
-character 3-grams, L1 on a closed-class function-word profile, and L1 on a
-tiny punctuation / length-shape vector. A boundary is marked `1` when the
-score clears a threshold calibrated on a held-out slice of this same toy
-bank. Easy documents (register *and* topic jump) are supposed to light up.
-Same-voice topic jumps are supposed to stay dark. Same-topic two-author
-documents are the ones I expect to miss in an oral, and I wrote them that
-way on purpose.
+For paragraphs \(p_i\) and \(p_{i+1}\) I still **compute** zlib Normalized
+Compression Distance — that is the oral thesis, and the labs walk the
+arithmetic. On 80-word original paragraphs the compressor saturates
+(NCD hangs near 0.85 whether or not the house changed), so the
+**decision** leans on a short register axis (formality, sentence length,
+contractions) plus a within-document peak: a hinge fires if it is an
+obvious absolute jump, or if it is this file's loudest hinge by a
+margin. Easy documents (register *and* topic jump) are supposed to light
+up. Same-voice topic jumps are supposed to stay dark. Same-topic
+two-author documents are the ones I expect to miss in an oral, and I
+wrote them that way on purpose.
 
 ## What this is not
 

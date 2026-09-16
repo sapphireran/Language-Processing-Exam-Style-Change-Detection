@@ -14,6 +14,7 @@ def _channel_note(row: BoundaryScore) -> str:
         ("char-3gram", row.char_cosine),
         ("function-word L1", row.function_l1),
         ("shape L1", row.shape_l1),
+        ("register L1", row.register_l1),
     ]
     parts.sort(key=lambda item: item[1], reverse=True)
     leader = parts[0]
@@ -27,7 +28,7 @@ def explain_document(problem: Problem, detector: QuoinDetector | None = None) ->
         f"# {problem.path.name}",
         "",
         f"paragraphs: {problem.n_paragraphs}    boundaries: {problem.n_boundaries}",
-        f"threshold: {detector.threshold:.2f}",
+        f"threshold: {detector.threshold:.2f}   rel-margin: {detector.rel_margin:.2f}   floor: {detector.floor:.2f}",
         "",
     ]
     for row in rows:
@@ -49,7 +50,9 @@ def explain_document(problem: Problem, detector: QuoinDetector | None = None) ->
                 f"- informal-marker rate: {left_vec.shape['informal']:.3f} / "
                 f"{right_vec.shape['informal']:.3f}",
                 f"- NCD {row.ncd:.3f}   char-cosine {row.char_cosine:.3f}   "
-                f"function L1 {row.function_l1:.3f}   shape L1 {row.shape_l1:.3f}",
+                f"function L1 {row.function_l1:.3f}   shape L1 {row.shape_l1:.3f}   "
+                f"register L1 {row.register_l1:.3f}",
+                f"- residual vs document median: {row.residual:+.3f}",
                 f"- {_channel_note(row)}",
                 "",
             ]
