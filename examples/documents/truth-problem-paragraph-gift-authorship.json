@@ -1,0 +1,8 @@
+{
+  "authors": 3,
+  "changes": [1, 1],
+  "difficulty": "paragraph",
+  "granularity": "paragraph",
+  "voices": ["student-essay", "textbook-essay", "notes"],
+  "note": "Paragraph-level variant of the same exam story. Detect with --granularity paragraph."
+}

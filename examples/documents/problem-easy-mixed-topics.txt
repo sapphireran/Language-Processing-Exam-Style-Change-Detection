@@ -1,0 +1,9 @@
+An n-gram language model estimates the probability of a token given a bounded history of preceding tokens.
+Therefore the chain rule is approximated by a Markov assumption of order n minus one.
+Moreover, add-one smoothing redistributes probability mass so that unseen n-grams receive a non-zero estimate.
+POS tagging is the one where we slap NNP or VB on every word.
+I'm never sure about "flying planes" — is flying a verb or an adjective here?
+Yeah the tagset size matters a lot and I always forget the exact number for PTB.
+CFG + CNF. CKY: spans [i,j], binary split k.
+score(A -> B C) + score(left) + score(right).
+eval: PARSEVAL bracketing F1, not exact tree match only.

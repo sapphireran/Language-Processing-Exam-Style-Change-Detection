@@ -1,0 +1,7 @@
+{
+  "authors": 3,
+  "changes": [0, 0, 1, 0, 0, 0, 1, 0, 0],
+  "difficulty": "exam",
+  "voices": ["student", "pasted-textbook", "lecture-notes"],
+  "note": "A made-up exam script: original student prose, then a pasted textbook paragraph, then a dump of lecture shorthand."
+}

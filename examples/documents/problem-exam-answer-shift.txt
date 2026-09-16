@@ -1,0 +1,10 @@
+I started this answer by saying a language model is just a distribution over the next word.
+If I'm honest I still picture a big count table and a lot of zeros.
+I keep underlining smoothing because I always forget that unseen n-grams wreck the whole product.
+An n-gram language model estimates the probability of a token given a bounded history of preceding tokens.
+Therefore the chain rule is approximated by a Markov assumption of order n minus one.
+Moreover, add-one smoothing redistributes probability mass so that unseen n-grams receive a non-zero estimate.
+Consequently, perplexity on a held-out corpus is the conventional intrinsic evaluation of such a model.
+n-gram: P(w_i | w_{i-n+1}..w_{i-1}).
+Markov order = n-1 — sparse counts — add-k / Kneser-Ney.
+eval: perplexity; lower = tighter predictive fit.

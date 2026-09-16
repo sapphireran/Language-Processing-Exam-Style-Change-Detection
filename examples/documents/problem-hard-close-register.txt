@@ -1,0 +1,8 @@
+A constituency parser recovers nested phrase-structure trees licensed by a context-free grammar.
+Chomsky normal form is frequently imposed so that dynamic programming remains cubic in sentence length.
+The CKY algorithm thus fills a chart of spans with weighted non-terminals.
+Accordingly, the highest-scoring tree is recovered by pointer traversal from the root cell.
+CFG + CNF. CKY: spans [i,j], binary split k.
+score(A -> B C) + left + right.
+unary closures first, then binary split.
+eval: PARSEVAL bracketing F1, not exact-tree.

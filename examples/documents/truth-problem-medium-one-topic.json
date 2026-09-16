@@ -1,0 +1,7 @@
+{
+  "authors": 2,
+  "changes": [0, 0, 0, 1, 0, 0, 0],
+  "difficulty": "medium",
+  "voices": ["textbook-vectors", "student-vectors"],
+  "note": "One topic (vector semantics). The change is a register shift from textbook prose to a first-person exam riff."
+}
