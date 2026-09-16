@@ -100,21 +100,25 @@ def render_report(
   <meta charset="utf-8"/>
   <title>{escape(title)}</title>
   <style>
-    body {{ font-family: Georgia, serif; margin: 2rem auto; max-width: 48rem;
-           color: #1f2937; background: #f8fafc; }}
-    h1 {{ font-size: 1.6rem; }}
-    .note {{ color: #475569; }}
-    .unit {{ border-radius: 0.6rem; padding: 0.8rem 1rem; margin: 0.6rem 0; }}
-    .unit header {{ font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase;
-                    color: #334155; }}
-    .pair {{ border-left: 4px solid #94a3b8; padding: 0.4rem 0 0.4rem 0.8rem; margin: 0.4rem 0; }}
+    body {{ font-family: ui-sans-serif, system-ui, sans-serif; margin: 1.5rem auto;
+           max-width: 42rem; color: #111827; background: #f8fafc; line-height: 1.45; }}
+    h1 {{ font-size: 1.45rem; margin-bottom: 0.4rem; }}
+    .note {{ color: #4b5563; font-size: 0.95rem; }}
+    .unit {{ border-radius: 0.6rem; padding: 0.85rem 1rem; margin: 0.7rem 0; }}
+    .unit header {{ font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase;
+                    color: #334155; margin-bottom: 0.35rem; }}
+    .unit p {{ margin: 0; font-size: 1.05rem; }}
+    .pair {{ border-left: 5px solid #94a3b8; padding: 0.55rem 0.8rem; margin: 0.45rem 0;
+             border-radius: 0 0.4rem 0.4rem 0; }}
     .pair.change {{ border-left-color: #b45309; }}
     .pair.hit {{ background: #ecfdf5; }}
     .pair.miss {{ background: #fef2f2; }}
-    .pair-label {{ font-family: ui-monospace, monospace; font-size: 0.85rem; }}
-    ul {{ list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.2rem 1rem; }}
-    li {{ display: flex; justify-content: space-between; font-size: 0.9rem; }}
-    li span {{ color: #475569; }}
+    .pair-label {{ font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+                   font-size: 0.9rem; margin: 0 0 0.4rem; }}
+    ul {{ list-style: none; padding: 0; margin: 0;
+          display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem 1.2rem; }}
+    li {{ display: flex; justify-content: space-between; gap: 1rem; font-size: 0.92rem; }}
+    li span {{ color: #4b5563; }}
   </style>
 </head>
 <body>
