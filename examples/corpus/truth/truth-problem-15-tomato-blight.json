@@ -1,0 +1,7 @@
+{
+  "authors": 2,
+  "tier": "hard",
+  "title": "Two gardeners, one blight",
+  "voices": ["garden_log", "neighbour_advice"],
+  "changes": [0, 0, 1, 0, 0, 0, 0, 0]
+}

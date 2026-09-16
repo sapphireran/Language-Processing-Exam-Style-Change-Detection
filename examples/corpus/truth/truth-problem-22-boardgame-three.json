@@ -1,0 +1,8 @@
+{
+  "authors": 3,
+  "tier": "collage",
+  "title": "Board-game night, three voices, one return",
+  "voices": ["rules_coach", "snack_diplomat", "house_rules"],
+  "returns": true,
+  "changes": [0, 1, 0, 1, 0, 1, 0, 1, 0]
+}

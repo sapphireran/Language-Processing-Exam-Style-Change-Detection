@@ -1,0 +1,7 @@
+{
+  "authors": 2,
+  "tier": "hard",
+  "title": "Same rain, diary then station note",
+  "voices": ["rain_diary", "met_note"],
+  "changes": [0, 0, 1, 0, 0, 0, 0, 0]
+}

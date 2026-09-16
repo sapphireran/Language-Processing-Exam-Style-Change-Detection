@@ -1,0 +1,7 @@
+{
+  "authors": 2,
+  "tier": "medium",
+  "title": "Landlord letter then WhatsApp",
+  "voices": ["formal_tenant", "whatsapp"],
+  "changes": [0, 0, 0, 1, 0, 0, 0, 0]
+}

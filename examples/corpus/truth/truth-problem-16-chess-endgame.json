@@ -1,0 +1,7 @@
+{
+  "authors": 2,
+  "tier": "hard",
+  "title": "Two annotators, one pawn ending",
+  "voices": ["chess_diary", "chess_card"],
+  "changes": [0, 0, 1, 0, 0, 0, 0, 0]
+}

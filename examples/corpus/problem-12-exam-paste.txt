@@ -1,0 +1,9 @@
+Style-change detection is an intrinsic task: the system sees one document and must mark boundaries where authorship changes.
+For n sentences the output has length n minus one, and evaluation is macro-F1 over stay and change pairs.
+Closed-class features are preferred when topic would otherwise leak into the decision.
+A never-fire baseline can post high accuracy and still fail the official metric.
+i cannot remember if delta z-scores inside the document or across a corpus and I am writing both in the margin
+the 16/4 example is 0.444 I think unless I swapped precision of stay
+do not start a paragraph with we propose if you cannot name the cut
+if I mix this file up in the answers I deserve the mark I get
+send the formula card to future me who will panic at 08:50

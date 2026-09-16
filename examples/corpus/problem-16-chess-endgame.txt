@@ -1,0 +1,9 @@
+I keep the king in front of the pawn until the knight has no safe check, then I edge forward one square at a time.
+If they check from the side I step in, not away, because away is how you donate a tempo you will want later.
+The draw is in the knight's schedule; I do not hunt it for sport.
+Bring the king to the promotion square's neighbourhood before you push, or the knight will sit on the pawn's head.
+You can afford one waiting move if the knight is offside; you cannot afford a cute check that lets it back in.
+Tablebases call this a draw with perfect play, which is a sentence for engines and a warning for people.
+Trade the cute check for a king move toward the square you actually need.
+Then stop annotating and play the move you already named.
+If the knight returns, repeat the same short plan; do not invent a second plan out of pride.

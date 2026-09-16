@@ -1,0 +1,8 @@
+{
+  "authors": 4,
+  "tier": "collage",
+  "title": "Housing thread with a returning analyst",
+  "voices": ["housing_analyst", "tenant_chat", "minutes", "lawyer"],
+  "returns": true,
+  "changes": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
+}

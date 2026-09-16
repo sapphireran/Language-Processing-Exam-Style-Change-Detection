@@ -1,0 +1,7 @@
+{
+  "authors": 2,
+  "tier": "medium",
+  "title": "Committee minutes then Slack",
+  "voices": ["minutes", "slack"],
+  "changes": [0, 0, 0, 1, 0, 0, 0, 0]
+}

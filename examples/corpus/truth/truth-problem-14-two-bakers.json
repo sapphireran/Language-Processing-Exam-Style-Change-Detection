@@ -1,0 +1,7 @@
+{
+  "authors": 2,
+  "tier": "hard",
+  "title": "Two bakers, one rye loaf",
+  "voices": ["baker_i", "baker_you"],
+  "changes": [0, 0, 0, 1, 0, 0, 0, 0]
+}
