@@ -1,0 +1,3 @@
+# Runtime is stdlib-only. Install test extras with:
+#   pip install -e ".[dev]"
+pytest>=8.0
