@@ -17,7 +17,7 @@ from .features import (
 from .ngrams import char_ngrams, cosine_distance
 from .tokenize import Mode, split_units
 
-DEFAULT_BLEND = (0.50, 0.30, 0.12, 0.08)
+DEFAULT_BLEND = (0.72, 0.16, 0.06, 0.06)
 
 
 def _cosine(a: Sequence[float], b: Sequence[float]) -> float:
@@ -36,14 +36,14 @@ def register_gap(left: UnitFeatures, right: UnitFeatures) -> float:
     full-scale style change on short teaching texts. Rates already live
     on a comparable scale; length is divided by a fixed constant.
     """
-    num = 0.0
-    den = 0.0
+    raw = 0.0
     for name, a, b in zip(REGISTER_NAMES, left.register_vector(), right.register_vector()):
         scale = REGISTER_COMPARE_SCALE[name]
         weight = REGISTER_COMPARE_WEIGHT[name]
-        num += weight * abs(a - b) / scale
-        den += weight
-    return num / den if den else 0.0
+        raw += weight * abs(a - b) / scale
+    # Unused channels used to sit in the denominator and squash a real
+    # person or vocative flip down to 0.03. Squash the raw sum instead.
+    return raw / (1.15 + raw)
 
 
 @dataclass(frozen=True)
@@ -92,7 +92,7 @@ def score_feature_hinges(
     for i, (left, right) in enumerate(zip(feats, feats[1:])):
         gap = register_gap(left, right)
         fw = 1.0 - _cosine(left.function_vector(), right.function_vector())
-        ch = cosine_distance(char_ngrams(left.text), char_ngrams(right.text))
+        ch = 0.45 * cosine_distance(char_ngrams(left.text), char_ngrams(right.text))
         de = deltas[i] if i < len(deltas) else 0.0
         # Delta on a 4-unit document is heavy-tailed; squash it.
         de_n = de / (1.0 + de)

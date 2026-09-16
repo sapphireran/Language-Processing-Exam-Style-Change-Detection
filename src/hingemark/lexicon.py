@@ -228,6 +228,11 @@ CONTRACTION_MARKERS: tuple[str, ...] = (
 
 PASSIVE_AUX: frozenset[str] = frozenset({"was", "were", "been", "being", "is", "are"})
 
+SHALL_MUST: frozenset[str] = frozenset({"shall", "must"})
+VOCATIVES: frozenset[str] = frozenset(
+    {"dearest", "dear", "hey", "yo", "hi", "hello", "ok", "okay"}
+)
+
 INFORMAL: frozenset[str] = frozenset(
     {
         "gonna",

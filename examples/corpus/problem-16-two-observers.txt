@@ -1,0 +1,7 @@
+Observation P-17 commenced at 22:14 UTC; the 408 MHz band was recorded for 96 minutes whilst the source transited.
+A narrow interference spike was noted at 22:41; however, the folded profile remained stable.
+Calibration against Cas A was completed at 00:06; system temperature 42 K.
+The committee therefore archives the night as usable.
+I started the 408 tape at 22:14 and I let it run while the source went over.
+A spike hit at 22:41 but the fold still looked clean when I checked.
+I did Cas A at 00:06 and I wrote 42 K in the book.

@@ -1,0 +1,21 @@
+{
+  "changes": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+  ],
+  "authors": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2
+  ],
+  "split": "easy",
+  "note": "River field journal snaps to a Marble auction lot. Topic and register move together."
+}

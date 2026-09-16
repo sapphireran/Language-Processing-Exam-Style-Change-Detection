@@ -1,0 +1,6 @@
+A CUSUM plot adds each new score minus the running mean, so a new writer often shows up as a change of slope.
+I would still not trust it on a six-sentence document because the mean is estimated from the same tiny series.
+I would rather treat CUSUM as a picture and cut with a pairwise score.
+It should be noted, however, that CUSUM remains attractive when documents are long and the change is persistent.
+A slope change may therefore be reported as supporting evidence, whilst the official decision stays with the pairwise threshold.
+Accordingly the present answer prefers CUSUM as a diagnostic rather than as a stand-alone detector.

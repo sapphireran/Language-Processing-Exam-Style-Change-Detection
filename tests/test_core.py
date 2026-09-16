@@ -70,7 +70,7 @@ class PairwiseTests(unittest.TestCase):
             "Lot 14: oak lock-gate leaf, 3.2 m by 0.48 m; iron strap hinges, c. 1891.",
         ]
         hinges = score_unit_hinges(units)
-        result = threshold_detect(hinges, threshold=0.20)
+        result = threshold_detect(hinges, threshold=0.18)
         self.assertEqual(result.changes, (1,))
 
     def test_never_change_is_all_zeros(self) -> None:

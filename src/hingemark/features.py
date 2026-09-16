@@ -21,6 +21,8 @@ from .lexicon import (
     INFORMAL,
     PASSIVE_AUX,
     SECOND_PERSON,
+    SHALL_MUST,
+    VOCATIVES,
 )
 from .tokenize import word_tokens
 
@@ -42,6 +44,8 @@ REGISTER_NAMES: tuple[str, ...] = (
     "passive_rate",
     "informal_rate",
     "fw_ratio",
+    "shall_rate",
+    "vocative_rate",
 )
 
 # Rate channels stay on a 0–1 scale. Length is divided so a two-word
@@ -64,6 +68,8 @@ REGISTER_COMPARE_SCALE: dict[str, float] = {
     "passive_rate": 1.0,
     "informal_rate": 1.0,
     "fw_ratio": 1.0,
+    "shall_rate": 1.0,
+    "vocative_rate": 1.0,
 }
 
 REGISTER_COMPARE_WEIGHT: dict[str, float] = {
@@ -84,6 +90,8 @@ REGISTER_COMPARE_WEIGHT: dict[str, float] = {
     "passive_rate": 0.85,
     "informal_rate": 1.10,
     "fw_ratio": 0.45,
+    "shall_rate": 1.15,
+    "vocative_rate": 1.20,
 }
 
 
@@ -109,6 +117,8 @@ class UnitFeatures:
     passive_rate: float
     informal_rate: float
     fw_ratio: float
+    shall_rate: float
+    vocative_rate: float
     ttr: float
     function_counts: tuple[int, ...] = field(repr=False)
 
@@ -131,11 +141,20 @@ class UnitFeatures:
             self.passive_rate,
             self.informal_rate,
             self.fw_ratio,
+            self.shall_rate,
+            self.vocative_rate,
         )
 
-    def function_vector(self) -> tuple[float, ...]:
+    def function_vector(self, smooth: float = 0.35) -> tuple[float, ...]:
+        """Smoothed function-word rates.
+
+        Raw cosine on a 10-word sentence is a trap: two same-author lines
+        that happen to share no closed-class word look orthogonal. Additive
+        smoothing keeps that pair near the prior and only a real shift moves.
+        """
+        dim = len(self.function_counts)
         n = max(self.n_words, 1)
-        return tuple(c / n for c in self.function_counts)
+        return tuple((c + smooth) / (n + smooth * dim) for c in self.function_counts)
 
 
 def extract(text: str) -> UnitFeatures:
@@ -175,6 +194,8 @@ def extract(text: str) -> UnitFeatures:
         passive_rate=sum(w in PASSIVE_AUX for w in words) / denom,
         informal_rate=sum(w in INFORMAL for w in words) / denom,
         fw_ratio=sum(counts) / denom,
+        shall_rate=sum(w in SHALL_MUST for w in words) / denom,
+        vocative_rate=sum(w in VOCATIVES for w in words) / denom,
         ttr=unique / denom,
         function_counts=tuple(counts),
     )

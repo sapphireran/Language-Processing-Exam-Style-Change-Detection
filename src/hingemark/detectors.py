@@ -9,7 +9,7 @@ from .pairwise import Hinge
 
 # Default cut is a study-set number, not a PAN claim. Recalibrate with
 # `hingemark calibrate` after you add documents.
-DEFAULT_THRESHOLD = 0.32
+DEFAULT_THRESHOLD = 0.30
 DEFAULT_ADAPTIVE_K = 0.75
 DEFAULT_ADAPTIVE_FLOOR = 0.22
 DEFAULT_MAD_FLOOR = 0.05
