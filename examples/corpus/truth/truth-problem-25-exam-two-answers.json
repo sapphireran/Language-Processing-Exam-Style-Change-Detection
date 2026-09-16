@@ -1,0 +1,16 @@
+{
+  "changes": [
+    0,
+    1,
+    0
+  ],
+  "authors": [
+    "answer_a",
+    "answer_a",
+    "answer_b",
+    "answer_b"
+  ],
+  "band": "medium",
+  "title": "Two exam answers on the same prompt",
+  "note": "Same question, two students. One hinge in the middle."
+}

@@ -1,0 +1,6 @@
+# Runtime is the Python standard library only.
+# Install the package itself in editable mode:
+#   pip install -e .
+# Test extras:
+#   pip install -e ".[dev]"
+pytest>=7.4
