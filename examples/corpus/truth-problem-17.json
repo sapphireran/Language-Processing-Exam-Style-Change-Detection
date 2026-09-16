@@ -1,0 +1,24 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0
+  ],
+  "houses": [
+    "twine",
+    "twine",
+    "roll",
+    "roll"
+  ],
+  "topics": [
+    "salt",
+    "salt",
+    "salt",
+    "salt"
+  ],
+  "difficulty": "medium",
+  "title": "Same salt works, Twine then Roll",
+  "holdout": false,
+  "slug": "twine-then-roll-salt"
+}

@@ -1,0 +1,24 @@
+{
+  "authors": 1,
+  "changes": [
+    0,
+    0,
+    0
+  ],
+  "houses": [
+    "twine",
+    "twine",
+    "twine",
+    "twine"
+  ],
+  "topics": [
+    "lime",
+    "lime",
+    "lime",
+    "lime"
+  ],
+  "difficulty": "control",
+  "title": "Twine stays on the lime kiln",
+  "holdout": false,
+  "slug": "twine-lime-control"
+}

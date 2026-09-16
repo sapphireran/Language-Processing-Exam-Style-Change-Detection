@@ -1,0 +1,24 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0
+  ],
+  "houses": [
+    "skiff",
+    "skiff",
+    "roll",
+    "roll"
+  ],
+  "topics": [
+    "eel",
+    "eel",
+    "hop",
+    "hop"
+  ],
+  "difficulty": "easy",
+  "title": "Skiff eel weir, then Roll hop minutes",
+  "holdout": false,
+  "slug": "skiff-eel-then-roll-hop"
+}

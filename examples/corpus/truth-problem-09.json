@@ -1,0 +1,24 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0
+  ],
+  "houses": [
+    "flint",
+    "flint",
+    "brine",
+    "brine"
+  ],
+  "topics": [
+    "salt",
+    "salt",
+    "peat",
+    "peat"
+  ],
+  "difficulty": "easy",
+  "title": "Flint salt card, then Brine peat statute",
+  "holdout": false,
+  "slug": "flint-salt-then-brine-peat"
+}

@@ -1,0 +1,24 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0
+  ],
+  "houses": [
+    "flint",
+    "flint",
+    "brine",
+    "brine"
+  ],
+  "topics": [
+    "lime",
+    "lime",
+    "lime",
+    "lime"
+  ],
+  "difficulty": "medium",
+  "title": "Same lime kiln, Flint then Brine",
+  "holdout": false,
+  "slug": "flint-then-brine-lime"
+}

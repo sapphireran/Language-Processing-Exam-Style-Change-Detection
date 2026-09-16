@@ -1,0 +1,24 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0
+  ],
+  "houses": [
+    "skiff",
+    "skiff",
+    "vellum",
+    "vellum"
+  ],
+  "topics": [
+    "eel",
+    "eel",
+    "eel",
+    "eel"
+  ],
+  "difficulty": "hard",
+  "title": "Same eel weir, Skiff then Vellum",
+  "holdout": false,
+  "slug": "skiff-then-vellum-eel"
+}

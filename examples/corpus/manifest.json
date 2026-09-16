@@ -1,0 +1,636 @@
+[
+  {
+    "id": 1,
+    "slug": "skiff-eel-control",
+    "file": "problem-01-skiff-eel-control.txt",
+    "truth": "truth-problem-01.json",
+    "difficulty": "control",
+    "holdout": false,
+    "authors": 1,
+    "changes": [
+      0,
+      0,
+      0
+    ],
+    "houses": [
+      "skiff",
+      "skiff",
+      "skiff",
+      "skiff"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 2,
+    "slug": "roll-hop-control",
+    "file": "problem-02-roll-hop-control.txt",
+    "truth": "truth-problem-02.json",
+    "difficulty": "control",
+    "holdout": false,
+    "authors": 1,
+    "changes": [
+      0,
+      0,
+      0
+    ],
+    "houses": [
+      "roll",
+      "roll",
+      "roll",
+      "roll"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 3,
+    "slug": "twine-lime-control",
+    "file": "problem-03-twine-lime-control.txt",
+    "truth": "truth-problem-03.json",
+    "difficulty": "control",
+    "holdout": false,
+    "authors": 1,
+    "changes": [
+      0,
+      0,
+      0
+    ],
+    "houses": [
+      "twine",
+      "twine",
+      "twine",
+      "twine"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 4,
+    "slug": "vellum-millrace-control",
+    "file": "problem-04-vellum-millrace-control.txt",
+    "truth": "truth-problem-04.json",
+    "difficulty": "control",
+    "holdout": true,
+    "authors": 1,
+    "changes": [
+      0,
+      0,
+      0
+    ],
+    "houses": [
+      "vellum",
+      "vellum",
+      "vellum",
+      "vellum"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 5,
+    "slug": "flint-salt-control",
+    "file": "problem-05-flint-salt-control.txt",
+    "truth": "truth-problem-05.json",
+    "difficulty": "control",
+    "holdout": false,
+    "authors": 1,
+    "changes": [
+      0,
+      0,
+      0
+    ],
+    "houses": [
+      "flint",
+      "flint",
+      "flint",
+      "flint"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 6,
+    "slug": "brine-peat-control",
+    "file": "problem-06-brine-peat-control.txt",
+    "truth": "truth-problem-06.json",
+    "difficulty": "control",
+    "holdout": false,
+    "authors": 1,
+    "changes": [
+      0,
+      0,
+      0
+    ],
+    "houses": [
+      "brine",
+      "brine",
+      "brine",
+      "brine"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 7,
+    "slug": "skiff-eel-then-roll-hop",
+    "file": "problem-07-skiff-eel-then-roll-hop.txt",
+    "truth": "truth-problem-07.json",
+    "difficulty": "easy",
+    "holdout": false,
+    "authors": 2,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "houses": [
+      "skiff",
+      "skiff",
+      "roll",
+      "roll"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 8,
+    "slug": "twine-lime-then-vellum-millrace",
+    "file": "problem-08-twine-lime-then-vellum-millrace.txt",
+    "truth": "truth-problem-08.json",
+    "difficulty": "easy",
+    "holdout": false,
+    "authors": 2,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "houses": [
+      "twine",
+      "twine",
+      "vellum",
+      "vellum"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 9,
+    "slug": "flint-salt-then-brine-peat",
+    "file": "problem-09-flint-salt-then-brine-peat.txt",
+    "truth": "truth-problem-09.json",
+    "difficulty": "easy",
+    "holdout": false,
+    "authors": 2,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "houses": [
+      "flint",
+      "flint",
+      "brine",
+      "brine"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 10,
+    "slug": "roll-hop-then-skiff-willow",
+    "file": "problem-10-roll-hop-then-skiff-willow.txt",
+    "truth": "truth-problem-10.json",
+    "difficulty": "easy",
+    "holdout": true,
+    "authors": 2,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "houses": [
+      "roll",
+      "roll",
+      "skiff",
+      "skiff"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 11,
+    "slug": "vellum-cider-then-flint-charcoal",
+    "file": "problem-11-vellum-cider-then-flint-charcoal.txt",
+    "truth": "truth-problem-11.json",
+    "difficulty": "easy",
+    "holdout": false,
+    "authors": 2,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "houses": [
+      "vellum",
+      "vellum",
+      "flint",
+      "flint"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 12,
+    "slug": "brine-granite-then-twine-tide",
+    "file": "problem-12-brine-granite-then-twine-tide.txt",
+    "truth": "truth-problem-12.json",
+    "difficulty": "easy",
+    "holdout": false,
+    "authors": 2,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "houses": [
+      "brine",
+      "brine",
+      "twine",
+      "twine"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 13,
+    "slug": "skiff-then-twine-coble",
+    "file": "problem-13-skiff-then-twine-coble.txt",
+    "truth": "truth-problem-13.json",
+    "difficulty": "medium",
+    "holdout": false,
+    "authors": 2,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "houses": [
+      "skiff",
+      "skiff",
+      "twine",
+      "twine"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 14,
+    "slug": "flint-then-brine-lime",
+    "file": "problem-14-flint-then-brine-lime.txt",
+    "truth": "truth-problem-14.json",
+    "difficulty": "medium",
+    "holdout": false,
+    "authors": 2,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "houses": [
+      "flint",
+      "flint",
+      "brine",
+      "brine"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 15,
+    "slug": "roll-then-vellum-willow",
+    "file": "problem-15-roll-then-vellum-willow.txt",
+    "truth": "truth-problem-15.json",
+    "difficulty": "medium",
+    "holdout": false,
+    "authors": 2,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "houses": [
+      "roll",
+      "roll",
+      "vellum",
+      "vellum"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 16,
+    "slug": "skiff-then-flint-peat",
+    "file": "problem-16-skiff-then-flint-peat.txt",
+    "truth": "truth-problem-16.json",
+    "difficulty": "medium",
+    "holdout": true,
+    "authors": 2,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "houses": [
+      "skiff",
+      "skiff",
+      "flint",
+      "flint"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 17,
+    "slug": "twine-then-roll-salt",
+    "file": "problem-17-twine-then-roll-salt.txt",
+    "truth": "truth-problem-17.json",
+    "difficulty": "medium",
+    "holdout": false,
+    "authors": 2,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "houses": [
+      "twine",
+      "twine",
+      "roll",
+      "roll"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 18,
+    "slug": "vellum-then-brine-hurdle",
+    "file": "problem-18-vellum-then-brine-hurdle.txt",
+    "truth": "truth-problem-18.json",
+    "difficulty": "medium",
+    "holdout": false,
+    "authors": 2,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "houses": [
+      "vellum",
+      "vellum",
+      "brine",
+      "brine"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 19,
+    "slug": "skiff-then-vellum-eel",
+    "file": "problem-19-skiff-then-vellum-eel.txt",
+    "truth": "truth-problem-19.json",
+    "difficulty": "hard",
+    "holdout": false,
+    "authors": 2,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "houses": [
+      "skiff",
+      "skiff",
+      "vellum",
+      "vellum"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 20,
+    "slug": "roll-then-flint-oast",
+    "file": "problem-20-roll-then-flint-oast.txt",
+    "truth": "truth-problem-20.json",
+    "difficulty": "hard",
+    "holdout": false,
+    "authors": 2,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "houses": [
+      "roll",
+      "roll",
+      "flint",
+      "flint"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 21,
+    "slug": "twine-then-brine-kiln",
+    "file": "problem-21-twine-then-brine-kiln.txt",
+    "truth": "truth-problem-21.json",
+    "difficulty": "hard",
+    "holdout": false,
+    "authors": 2,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "houses": [
+      "twine",
+      "twine",
+      "brine",
+      "brine"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 22,
+    "slug": "flint-then-skiff-millrace",
+    "file": "problem-22-flint-then-skiff-millrace.txt",
+    "truth": "truth-problem-22.json",
+    "difficulty": "hard",
+    "holdout": true,
+    "authors": 2,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "houses": [
+      "flint",
+      "flint",
+      "skiff",
+      "skiff"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 23,
+    "slug": "brine-then-twine-withy",
+    "file": "problem-23-brine-then-twine-withy.txt",
+    "truth": "truth-problem-23.json",
+    "difficulty": "hard",
+    "holdout": false,
+    "authors": 2,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "houses": [
+      "brine",
+      "brine",
+      "twine",
+      "twine"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 24,
+    "slug": "vellum-then-roll-setts",
+    "file": "problem-24-vellum-then-roll-setts.txt",
+    "truth": "truth-problem-24.json",
+    "difficulty": "hard",
+    "holdout": false,
+    "authors": 2,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "houses": [
+      "vellum",
+      "vellum",
+      "roll",
+      "roll"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 25,
+    "slug": "skiff-eel-then-skiff-hop",
+    "file": "problem-25-skiff-eel-then-skiff-hop.txt",
+    "truth": "truth-problem-25.json",
+    "difficulty": "trap",
+    "holdout": false,
+    "authors": 1,
+    "changes": [
+      0,
+      0,
+      0
+    ],
+    "houses": [
+      "skiff",
+      "skiff",
+      "skiff",
+      "skiff"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 26,
+    "slug": "roll-lime-then-roll-millrace",
+    "file": "problem-26-roll-lime-then-roll-millrace.txt",
+    "truth": "truth-problem-26.json",
+    "difficulty": "trap",
+    "holdout": true,
+    "authors": 1,
+    "changes": [
+      0,
+      0,
+      0
+    ],
+    "houses": [
+      "roll",
+      "roll",
+      "roll",
+      "roll"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 27,
+    "slug": "flint-cider-then-flint-charcoal",
+    "file": "problem-27-flint-cider-then-flint-charcoal.txt",
+    "truth": "truth-problem-27.json",
+    "difficulty": "trap",
+    "holdout": false,
+    "authors": 1,
+    "changes": [
+      0,
+      0,
+      0
+    ],
+    "houses": [
+      "flint",
+      "flint",
+      "flint",
+      "flint"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 28,
+    "slug": "twine-peat-then-twine-salt",
+    "file": "problem-28-twine-peat-then-twine-salt.txt",
+    "truth": "truth-problem-28.json",
+    "difficulty": "trap",
+    "holdout": false,
+    "authors": 1,
+    "changes": [
+      0,
+      0,
+      0
+    ],
+    "houses": [
+      "twine",
+      "twine",
+      "twine",
+      "twine"
+    ],
+    "n_units": 4
+  },
+  {
+    "id": 29,
+    "slug": "skiff-eel-roll-hop-skiff-willow",
+    "file": "problem-29-skiff-eel-roll-hop-skiff-willow.txt",
+    "truth": "truth-problem-29.json",
+    "difficulty": "return",
+    "holdout": false,
+    "authors": 2,
+    "changes": [
+      0,
+      1,
+      0,
+      1,
+      0
+    ],
+    "houses": [
+      "skiff",
+      "skiff",
+      "roll",
+      "roll",
+      "skiff",
+      "skiff"
+    ],
+    "n_units": 6
+  },
+  {
+    "id": 30,
+    "slug": "four-house-collage",
+    "file": "problem-30-four-house-collage.txt",
+    "truth": "truth-problem-30.json",
+    "difficulty": "collage",
+    "holdout": true,
+    "authors": 4,
+    "changes": [
+      1,
+      1,
+      1
+    ],
+    "houses": [
+      "flint",
+      "brine",
+      "twine",
+      "vellum"
+    ],
+    "n_units": 4
+  }
+]

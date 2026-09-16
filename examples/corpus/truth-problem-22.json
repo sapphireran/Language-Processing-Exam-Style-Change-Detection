@@ -1,0 +1,24 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0
+  ],
+  "houses": [
+    "flint",
+    "flint",
+    "skiff",
+    "skiff"
+  ],
+  "topics": [
+    "millrace",
+    "millrace",
+    "millrace",
+    "millrace"
+  ],
+  "difficulty": "hard",
+  "title": "Same millrace, Flint then Skiff",
+  "holdout": true,
+  "slug": "flint-then-skiff-millrace"
+}

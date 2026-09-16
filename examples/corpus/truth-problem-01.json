@@ -1,0 +1,24 @@
+{
+  "authors": 1,
+  "changes": [
+    0,
+    0,
+    0
+  ],
+  "houses": [
+    "skiff",
+    "skiff",
+    "skiff",
+    "skiff"
+  ],
+  "topics": [
+    "eel",
+    "eel",
+    "eel",
+    "eel"
+  ],
+  "difficulty": "control",
+  "title": "Skiff stays on the eel weir",
+  "holdout": false,
+  "slug": "skiff-eel-control"
+}

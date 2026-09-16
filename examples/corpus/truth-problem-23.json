@@ -1,0 +1,24 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0
+  ],
+  "houses": [
+    "brine",
+    "brine",
+    "twine",
+    "twine"
+  ],
+  "topics": [
+    "willow",
+    "willow",
+    "willow",
+    "willow"
+  ],
+  "difficulty": "hard",
+  "title": "Same withy beds, Brine then Twine",
+  "holdout": false,
+  "slug": "brine-then-twine-withy"
+}

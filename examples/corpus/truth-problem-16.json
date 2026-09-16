@@ -1,0 +1,24 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0
+  ],
+  "houses": [
+    "skiff",
+    "skiff",
+    "flint",
+    "flint"
+  ],
+  "topics": [
+    "peat",
+    "peat",
+    "peat",
+    "peat"
+  ],
+  "difficulty": "medium",
+  "title": "Same peat moss, Skiff then Flint",
+  "holdout": true,
+  "slug": "skiff-then-flint-peat"
+}

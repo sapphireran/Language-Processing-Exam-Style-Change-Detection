@@ -1,0 +1,24 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0
+  ],
+  "houses": [
+    "vellum",
+    "vellum",
+    "flint",
+    "flint"
+  ],
+  "topics": [
+    "cider",
+    "cider",
+    "charcoal",
+    "charcoal"
+  ],
+  "difficulty": "easy",
+  "title": "Vellum cider press, then Flint charcoal clamp",
+  "holdout": false,
+  "slug": "vellum-cider-then-flint-charcoal"
+}

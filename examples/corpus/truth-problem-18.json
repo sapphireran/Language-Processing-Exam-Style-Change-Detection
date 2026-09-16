@@ -1,0 +1,24 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0
+  ],
+  "houses": [
+    "vellum",
+    "vellum",
+    "brine",
+    "brine"
+  ],
+  "topics": [
+    "hurdle",
+    "hurdle",
+    "hurdle",
+    "hurdle"
+  ],
+  "difficulty": "medium",
+  "title": "Same wattle hurdles, Vellum then Brine",
+  "holdout": false,
+  "slug": "vellum-then-brine-hurdle"
+}

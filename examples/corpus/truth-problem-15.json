@@ -1,0 +1,24 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0
+  ],
+  "houses": [
+    "roll",
+    "roll",
+    "vellum",
+    "vellum"
+  ],
+  "topics": [
+    "willow",
+    "willow",
+    "willow",
+    "willow"
+  ],
+  "difficulty": "medium",
+  "title": "Same willow beds, Roll then Vellum",
+  "holdout": false,
+  "slug": "roll-then-vellum-willow"
+}

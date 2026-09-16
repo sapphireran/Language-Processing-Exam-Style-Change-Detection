@@ -1,0 +1,24 @@
+{
+  "authors": 1,
+  "changes": [
+    0,
+    0,
+    0
+  ],
+  "houses": [
+    "twine",
+    "twine",
+    "twine",
+    "twine"
+  ],
+  "topics": [
+    "peat",
+    "peat",
+    "salt",
+    "salt"
+  ],
+  "difficulty": "trap",
+  "title": "Same Twine, peat moss then salt table",
+  "holdout": false,
+  "slug": "twine-peat-then-twine-salt"
+}

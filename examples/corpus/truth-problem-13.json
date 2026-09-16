@@ -1,0 +1,24 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0
+  ],
+  "houses": [
+    "skiff",
+    "skiff",
+    "twine",
+    "twine"
+  ],
+  "topics": [
+    "coble",
+    "coble",
+    "coble",
+    "coble"
+  ],
+  "difficulty": "medium",
+  "title": "Same coble, Skiff then Twine",
+  "holdout": false,
+  "slug": "skiff-then-twine-coble"
+}
