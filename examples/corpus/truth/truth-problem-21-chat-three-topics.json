@@ -1,0 +1,20 @@
+{
+  "authors": 1,
+  "changes": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "site": "control",
+  "title": "One chat voice: kiln, bus, radio",
+  "voices": [
+    "chat",
+    "chat",
+    "chat"
+  ],
+  "expected_error": "chat_jitter",
+  "notes": "Short chat units jitter length and vocatives. A known false-alarm risk.",
+  "return_author": false
+}

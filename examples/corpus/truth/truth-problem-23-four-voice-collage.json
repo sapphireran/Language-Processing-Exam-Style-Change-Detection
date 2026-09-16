@@ -1,0 +1,19 @@
+{
+  "authors": 4,
+  "changes": [
+    1,
+    1,
+    1
+  ],
+  "site": "collage",
+  "title": "Four house voices on a Saturday in the parish",
+  "voices": [
+    "stall",
+    "notice",
+    "notebook",
+    "chat"
+  ],
+  "expected_error": null,
+  "notes": "One unit per voice. A collage, not a realistic letter.",
+  "return_author": false
+}

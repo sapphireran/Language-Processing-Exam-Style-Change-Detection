@@ -1,0 +1,20 @@
+{
+  "authors": 3,
+  "changes": [
+    0,
+    1,
+    0,
+    1,
+    0
+  ],
+  "site": "collage",
+  "title": "Harbour minutes, personal letter, then a notice",
+  "voices": [
+    "minutes",
+    "letter",
+    "notice"
+  ],
+  "expected_error": null,
+  "notes": "Three voices, two folds. Minutes and notice are both formal-ish; the letter in the middle is the giveaway.",
+  "return_author": false
+}

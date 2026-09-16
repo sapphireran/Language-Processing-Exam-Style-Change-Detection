@@ -1,0 +1,20 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0,
+    1,
+    0
+  ],
+  "site": "return",
+  "title": "Kiln stall, notice, stall again",
+  "voices": [
+    "stall",
+    "notice",
+    "stall"
+  ],
+  "expected_error": "return_undercount",
+  "notes": "authors=2 but 1+sum(changes)=3. Naive author count over-counts the return.",
+  "return_author": true
+}

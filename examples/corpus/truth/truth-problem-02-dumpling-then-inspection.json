@@ -1,0 +1,18 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0,
+    0
+  ],
+  "site": "easy",
+  "title": "Night-market dumpling notes then inspection form",
+  "voices": [
+    "stall",
+    "notice"
+  ],
+  "expected_error": null,
+  "notes": "Food-stall chat versus health-code English. Same stall, new genre.",
+  "return_author": false
+}

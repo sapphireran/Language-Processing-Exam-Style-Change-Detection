@@ -1,0 +1,19 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    0
+  ],
+  "site": "hard",
+  "title": "Two coopers measuring the same puncheon",
+  "voices": [
+    "notebook",
+    "notebook"
+  ],
+  "expected_error": "same_register_miss",
+  "notes": "Same puncheon, two notebooks, no register fold.",
+  "return_author": false
+}

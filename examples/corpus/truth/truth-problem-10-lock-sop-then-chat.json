@@ -1,0 +1,18 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    0,
+    1,
+    0
+  ],
+  "site": "medium",
+  "title": "Mortise SOP then apprentice chat",
+  "voices": [
+    "notice",
+    "chat"
+  ],
+  "expected_error": null,
+  "notes": "Procedure then the apprentice reporting the same job in chat.",
+  "return_author": false
+}

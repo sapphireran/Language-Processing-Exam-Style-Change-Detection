@@ -1,0 +1,17 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0
+  ],
+  "site": "paste",
+  "title": "Two exam answers on the same style-change prompt",
+  "voices": [
+    "notebook",
+    "stall"
+  ],
+  "expected_error": null,
+  "notes": "Paste / two candidates. First answer is notebook-exam English; second is stall panic.",
+  "return_author": false
+}

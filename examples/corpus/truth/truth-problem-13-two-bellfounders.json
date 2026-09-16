@@ -1,0 +1,19 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    0
+  ],
+  "site": "hard",
+  "title": "Two bellfounders on the same tenor",
+  "voices": [
+    "notebook",
+    "notebook"
+  ],
+  "expected_error": "same_register_miss",
+  "notes": "Gold hinge after unit 3. Both voices are hedged scientific we. Default cut should stay quiet.",
+  "return_author": false
+}

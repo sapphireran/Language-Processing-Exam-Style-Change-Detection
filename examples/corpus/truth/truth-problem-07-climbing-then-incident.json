@@ -1,0 +1,18 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0,
+    0
+  ],
+  "site": "easy",
+  "title": "Route-setting chat then incident report",
+  "voices": [
+    "chat",
+    "notice"
+  ],
+  "expected_error": null,
+  "notes": "Gym chat versus incident-form shall/must.",
+  "return_author": false
+}

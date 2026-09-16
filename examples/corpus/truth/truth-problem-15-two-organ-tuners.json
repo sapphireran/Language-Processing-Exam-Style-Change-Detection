@@ -1,0 +1,19 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    0
+  ],
+  "site": "hard",
+  "title": "Two organ tuners on the same swell mixture",
+  "voices": [
+    "notebook",
+    "notebook"
+  ],
+  "expected_error": "same_register_miss",
+  "notes": "Same mixture, two tuners, notebook register throughout.",
+  "return_author": false
+}
