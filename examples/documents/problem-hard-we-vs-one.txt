@@ -1,0 +1,6 @@
+We formulate style change detection as a binary decision at every inter-sentential boundary, and we deliberately withhold any comparison corpus.
+Our features are therefore intrinsic: function-word rates, punctuation, and a handful of register cues that we can defend in an oral exam.
+Moreover, we do not claim that this inventory rivals a fine-tuned encoder; we claim only that it is inspectable.
+One may treat each boundary as an independent Bernoulli trial, though that independence assumption is known to be optimistic.
+A subsequent smoothing stage is consequently required if isolated false alarms are to be suppressed.
+The present notes record that choice without further experimental justification.

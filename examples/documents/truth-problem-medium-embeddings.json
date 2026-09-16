@@ -1,0 +1,7 @@
+{
+  "authors": 2,
+  "changes": [0, 0, 1, 0, 0],
+  "difficulty": "medium",
+  "voices": ["student", "student", "student", "textbook", "textbook", "textbook"],
+  "note": "Same topic (word embeddings). The cut is student hedges vs academic connectives."
+}

@@ -1,0 +1,8 @@
+A projective dependency tree can be encoded as a sequence of stack-and-buffer transitions.
+An oracle then maps each gold tree onto the unique transition sequence that reconstructs it.
+A classifier is trained to imitate that oracle given a representation of the current configuration.
+Character-level LSTMs recover most out-of-vocabulary losses on the development set.
+trans: shift | left-arc | right-arc
+oracle: gold tree -> unique path
+feat: stack[0], buffer[0], POS, dist
+dev: +1.4 UAS with char-LSTM

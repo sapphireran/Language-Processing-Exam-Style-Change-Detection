@@ -1,0 +1,7 @@
+{
+  "authors": 3,
+  "changes": [0, 0, 1, 0, 0, 1, 0, 0],
+  "difficulty": "easy",
+  "voices": ["chat", "chat", "chat", "textbook", "textbook", "textbook", "notes", "notes", "notes"],
+  "note": "Topic and register both jump: a recipe, then syntax prose, then CFG productions."
+}

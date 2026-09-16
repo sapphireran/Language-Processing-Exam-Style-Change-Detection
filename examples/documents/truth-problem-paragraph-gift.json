@@ -1,0 +1,7 @@
+{
+  "authors": 3,
+  "changes": [1, 1],
+  "difficulty": "paragraph",
+  "voices": ["student", "textbook", "notes"],
+  "note": "Same exam story as takehome, but gold labels are paragraph pairs (PAN 2023 shape)."
+}

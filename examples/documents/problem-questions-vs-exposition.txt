@@ -1,0 +1,6 @@
+What actually changes if we swap a unigram LM for a bigram one?
+Why do we still smooth even when the training set looks huge?
+Can a trigram ever recover a long-distance subject–verb link?
+A language model assigns a probability to every string in the language and is typically estimated from corpus counts.
+Smoothing redistributes probability mass from seen n-grams to unseen ones so that no test string is assigned zero.
+Local n-gram context cannot encode unbounded syntactic agreement; a latent or neural state is therefore required.

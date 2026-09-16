@@ -1,0 +1,6 @@
+I keep mixing up count vectors and embeddings, so here is how I remember it.
+If two words show up in the same kind of sentence, I expect their vectors to end up close.
+That is basically why king minus man plus woman lands near queen, I think.
+Distributional semantics represents each word as a real-valued vector derived from co-occurrence statistics.
+Geometric regularities in that space recover analogical relations such as gender and tense.
+Dimensionality reduction, typically via SVD or a neural objective, therefore yields the final embedding.
