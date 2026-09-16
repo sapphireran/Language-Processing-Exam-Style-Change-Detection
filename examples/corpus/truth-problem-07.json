@@ -1,0 +1,14 @@
+{
+  "changes": [
+    0,
+    1,
+    0
+  ],
+  "authors": 2,
+  "houses": [
+    "bench",
+    "seminar"
+  ],
+  "band": "easy",
+  "holdout": false
+}

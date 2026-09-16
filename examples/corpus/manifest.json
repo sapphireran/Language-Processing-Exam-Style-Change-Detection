@@ -1,0 +1,630 @@
+[
+  {
+    "id": "01-caliper-stilling-control",
+    "code": "01",
+    "band": "control",
+    "houses": [
+      "caliper"
+    ],
+    "topics": [
+      "stilling-well"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      0,
+      0
+    ],
+    "holdout": false,
+    "note": "Single Caliper visit. Topic stays on the gauge. Zero hinges must stay zero.",
+    "problem": "problem-01-caliper-stilling-control.txt",
+    "truth": "truth-problem-01.json"
+  },
+  {
+    "id": "02-placard-cinema-control",
+    "code": "02",
+    "band": "control",
+    "houses": [
+      "placard"
+    ],
+    "topics": [
+      "cinema-booth"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      0,
+      0
+    ],
+    "holdout": false,
+    "note": "Single Placard booth. You/your stays loud on purpose.",
+    "problem": "problem-02-placard-cinema-control.txt",
+    "truth": "truth-problem-02.json"
+  },
+  {
+    "id": "03-pocket-icehouse-control",
+    "code": "03",
+    "band": "control",
+    "houses": [
+      "pocket"
+    ],
+    "topics": [
+      "icehouse"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      0,
+      0
+    ],
+    "holdout": false,
+    "note": "Single Pocket. Dashes and I/my should not look like a second author.",
+    "problem": "problem-03-pocket-icehouse-control.txt",
+    "truth": "truth-problem-03.json"
+  },
+  {
+    "id": "04-statute-signal-control",
+    "code": "04",
+    "band": "control",
+    "houses": [
+      "statute"
+    ],
+    "topics": [
+      "signal-box"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      0,
+      0
+    ],
+    "holdout": true,
+    "note": "Holdout control. Statute throughout; deontic verbs must not be read as cuts.",
+    "problem": "problem-04-statute-signal-control.txt",
+    "truth": "truth-problem-04.json"
+  },
+  {
+    "id": "05-caliper-well-then-placard-booth",
+    "code": "05",
+    "band": "easy",
+    "houses": [
+      "caliper",
+      "placard"
+    ],
+    "topics": [
+      "stilling-well",
+      "cinema-booth"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "holdout": false,
+    "note": "Caliper hydrology then Placard booth. Topic and house jump together.",
+    "problem": "problem-05-caliper-well-then-placard-booth.txt",
+    "truth": "truth-problem-05.json"
+  },
+  {
+    "id": "06-pocket-ice-then-statute-filter",
+    "code": "06",
+    "band": "easy",
+    "houses": [
+      "pocket",
+      "statute"
+    ],
+    "topics": [
+      "icehouse",
+      "slow-sand-filter"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "holdout": false,
+    "note": "Notebook ice then by-law sand filter. Easy on purpose.",
+    "problem": "problem-06-pocket-ice-then-statute-filter.txt",
+    "truth": "truth-problem-06.json"
+  },
+  {
+    "id": "07-bench-box-then-seminar-compass",
+    "code": "07",
+    "band": "easy",
+    "houses": [
+      "bench",
+      "seminar"
+    ],
+    "topics": [
+      "signal-box",
+      "compass-swing"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "holdout": false,
+    "note": "Bench box chatter then Seminar on swinging ship.",
+    "problem": "problem-07-bench-box-then-seminar-compass.txt",
+    "truth": "truth-problem-07.json"
+  },
+  {
+    "id": "08-placard-fognet-then-caliper-marbling",
+    "code": "08",
+    "band": "easy",
+    "houses": [
+      "placard",
+      "caliper"
+    ],
+    "topics": [
+      "fog-net",
+      "paper-marbling"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "holdout": false,
+    "note": "Placard fog harvest then Caliper marbling shop.",
+    "problem": "problem-08-placard-fognet-then-caliper-marbling.txt",
+    "truth": "truth-problem-08.json"
+  },
+  {
+    "id": "09-statute-piano-then-pocket-herbarium",
+    "code": "09",
+    "band": "easy",
+    "houses": [
+      "statute",
+      "pocket"
+    ],
+    "topics": [
+      "piano-regulation",
+      "herbarium"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "holdout": false,
+    "note": "Piano by-law then a herbarium notebook.",
+    "problem": "problem-09-statute-piano-then-pocket-herbarium.txt",
+    "truth": "truth-problem-09.json"
+  },
+  {
+    "id": "10-seminar-grain-then-bench-bells",
+    "code": "10",
+    "band": "easy",
+    "houses": [
+      "seminar",
+      "bench"
+    ],
+    "topics": [
+      "grain-elevator",
+      "change-ringing"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "holdout": true,
+    "note": "Holdout easy. Seminar dust then Bench tower.",
+    "problem": "problem-10-seminar-grain-then-bench-bells.txt",
+    "truth": "truth-problem-10.json"
+  },
+  {
+    "id": "11-stilling-caliper-then-placard",
+    "code": "11",
+    "band": "medium",
+    "houses": [
+      "caliper",
+      "placard"
+    ],
+    "topics": [
+      "stilling-well"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "holdout": false,
+    "note": "Same well. Caliper visit then Placard app copy.",
+    "problem": "problem-11-stilling-caliper-then-placard.txt",
+    "truth": "truth-problem-11.json"
+  },
+  {
+    "id": "12-cinema-pocket-then-statute",
+    "code": "12",
+    "band": "medium",
+    "houses": [
+      "pocket",
+      "statute"
+    ],
+    "topics": [
+      "cinema-booth"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "holdout": false,
+    "note": "Same booth. Pocket night then Statute rules.",
+    "problem": "problem-12-cinema-pocket-then-statute.txt",
+    "truth": "truth-problem-12.json"
+  },
+  {
+    "id": "13-filter-seminar-then-bench",
+    "code": "13",
+    "band": "medium",
+    "houses": [
+      "seminar",
+      "bench"
+    ],
+    "topics": [
+      "slow-sand-filter"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "holdout": false,
+    "note": "Same filter. Seminar caution then Bench scrape.",
+    "problem": "problem-13-filter-seminar-then-bench.txt",
+    "truth": "truth-problem-13.json"
+  },
+  {
+    "id": "14-bells-caliper-then-pocket",
+    "code": "14",
+    "band": "medium",
+    "houses": [
+      "caliper",
+      "pocket"
+    ],
+    "topics": [
+      "change-ringing"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "holdout": false,
+    "note": "Same tower. Caliper minutes then Pocket guilt.",
+    "problem": "problem-14-bells-caliper-then-pocket.txt",
+    "truth": "truth-problem-14.json"
+  },
+  {
+    "id": "15-compass-statute-then-placard",
+    "code": "15",
+    "band": "medium",
+    "houses": [
+      "statute",
+      "placard"
+    ],
+    "topics": [
+      "compass-swing"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "holdout": true,
+    "note": "Holdout medium. Same swing, Statute then Placard.",
+    "problem": "problem-15-compass-statute-then-placard.txt",
+    "truth": "truth-problem-15.json"
+  },
+  {
+    "id": "16-stilling-caliper-then-seminar",
+    "code": "16",
+    "band": "hard",
+    "houses": [
+      "caliper",
+      "seminar"
+    ],
+    "topics": [
+      "stilling-well"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "holdout": false,
+    "note": "Hard: two formal houses on one well. Topic cannot help; I/you are scarce in both.",
+    "problem": "problem-16-stilling-caliper-then-seminar.txt",
+    "truth": "truth-problem-16.json"
+  },
+  {
+    "id": "17-icehouse-pocket-then-bench",
+    "code": "17",
+    "band": "hard",
+    "houses": [
+      "pocket",
+      "bench"
+    ],
+    "topics": [
+      "icehouse"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "holdout": false,
+    "note": "Hard: Pocket vs Bench, both first-person, same icehouse. Contractions and anyway should carry it.",
+    "problem": "problem-17-icehouse-pocket-then-bench.txt",
+    "truth": "truth-problem-17.json"
+  },
+  {
+    "id": "18-filter-statute-then-seminar",
+    "code": "18",
+    "band": "hard",
+    "houses": [
+      "statute",
+      "seminar"
+    ],
+    "topics": [
+      "slow-sand-filter"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "holdout": false,
+    "note": "Hard: Statute vs Seminar. Both long and formal; shall vs we/however.",
+    "problem": "problem-18-filter-statute-then-seminar.txt",
+    "truth": "truth-problem-18.json"
+  },
+  {
+    "id": "19-signal-caliper-then-statute",
+    "code": "19",
+    "band": "hard",
+    "houses": [
+      "caliper",
+      "statute"
+    ],
+    "topics": [
+      "signal-box"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      1,
+      0
+    ],
+    "holdout": true,
+    "note": "Holdout hard. Caliper log then Statute of the same box. No you, little I.",
+    "problem": "problem-19-signal-caliper-then-statute.txt",
+    "truth": "truth-problem-19.json"
+  },
+  {
+    "id": "20-caliper-well-then-caliper-booth",
+    "code": "20",
+    "band": "trap",
+    "houses": [
+      "caliper"
+    ],
+    "topics": [
+      "stilling-well",
+      "cinema-booth"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      0,
+      0
+    ],
+    "holdout": false,
+    "note": "Trap: Caliper on a well, then Caliper on a booth. Nouns move; house should not.",
+    "problem": "problem-20-caliper-well-then-caliper-booth.txt",
+    "truth": "truth-problem-20.json"
+  },
+  {
+    "id": "21-placard-fog-then-placard-piano",
+    "code": "21",
+    "band": "trap",
+    "houses": [
+      "placard"
+    ],
+    "topics": [
+      "fog-net",
+      "piano-regulation"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      0,
+      0
+    ],
+    "holdout": false,
+    "note": "Trap: Placard fog then Placard piano. You/your throughout.",
+    "problem": "problem-21-placard-fog-then-placard-piano.txt",
+    "truth": "truth-problem-21.json"
+  },
+  {
+    "id": "22-pocket-ice-then-pocket-herbarium",
+    "code": "22",
+    "band": "trap",
+    "houses": [
+      "pocket"
+    ],
+    "topics": [
+      "icehouse",
+      "herbarium"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      0,
+      0
+    ],
+    "holdout": false,
+    "note": "Trap: Pocket ice then Pocket plants. Dashes stay; topic does not.",
+    "problem": "problem-22-pocket-ice-then-pocket-herbarium.txt",
+    "truth": "truth-problem-22.json"
+  },
+  {
+    "id": "23-seminar-compass-then-seminar-grain",
+    "code": "23",
+    "band": "trap",
+    "houses": [
+      "seminar"
+    ],
+    "topics": [
+      "compass-swing",
+      "grain-elevator"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      0,
+      0
+    ],
+    "holdout": true,
+    "note": "Holdout trap. Seminar on a compass, then Seminar on grain dust.",
+    "problem": "problem-23-seminar-compass-then-seminar-grain.txt",
+    "truth": "truth-problem-23.json"
+  },
+  {
+    "id": "24-stilling-caliper-placard-caliper",
+    "code": "24",
+    "band": "return",
+    "houses": [
+      "caliper",
+      "placard",
+      "caliper"
+    ],
+    "topics": [
+      "stilling-well"
+    ],
+    "n_paragraphs": 5,
+    "changes": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "holdout": false,
+    "note": "ABA on one well: Caliper, Placard, Caliper. Two real hinges.",
+    "problem": "problem-24-stilling-caliper-placard-caliper.txt",
+    "truth": "truth-problem-24.json"
+  },
+  {
+    "id": "25-cinema-pocket-statute-pocket",
+    "code": "25",
+    "band": "return",
+    "houses": [
+      "pocket",
+      "statute",
+      "pocket"
+    ],
+    "topics": [
+      "cinema-booth"
+    ],
+    "n_paragraphs": 3,
+    "changes": [
+      1,
+      1
+    ],
+    "holdout": false,
+    "note": "ABA booth: Pocket, Statute, Pocket. Short on purpose; both hinges fire.",
+    "problem": "problem-25-cinema-pocket-statute-pocket.txt",
+    "truth": "truth-problem-25.json"
+  },
+  {
+    "id": "26-filter-bench-seminar-bench",
+    "code": "26",
+    "band": "return",
+    "houses": [
+      "bench",
+      "seminar",
+      "bench"
+    ],
+    "topics": [
+      "slow-sand-filter"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      0,
+      1,
+      1
+    ],
+    "holdout": true,
+    "note": "Holdout return. Bench, Seminar, Bench on one filter.",
+    "problem": "problem-26-filter-bench-seminar-bench.txt",
+    "truth": "truth-problem-26.json"
+  },
+  {
+    "id": "27-stilling-four-houses",
+    "code": "27",
+    "band": "collage",
+    "houses": [
+      "caliper",
+      "placard",
+      "seminar",
+      "pocket"
+    ],
+    "topics": [
+      "stilling-well"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      1,
+      1,
+      1
+    ],
+    "holdout": false,
+    "note": "Four houses, one well. Three hinges, all real.",
+    "problem": "problem-27-stilling-four-houses.txt",
+    "truth": "truth-problem-27.json"
+  },
+  {
+    "id": "28-mixed-statute-bench-caliper-placard",
+    "code": "28",
+    "band": "collage",
+    "houses": [
+      "statute",
+      "bench",
+      "caliper",
+      "placard"
+    ],
+    "topics": [
+      "slow-sand-filter",
+      "weather-balloon",
+      "paper-marbling",
+      "soap-kettle"
+    ],
+    "n_paragraphs": 4,
+    "changes": [
+      1,
+      1,
+      1
+    ],
+    "holdout": true,
+    "note": "Holdout collage. Four houses and four topics. Every hinge is a cut.",
+    "problem": "problem-28-mixed-statute-bench-caliper-placard.txt",
+    "truth": "truth-problem-28.json"
+  }
+]
