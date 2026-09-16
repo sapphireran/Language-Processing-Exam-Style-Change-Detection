@@ -1,0 +1,9 @@
+Okay so here's the thing I keep tripping over when I try to explain style change to people. You don't actually need a fancy model to see that two bits of writing feel different. You just read them out loud. One sounds like a lecture. The other sounds like a text you send at midnight. That's the whole vibe.
+
+I'm not saying the lecture style is bad! It's just doing a different job. Long sentences, lots of "therefore", almost no "I'm". You can feel the writer standing three steps back from the page. When I write like this I stay close. I ask you questions. I use contractions because that's how I talk.
+
+Anyway, the exam trick is to name the features that make that feeling measurable. Sentence length. Contractions. First person. Little words like "just" and "really". Once you can point at those, you're not stuck saying "it feels different". You've got a checklist.
+
+And yeah, short paragraphs can fool you. If I only give you twelve words you shouldn't trust a type-token ratio. That's why the demo skips skinny paragraphs. Don't score noise and then act surprised when the distances go wild.
+
+I'm staying in this voice on purpose. If I suddenly got formal you'd think there was a second author, and there isn't. No fake change points, okay? That's as important as catching the real switches.

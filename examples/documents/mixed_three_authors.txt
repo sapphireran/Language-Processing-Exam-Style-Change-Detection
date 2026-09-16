@@ -1,0 +1,11 @@
+A formal register is characterised by restraint. Sentences are permitted to run long; connectives such as however and therefore are used to mark logical relations; contractions are avoided. The writer does not address the reader as you, nor does the writer linger on personal anecdote. The paragraph is treated as a unit of argument rather than as a turn in a conversation.
+
+That restraint has a measurable footprint. Mean sentence length rises, the rate of first-person pronouns falls, and punctuation shifts toward commas and semicolons rather than question marks. None of these cues is individually decisive. Taken together, they describe a region in feature space that casual prose rarely occupies for long.
+
+Hey, contrast time. I'm switching voices on purpose so you can hear the cut. Short sentences. Lots of I'm and you're. Questions? Sure. I don't care about sounding careful. I care about sounding like a person who would actually send this paragraph.
+
+Still me. I'm not going back to the lecture. You're going to keep seeing contractions, right? Yeah. I really want this second casual paragraph to sound like the first one, not like a textbook trying to be friendly.
+
+Step 1: load the file. Step 2: split paragraphs. Step 3: score 4 axes. Step 4: threshold adjacent gaps. Input: 1 document. Output: 2 cuts.
+
+Step 1: compare neighbours. Step 2: mark each cut. Step 3: cluster leftover groups. Input: 6 paragraphs. Output: 3 labels. Stop on empty input.

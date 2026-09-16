@@ -1,0 +1,9 @@
+The opening argument is written in a single measured voice. It introduces the problem, defines the paragraph as the segmentation unit, and insists that evaluation must distinguish detection of mixture from localisation of boundaries. No second person address is used, and contractions are withheld on purpose.
+
+A second paragraph in the same voice adds only technical caution. Short units inflate type-token ratios; quoted dialogue injects alien pronouns; lists of numbers suppress function-word signal. Those caveats belong to the same writer because they share connective habits and sentence architecture.
+
+Okay I'm the interruption. I'll only stay for two paragraphs and then the lecture voice comes back, which is the part people forget to test. If you only look at adjacent cuts you might invent a third author when the first one returns. That's a clustering problem, not a boundary problem.
+
+Don't merge me into the lecture just because I sit in the middle. I use I, I ask questions, and I don't care about however and therefore. Two styles, three blocks. That's the shape.
+
+When the original voice resumes, the feature vector should move back toward the opening region rather than toward a new third cluster. The correct author sequence is therefore A, A, B, B, A. Adjacent change points occur after the second and fourth paragraphs; the last paragraph is not a new writer.

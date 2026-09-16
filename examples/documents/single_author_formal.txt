@@ -1,0 +1,9 @@
+The comparative study of written style proceeds from a simple observation: many grammatical choices are only weakly constrained by topic. A writer may prefer the definite article, a particular set of connectives, or a habitual sentence length, and those preferences tend to persist across subject matter. Consequently, a document can be treated as a sequence of local style estimates rather than as a single undifferentiated bag of words.
+
+It is nevertheless easy to overstate the stability of those estimates. Paragraph length, quotation, and the intrusion of numbers all perturb surface frequencies. A cautious analysis therefore reports not only a point estimate of style but also a measure of local variability. When variability remains modest, the hypothesis of a single author is at least consistent with the evidence; when it spikes, a change point becomes a live possibility.
+
+Moreover, the most useful markers are often the least salient to a casual reader. Function words, punctuation habits, and rates of contraction survive topical change more reliably than nouns or verbs. The present notes adopt that closed-class inventory and leave open-class vocabulary to complementary tasks such as topic segmentation.
+
+A further methodological caution concerns evaluation. Accuracy on a balanced collection of single-author and multi-author documents can conceal a system that never predicts a boundary. Precision and recall at the boundary, together with a clustering score on author labels, give a more honest picture of what the detector has actually learned.
+
+Finally, unsupervised distance methods should be read as baselines. They make the geometry of the feature space visible, which is pedagogically valuable, but they do not replace supervised models trained on large labelled collections. Their role here is to make the exam concepts executable.

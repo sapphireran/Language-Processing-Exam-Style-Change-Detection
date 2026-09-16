@@ -1,0 +1,7 @@
+{
+  "document": "mixed_three_authors.txt",
+  "multi_author": true,
+  "authors": [0, 0, 1, 1, 2, 2],
+  "changes": [false, true, false, true, false],
+  "notes": "Formal, casual, then a terse procedural voice."
+}

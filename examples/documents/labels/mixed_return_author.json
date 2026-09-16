@@ -1,0 +1,7 @@
+{
+  "document": "mixed_return_author.txt",
+  "multi_author": true,
+  "authors": [0, 0, 1, 1, 0],
+  "changes": [false, true, false, true],
+  "notes": "Author A, interruption by B, then A returns. Two authors, not three."
+}
