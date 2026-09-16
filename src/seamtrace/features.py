@@ -45,6 +45,7 @@ SCALAR_NAMES: tuple[str, ...] = (
     "hedge_rate",
     "contraction_rate",
     "long_word_rate",
+    "starts_lower",
 )
 
 
@@ -94,8 +95,10 @@ def extract_unit_features(text: str) -> UnitFeatures:
         idx = _FW_INDEX.get(tok)
         if idx is not None:
             fw_counts[idx] += 1.0
-    fw_total = sum(fw_counts) or 1.0
-    fw_vec = tuple(c / fw_total for c in fw_counts)
+    # Light add-k: enough to avoid zero vectors, not enough to wash the list.
+    smoothed = [c + 0.05 for c in fw_counts]
+    fw_total = sum(smoothed)
+    fw_vec = tuple(c / fw_total for c in smoothed)
 
     grams = char_ngrams(text, 3)
     gram_counts: dict[str, float] = {}
@@ -125,5 +128,6 @@ def extract_unit_features(text: str) -> UnitFeatures:
         "hedge_rate": rate(sum(t in HEDGES for t in tokens), n_words),
         "contraction_rate": rate(sum(t in CONTRACTIONS for t in tokens), n_words),
         "long_word_rate": rate(sum(len(t) >= 7 for t in tokens), n_words),
+        "starts_lower": float(bool(text) and text[0].islower()),
     }
     return UnitFeatures(text=text, scalars=scalars, function_words=fw_vec, trigrams=gram_vec)

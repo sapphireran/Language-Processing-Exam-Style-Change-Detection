@@ -28,7 +28,8 @@ class Problem:
 def load_problem(path: str | Path, *, mode: str = "auto") -> Problem:
     p = Path(path)
     # newline="" matches the PAN reading note and keeps \r intact.
-    text = p.read_text(encoding="utf-8", newline="")
+    with p.open("r", encoding="utf-8", newline="") as handle:
+        text = handle.read()
     return Problem(path=p, units=split_units(text, mode=mode), text=text)
 
 

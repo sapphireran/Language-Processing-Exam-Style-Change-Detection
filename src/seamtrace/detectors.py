@@ -21,7 +21,7 @@ def _combined(rows: list[ScoreBreakdown]) -> list[float]:
 class ThresholdDetector:
     """Flag a seam when the blended score is at least `threshold`."""
 
-    threshold: float = 0.34
+    threshold: float = 0.42
     name: str = "threshold"
 
     def predict(self, table: FeatureTable) -> list[int]:
@@ -57,7 +57,7 @@ class EnsembleDetector:
     exam failure mode on Hard documents.
     """
 
-    threshold: float = 0.34
+    threshold: float = 0.42
     k: float = 0.85
     name: str = "ensemble"
 

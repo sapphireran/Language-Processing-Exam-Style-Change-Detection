@@ -12,19 +12,12 @@ shows whether the detector saw one late jump or many small wobbles.
 from __future__ import annotations
 
 from .features import FeatureTable
-from .pairwise import pair_score
+from .pairwise import score_document
 from .vector import mean
 
 
 def window_scores(table: FeatureTable, window: int = 2) -> list[float]:
-    if len(table) < 2:
-        return []
-    scores: list[float] = []
-    for i in range(1, len(table)):
-        left_ids = range(max(0, i - window), i)
-        chunk = [pair_score(table.units[j], table.units[i], table) for j in left_ids]
-        scores.append(mean(chunk))
-    return scores
+    return [row.combined for row in score_document(table, window=window)]
 
 
 def cusum_scores(table: FeatureTable, window: int = 2) -> list[float]:

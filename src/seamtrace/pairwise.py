@@ -7,9 +7,9 @@ The score is a weighted blend:
 * mean absolute difference of selected scalars
 * Burrows' Delta on the same function-word space
 
-Weights are exam-tunable. Defaults put most mass on function words
-and trigrams so a topic jump without a register jump scores lower
-than a register jump on the same topic.
+Weights are exam-tunable. Defaults put most mass on a small register
+vector (person, contractions, sentence-initial case) plus function
+words, so a topic jump without a register jump is not an automatic hit.
 """
 
 from __future__ import annotations
@@ -17,18 +17,20 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from .delta import burrows_delta
-from .features import SCALAR_NAMES, FeatureTable, UnitFeatures
+from .features import FeatureTable, UnitFeatures, extract_unit_features
 from .vector import cosine_distance, sparse_cosine_distance
 
-# Scalars that are rates, not raw counts. Counts would dominate.
-RATE_SCALARS = tuple(
-    name
-    for name in SCALAR_NAMES
-    if name
-    not in {
-        "n_chars",
-        "n_words",
-    }
+# Style-leaning rates. TTR / hapax / digits are stored but not blended:
+# they mostly measure length and topic, not register.
+STYLE_SCALARS = (
+    "first_person_rate",
+    "second_person_rate",
+    "contraction_rate",
+    "hedge_rate",
+    "modal_rate",
+    "starts_lower",
+    "long_word_rate",
+    "avg_word_len",
 )
 
 
@@ -42,19 +44,48 @@ class ScoreBreakdown:
 
 
 DEFAULT_WEIGHTS = {
-    "function_words": 0.40,
-    "trigrams": 0.25,
-    "scalars": 0.15,
-    "delta": 0.20,
+    "function_words": 0.35,
+    "trigrams": 0.10,
+    "scalars": 0.40,
+    "delta": 0.15,
 }
+
+# Consecutive units are short. Score the boundary using a left/right window
+# so function-word estimates stop looking orthogonal by accident.
+DEFAULT_WINDOW = 1
+
+
+def _join_window(units: list[UnitFeatures], start: int, end: int) -> UnitFeatures:
+    text = " ".join(unit.text for unit in units[start:end])
+    return extract_unit_features(text)
+
+
+def window_pair(table: FeatureTable, index: int, window: int = DEFAULT_WINDOW) -> tuple[UnitFeatures, UnitFeatures]:
+    left_start = max(0, index - window + 1)
+    right_end = min(len(table), index + 1 + window)
+    left = _join_window(table.units, left_start, index + 1)
+    right = _join_window(table.units, index + 1, right_end)
+    return left, right
 
 
 def _scalar_distance(left: UnitFeatures, right: UnitFeatures) -> float:
-    diffs = [
-        abs(left.scalars[name] - right.scalars[name]) for name in RATE_SCALARS
-    ]
-    # Bound typical rate diffs (0-1) so a single binary flag cannot explode.
-    return sum(min(d, 1.0) for d in diffs) / len(diffs)
+    diffs = []
+    for name in STYLE_SCALARS:
+        a = left.scalars[name]
+        b = right.scalars[name]
+        if name == "avg_word_len":
+            diffs.append(min(abs(a - b) / 8.0, 1.0))
+        else:
+            diffs.append(min(abs(a - b), 1.0))
+    return sum(diffs) / len(diffs)
+
+
+def window_table(table: FeatureTable, window: int = DEFAULT_WINDOW) -> FeatureTable:
+    sides: list[UnitFeatures] = []
+    for i in range(max(0, len(table) - 1)):
+        left, right = window_pair(table, i, window)
+        sides.extend([left, right])
+    return FeatureTable(sides) if sides else table
 
 
 def breakdown(
@@ -67,7 +98,8 @@ def breakdown(
     fw = cosine_distance(left.function_words, right.function_words)
     tri = sparse_cosine_distance(left.trigrams, right.trigrams)
     sc = _scalar_distance(left, right)
-    de = burrows_delta(left, right, table)
+    raw_delta = burrows_delta(left, right, table)
+    de = raw_delta / (1.0 + raw_delta)
     combined = (
         w["function_words"] * fw
         + w["trigrams"] * tri
@@ -93,9 +125,15 @@ def pair_score(
 
 
 def score_document(
-    table: FeatureTable, weights: dict[str, float] | None = None
+    table: FeatureTable,
+    weights: dict[str, float] | None = None,
+    window: int = DEFAULT_WINDOW,
 ) -> list[ScoreBreakdown]:
-    return [
-        breakdown(table.units[i], table.units[i + 1], table, weights)
-        for i in range(len(table) - 1)
-    ]
+    if len(table) < 2:
+        return []
+    ref = window_table(table, window)
+    rows = []
+    for i in range(len(table) - 1):
+        left, right = window_pair(table, i, window)
+        rows.append(breakdown(left, right, ref, weights))
+    return rows

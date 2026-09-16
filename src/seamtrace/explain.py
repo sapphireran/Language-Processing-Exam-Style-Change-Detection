@@ -17,7 +17,7 @@ from dataclasses import dataclass
 
 from .features import FeatureTable
 from .lexicon import FUNCTION_WORDS
-from .pairwise import ScoreBreakdown, breakdown
+from .pairwise import ScoreBreakdown, breakdown, window_pair, window_table
 from .tokenize import words
 
 
@@ -55,9 +55,8 @@ def explain_pair(
     gold: int | None,
     threshold: float,
 ) -> PairExplanation:
-    left = table.units[index]
-    right = table.units[index + 1]
-    parts = breakdown(left, right, table)
+    left, right = window_pair(table, index)
+    parts = breakdown(left, right, window_table(table))
     topic = _content_shift(left.text, right.text)
     n_left = left.scalars["n_words"]
     n_right = right.scalars["n_words"]

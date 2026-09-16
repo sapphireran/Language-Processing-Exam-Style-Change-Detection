@@ -139,7 +139,7 @@ def cmd_features(args: argparse.Namespace) -> int:
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="seamtrace", description="Personal style-change exam lab")
     p.add_argument("--detector", default="threshold", choices=["threshold", "adaptive", "ensemble"])
-    p.add_argument("--threshold", type=float, default=0.34)
+    p.add_argument("--threshold", type=float, default=0.42)
     p.add_argument("--k", type=float, default=0.85)
     sub = p.add_subparsers(dest="cmd", required=True)
 
