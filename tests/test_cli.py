@@ -15,8 +15,14 @@ EASY = CORPUS / "easy" / "problem-01-ferry-marsh-knit.txt"
 
 class CliTests(unittest.TestCase):
     def test_split_counts_paragraphs(self) -> None:
-        code = main(["split", str(EASY)])
+        import io
+        from contextlib import redirect_stdout
+
+        buf = io.StringIO()
+        with redirect_stdout(buf):
+            code = main(["split", str(EASY)])
         self.assertEqual(code, 0)
+        self.assertIn("paragraphs=6", buf.getvalue())
 
     def test_detect_json(self) -> None:
         import io
@@ -30,8 +36,13 @@ class CliTests(unittest.TestCase):
         self.assertEqual(payload["changes"], [0, 1, 0, 1, 0])
 
     def test_predict_dir_writes_solutions(self) -> None:
+        import io
+        from contextlib import redirect_stdout
+
         with tempfile.TemporaryDirectory() as tmp:
-            code = main(["predict-dir", str(CORPUS / "easy"), tmp])
+            buf = io.StringIO()
+            with redirect_stdout(buf):
+                code = main(["predict-dir", str(CORPUS / "easy"), tmp])
             self.assertEqual(code, 0)
             written = sorted(Path(tmp).glob("solution-problem-*.json"))
             self.assertEqual(len(written), 3)
