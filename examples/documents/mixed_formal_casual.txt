@@ -1,0 +1,11 @@
+Style change detection asks whether a document remains stylistically homogeneous or whether its local writing habits shift. The operational unit is usually the paragraph. Each unit is mapped to a vector of frequencies, distances between neighbours are computed, and peaks in that series are treated as candidate boundaries.
+
+The appeal of this formulation is that it separates three questions that are often conflated. First, does more than one authorial style appear at all? Second, where do the transitions occur? Third, can paragraphs be grouped into latent authors, including the case in which an earlier style returns after an interruption?
+
+Those questions are not interchangeable. A detector may notice that a document is mixed without placing the boundary on the correct paragraph, and it may place boundaries correctly while still failing to recognise that the first and last blocks belong to the same writer.
+
+Okay but that's the textbook version and it sounds way stiffer than what you actually do in practice. You grab a chunk, you count the little words, and you see whether the next chunk suddenly starts talking like a different person. If it does, you mark the cut. If it doesn't, you move on. That's it.
+
+I'm being sloppy on purpose here so the contrast is obvious. Look at the contractions. Look at how often I say I. Look at the questions I keep throwing at you. None of that showed up in the first three paragraphs, and that's the whole point of the example.
+
+If this demo works, the distances should stay small across the formal block, jump hard when my voice arrives, and then stay high-ish inside this casual block only if I start contradicting myself. I won't. I'll just keep chatting until the file ends.

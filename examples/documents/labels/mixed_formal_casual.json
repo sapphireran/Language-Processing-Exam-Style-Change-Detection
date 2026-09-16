@@ -1,0 +1,7 @@
+{
+  "document": "mixed_formal_casual.txt",
+  "multi_author": true,
+  "authors": [0, 0, 0, 1, 1, 1],
+  "changes": [false, false, true, false, false],
+  "notes": "Formal lecture voice for three paragraphs, then a casual voice."
+}
