@@ -1,0 +1,8 @@
+{
+  "changes": [1, 1],
+  "authors": 2,
+  "paragraph_authors": [1, 2, 1],
+  "title": "Returning author: ferry diary, hotel review, diary",
+  "difficulty": "medium",
+  "notes": "A-B-A. A change vector cannot name the returning author; clustering can."
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Four-paragraph collage: counsel, student, committee, student</title>
+<style>
+body { font: 16px/1.45 Georgia, serif; margin: 2rem auto; max-width: 980px; color: #222; }
+h1,h2 { font-family: Palatino, Georgia, serif; }
+.para { border: 1px solid #ddd4c4; padding: 0.8rem 1rem; margin: 0.7rem 0; background: #fffdf8; }
+.para.change { border-left: 6px solid #a33; background: #fff6f2; }
+.para header { font: 12px/1.3 Menlo, Consolas, monospace; color: #555; margin-bottom: 0.4rem; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { border-bottom: 1px solid #eadfcf; padding: 0.35rem 0.4rem; vertical-align: middle; }
+th { text-align: left; font-family: Menlo, Consolas, monospace; }
+.hit { color: #a33; font-weight: 700; }
+.miss { color: #888; }
+.bar { position: relative; height: 14px; background: #f0e8dc; min-width: 70px; }
+.bar span { display: block; height: 100%; }
+.bar em { position: absolute; inset: 0; font: 11px Menlo, Consolas, monospace; text-align: center; }
+.score { background: #eef5ea; padding: 0.6rem 0.8rem; }
+.figs svg { margin: 0.4rem 0.4rem 0.4rem 0; }
+.note { color: #555; font-size: 0.95rem; }
+</style>
+</head>
+<body>
+<h1>Four-paragraph collage: counsel, student, committee, student</h1>
+<p class="note">Personal exam lab report · method <code>ensemble</code> ·
+4 paragraphs · changes [1, 1, 1]</p>
+<p class="score">Gold [1, 1, 1] · Pred [1, 1, 1] · P 1.00 · R 1.00 · F1 1.00</p>
+<h2>Paragraphs</h2>
+<section class="para"><header>P1 · 19 words · sent 19.0 · formality 0.99 · contr 0.00</header><p>Pursuant to clause 4.2, the licensee shall not sublicense the dataset, nor any derivative embedding, without prior written consent.</p></section><section class="para change"><header>P2 style change ↑ · 20 words · sent 20.0 · formality -0.40 · contr 0.00</header><p>yeah but we already shipped the demo to two classes so that clause is a bit theoretical at this point??</p></section><section class="para change"><header>P3 style change ↑ · 18 words · sent 18.0 · formality 0.93 · contr 0.00</header><p>The committee notes the breach and recommends a retrospective addendum rather than a recall of the teaching materials.</p></section><section class="para change"><header>P4 style change ↑ · 17 words · sent 17.0 · formality 0.61 · contr 0.00</header><p>i can draft the addendum tonight, just tell me whether we need legal english or human english</p></section>
+<h2>Adjacent channels</h2>
+<table>
+<thead><tr><th>pair</th><th>Δ?</th><th>formality</th><th>register</th><th>pronoun</th><th>contr</th><th>char3</th><th>topic</th><th>votes</th></tr></thead>
+<tbody>
+<tr><td>1→2</td><td class='hit'>YES</td><td><div class="bar"><span style="width:100.0%;background:#4a7c3a"></span><em>1.39</em></div></td><td><div class="bar"><span style="width:100.0%;background:#2c6e8a"></span><em>2.80</em></div></td><td><div class="bar"><span style="width:50.0%;background:#6b4c9a"></span><em>1.00</em></div></td><td><div class="bar"><span style="width:0.0%;background:#8a4b2c"></span><em>0.00</em></div></td><td><div class="bar"><span style="width:77.5%;background:#8a6a2c"></span><em>0.78</em></div></td><td><div class="bar"><span style="width:94.4%;background:#666"></span><em>0.94</em></div></td><td>formality=1.39≥0.40 (strong); person=1.00≥1.00; register=2.80≥0.46 (strong); marker=0.05≥0.05 (strong)</td></tr><tr><td>2→3</td><td class='hit'>YES</td><td><div class="bar"><span style="width:100.0%;background:#4a7c3a"></span><em>1.33</em></div></td><td><div class="bar"><span style="width:100.0%;background:#2c6e8a"></span><em>2.76</em></div></td><td><div class="bar"><span style="width:50.0%;background:#6b4c9a"></span><em>1.00</em></div></td><td><div class="bar"><span style="width:0.0%;background:#8a4b2c"></span><em>0.00</em></div></td><td><div class="bar"><span style="width:78.0%;background:#8a6a2c"></span><em>0.78</em></div></td><td><div class="bar"><span style="width:100.0%;background:#666"></span><em>1.00</em></div></td><td>formality=1.33≥0.40 (strong); person=1.00≥1.00; register=2.76≥0.46 (strong); marker=0.05≥0.05 (strong)</td></tr><tr><td>3→4</td><td class='hit'>YES</td><td><div class="bar"><span style="width:26.5%;background:#4a7c3a"></span><em>0.32</em></div></td><td><div class="bar"><span style="width:32.9%;background:#2c6e8a"></span><em>0.39</em></div></td><td><div class="bar"><span style="width:100.0%;background:#6b4c9a"></span><em>2.00</em></div></td><td><div class="bar"><span style="width:0.0%;background:#8a4b2c"></span><em>0.00</em></div></td><td><div class="bar"><span style="width:76.7%;background:#8a6a2c"></span><em>0.77</em></div></td><td><div class="bar"><span style="width:94.4%;background:#666"></span><em>0.94</em></div></td><td>formality=0.32≥0.22; person=2.00≥2.00 (strong); pronoun=0.18≥0.15 (strong); register=0.39≥0.26; marker=0.06≥0.05 (strong)</td></tr>
+</tbody>
+</table>
+<h2>CUSUM paths</h2>
+<div class="figs"><svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140"><rect x="0" y="0" width="420" height="140" fill="#f7f4ee"/><line x1="12" y1="115.3" x2="408" y2="115.3" stroke="#cbbba0" stroke-dasharray="3 3"/><polyline fill="none" stroke="#255f8a" stroke-width="2" points="12.0,12.0 144.0,128.0 276.0,49.0 408.0,115.3"/><text x="12" y="10" font-size="10" fill="#255f8a">mean_word_len CUSUM</text><text x="12.0" y="138" font-size="9" text-anchor="middle">1</text><text x="144.0" y="138" font-size="9" text-anchor="middle">2</text><text x="276.0" y="138" font-size="9" text-anchor="middle">3</text><text x="408.0" y="138" font-size="9" text-anchor="middle">4</text></svg><svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140"><rect x="0" y="0" width="420" height="140" fill="#f7f4ee"/><line x1="12" y1="128.0" x2="408" y2="128.0" stroke="#cbbba0" stroke-dasharray="3 3"/><polyline fill="none" stroke="#255f8a" stroke-width="2" points="12.0,99.0 144.0,12.0 276.0,41.0 408.0,128.0"/><text x="12" y="10" font-size="10" fill="#255f8a">mean_sent_len CUSUM</text><text x="12.0" y="138" font-size="9" text-anchor="middle">1</text><text x="144.0" y="138" font-size="9" text-anchor="middle">2</text><text x="276.0" y="138" font-size="9" text-anchor="middle">3</text><text x="408.0" y="138" font-size="9" text-anchor="middle">4</text></svg><svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140"><rect x="0" y="0" width="420" height="140" fill="#f7f4ee"/><line x1="12" y1="69.2" x2="408" y2="69.2" stroke="#cbbba0" stroke-dasharray="3 3"/><polyline fill="none" stroke="#255f8a" stroke-width="2" points="12.0,12.0 144.0,128.0 276.0,78.8 408.0,69.2"/><text x="12" y="10" font-size="10" fill="#255f8a">formality CUSUM</text><text x="12.0" y="138" font-size="9" text-anchor="middle">1</text><text x="144.0" y="138" font-size="9" text-anchor="middle">2</text><text x="276.0" y="138" font-size="9" text-anchor="middle">3</text><text x="408.0" y="138" font-size="9" text-anchor="middle">4</text></svg></div>
+</body>
+</html>

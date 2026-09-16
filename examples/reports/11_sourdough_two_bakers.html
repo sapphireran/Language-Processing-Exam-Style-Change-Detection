@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Two bakers, one dough</title>
+<style>
+body { font: 16px/1.45 Georgia, serif; margin: 2rem auto; max-width: 980px; color: #222; }
+h1,h2 { font-family: Palatino, Georgia, serif; }
+.para { border: 1px solid #ddd4c4; padding: 0.8rem 1rem; margin: 0.7rem 0; background: #fffdf8; }
+.para.change { border-left: 6px solid #a33; background: #fff6f2; }
+.para header { font: 12px/1.3 Menlo, Consolas, monospace; color: #555; margin-bottom: 0.4rem; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { border-bottom: 1px solid #eadfcf; padding: 0.35rem 0.4rem; vertical-align: middle; }
+th { text-align: left; font-family: Menlo, Consolas, monospace; }
+.hit { color: #a33; font-weight: 700; }
+.miss { color: #888; }
+.bar { position: relative; height: 14px; background: #f0e8dc; min-width: 70px; }
+.bar span { display: block; height: 100%; }
+.bar em { position: absolute; inset: 0; font: 11px Menlo, Consolas, monospace; text-align: center; }
+.score { background: #eef5ea; padding: 0.6rem 0.8rem; }
+.figs svg { margin: 0.4rem 0.4rem 0.4rem 0; }
+.note { color: #555; font-size: 0.95rem; }
+</style>
+</head>
+<body>
+<h1>Two bakers, one dough</h1>
+<p class="note">Personal exam lab report · method <code>ensemble</code> ·
+4 paragraphs · changes [1, 1, 1]</p>
+<p class="score">Gold [1, 1, 1] · Pred [1, 1, 1] · P 1.00 · R 1.00 · F1 1.00</p>
+<h2>Paragraphs</h2>
+<section class="para"><header>P1 · 58 words · sent 14.5 · formality 0.69 · contr 0.00</header><p>You feed the starter when it smells lonely, not when the clock says so. A spoon of flour, a splash of water, wait until it looks like a sponge that wants to climb out. If it smells like nail polish you were late; throw half away and start again. My mother never measured and the bread still rose.</p></section><section class="para change"><header>P2 style change ↑ · 49 words · sent 24.5 · formality 1.02 · contr 0.00</header><p>Hydration is expressed as water mass over flour mass. At 75 percent the dough is extensible enough for an open crumb, provided gluten has been developed by folds at thirty-minute intervals and the bulk ferment is halted around 50 percent volume increase, not by a wall-clock rule.</p></section><section class="para change"><header>P3 style change ↑ · 38 words · sent 9.5 · formality 0.59 · contr 0.03</header><p>Don&#x27;t scare people with percentages. If the dough sticks to your fingers like gum it is too wet; dust the board. If it tears instead of stretching, it is tired or thirsty. You will know after two loaves.</p></section><section class="para change"><header>P4 style change ↑ · 42 words · sent 14.0 · formality 0.88 · contr 0.00</header><p>Alveometry is nevertheless unnecessary at home. What is necessary, however, is a consistent flour, a starter whose peak is observed rather than assumed, and a baking stone that has been above 250 C for at least forty minutes. The rest is commentary.</p></section>
+<h2>Adjacent channels</h2>
+<table>
+<thead><tr><th>pair</th><th>Δ?</th><th>formality</th><th>register</th><th>pronoun</th><th>contr</th><th>char3</th><th>topic</th><th>votes</th></tr></thead>
+<tbody>
+<tr><td>1→2</td><td class='hit'>YES</td><td><div class="bar"><span style="width:27.9%;background:#4a7c3a"></span><em>0.33</em></div></td><td><div class="bar"><span style="width:21.1%;background:#2c6e8a"></span><em>0.25</em></div></td><td><div class="bar"><span style="width:100.0%;background:#6b4c9a"></span><em>2.00</em></div></td><td><div class="bar"><span style="width:0.0%;background:#8a4b2c"></span><em>0.00</em></div></td><td><div class="bar"><span style="width:74.3%;background:#8a6a2c"></span><em>0.74</em></div></td><td><div class="bar"><span style="width:94.2%;background:#666"></span><em>0.94</em></div></td><td>formality=0.33≥0.22; person=2.00≥2.00 (strong); marker=0.03≥0.03</td></tr><tr><td>2→3</td><td class='hit'>YES</td><td><div class="bar"><span style="width:36.0%;background:#4a7c3a"></span><em>0.43</em></div></td><td><div class="bar"><span style="width:26.8%;background:#2c6e8a"></span><em>0.32</em></div></td><td><div class="bar"><span style="width:50.0%;background:#6b4c9a"></span><em>1.00</em></div></td><td><div class="bar"><span style="width:13.2%;background:#8a4b2c"></span><em>0.03</em></div></td><td><div class="bar"><span style="width:76.1%;background:#8a6a2c"></span><em>0.76</em></div></td><td><div class="bar"><span style="width:97.7%;background:#666"></span><em>0.98</em></div></td><td>formality=0.43≥0.40 (strong); person=1.00≥1.00; register=0.32≥0.26; sentlen=0.88≥0.80</td></tr><tr><td>3→4</td><td class='hit'>YES</td><td><div class="bar"><span style="width:24.1%;background:#4a7c3a"></span><em>0.29</em></div></td><td><div class="bar"><span style="width:24.8%;background:#2c6e8a"></span><em>0.30</em></div></td><td><div class="bar"><span style="width:50.0%;background:#6b4c9a"></span><em>1.00</em></div></td><td><div class="bar"><span style="width:13.2%;background:#8a4b2c"></span><em>0.03</em></div></td><td><div class="bar"><span style="width:78.9%;background:#8a6a2c"></span><em>0.79</em></div></td><td><div class="bar"><span style="width:100.0%;background:#666"></span><em>1.00</em></div></td><td>formality=0.29≥0.22; person=1.00≥1.00; register=0.30≥0.26; marker=0.07≥0.05 (strong)</td></tr>
+</tbody>
+</table>
+<h2>CUSUM paths</h2>
+<div class="figs"><svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140"><rect x="0" y="0" width="420" height="140" fill="#f7f4ee"/><line x1="12" y1="12.0" x2="408" y2="12.0" stroke="#cbbba0" stroke-dasharray="3 3"/><polyline fill="none" stroke="#255f8a" stroke-width="2" points="12.0,128.0 144.0,61.2 276.0,115.0 408.0,12.0"/><text x="12" y="10" font-size="10" fill="#255f8a">mean_word_len CUSUM</text><text x="12.0" y="138" font-size="9" text-anchor="middle">1</text><text x="144.0" y="138" font-size="9" text-anchor="middle">2</text><text x="276.0" y="138" font-size="9" text-anchor="middle">3</text><text x="408.0" y="138" font-size="9" text-anchor="middle">4</text></svg><svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140"><rect x="0" y="0" width="420" height="140" fill="#f7f4ee"/><line x1="12" y1="113.3" x2="408" y2="113.3" stroke="#cbbba0" stroke-dasharray="3 3"/><polyline fill="none" stroke="#255f8a" stroke-width="2" points="12.0,128.0 144.0,12.0 276.0,92.1 408.0,113.3"/><text x="12" y="10" font-size="10" fill="#255f8a">mean_sent_len CUSUM</text><text x="12.0" y="138" font-size="9" text-anchor="middle">1</text><text x="144.0" y="138" font-size="9" text-anchor="middle">2</text><text x="276.0" y="138" font-size="9" text-anchor="middle">3</text><text x="408.0" y="138" font-size="9" text-anchor="middle">4</text></svg><svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140"><rect x="0" y="0" width="420" height="140" fill="#f7f4ee"/><line x1="12" y1="73.2" x2="408" y2="73.2" stroke="#cbbba0" stroke-dasharray="3 3"/><polyline fill="none" stroke="#255f8a" stroke-width="2" points="12.0,128.0 144.0,12.0 276.0,116.3 408.0,73.2"/><text x="12" y="10" font-size="10" fill="#255f8a">formality CUSUM</text><text x="12.0" y="138" font-size="9" text-anchor="middle">1</text><text x="144.0" y="138" font-size="9" text-anchor="middle">2</text><text x="276.0" y="138" font-size="9" text-anchor="middle">3</text><text x="408.0" y="138" font-size="9" text-anchor="middle">4</text></svg></div>
+</body>
+</html>

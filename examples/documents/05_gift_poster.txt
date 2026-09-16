@@ -1,0 +1,7 @@
+We present a compact architecture for on-device keyword spotting. The proposed model attains 96.2 percent accuracy on a held-out bilingual set while remaining within a 250 kilobyte parameter budget, thereby enabling always-on inference on commodity microcontrollers.
+
+Okay so the actual training story is messier. I tried three learning rates, the middle one exploded on day two, and the final number is from the run that didn't crash. I still think the tiny model is the right call but please don't cite the 96.2 as if we swept the whole grid.
+
+Latency was measured on a single development board at room temperature. Results should be interpreted as an existence proof rather than a hardware survey.
+
+Also I forgot to freeze the seed on the first two runs so those logs are gone. If anyone asks in the poster session I'll just say we report the stable replicate. Sorry.

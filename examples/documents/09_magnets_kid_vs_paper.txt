@@ -1,0 +1,7 @@
+Magnets have two ends. We call them north and south. If you push two norths together they fight, and if you put a north near a south they hug. That is why a fridge magnet sticks: the door is happy to be a south when the magnet is a north.
+
+Two like poles of a permanent magnet produce a repulsive force; opposite poles attract. In the continuum approximation the field is divergence-free outside the material, and the observed stickiness of a kitchen magnet is a boundary-value problem, not a lesson about the magnet "wanting" anything.
+
+You can make a magnet weaker by hitting it or by making it very hot. The tiny arrows inside get confused and stop pointing the same way. When they all point together again, the magnet is strong.
+
+However, thermal agitation and mechanical shock both degrade remanence by randomising domain orientation. Recovery, when it occurs, is consequently a re-alignment process; it should not be described as the arrows deciding to cooperate.

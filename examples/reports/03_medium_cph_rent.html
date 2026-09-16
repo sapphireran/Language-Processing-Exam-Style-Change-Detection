@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Medium: two voices on Copenhagen rent (A B A B)</title>
+<style>
+body { font: 16px/1.45 Georgia, serif; margin: 2rem auto; max-width: 980px; color: #222; }
+h1,h2 { font-family: Palatino, Georgia, serif; }
+.para { border: 1px solid #ddd4c4; padding: 0.8rem 1rem; margin: 0.7rem 0; background: #fffdf8; }
+.para.change { border-left: 6px solid #a33; background: #fff6f2; }
+.para header { font: 12px/1.3 Menlo, Consolas, monospace; color: #555; margin-bottom: 0.4rem; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { border-bottom: 1px solid #eadfcf; padding: 0.35rem 0.4rem; vertical-align: middle; }
+th { text-align: left; font-family: Menlo, Consolas, monospace; }
+.hit { color: #a33; font-weight: 700; }
+.miss { color: #888; }
+.bar { position: relative; height: 14px; background: #f0e8dc; min-width: 70px; }
+.bar span { display: block; height: 100%; }
+.bar em { position: absolute; inset: 0; font: 11px Menlo, Consolas, monospace; text-align: center; }
+.score { background: #eef5ea; padding: 0.6rem 0.8rem; }
+.figs svg { margin: 0.4rem 0.4rem 0.4rem 0; }
+.note { color: #555; font-size: 0.95rem; }
+</style>
+</head>
+<body>
+<h1>Medium: two voices on Copenhagen rent (A B A B)</h1>
+<p class="note">Personal exam lab report · method <code>ensemble</code> ·
+4 paragraphs · changes [1, 1, 1]</p>
+<p class="score">Gold [1, 1, 1] · Pred [1, 1, 1] · P 1.00 · R 1.00 · F1 1.00</p>
+<h2>Paragraphs</h2>
+<section class="para"><header>P1 · 48 words · sent 16.0 · formality 0.70 · contr 0.02</header><p>Honestly the rent here is mental. Eleven thousand for a room where the shower is basically a sad curtain and the fridge hums like it&#x27;s dying. I viewed three places last week and they all wanted a Danish degree, a parent with a cpr number, and a smile.</p></section><section class="para change"><header>P2 style change ↑ · 31 words · sent 15.5 · formality 0.93 · contr 0.00</header><p>The Copenhagen rental market remains constrained. Applicants should expect documentation of income, a deposit equivalent to three months&#x27; rent, and little room for negotiation on fixtures that fail ordinary habitability tests.</p></section><section class="para change"><header>P3 style change ↑ · 38 words · sent 9.5 · formality 0.37 · contr 0.03</header><p>I told the agent I could pay six months up front and she still said the landlord wanted a local guarantor. Like, I have a job. I have a contract. It just isn&#x27;t the right kind of paper.</p></section><section class="para change"><header>P4 style change ↑ · 41 words · sent 20.5 · formality 1.03 · contr 0.00</header><p>Landlords, for their part, cite the cost of compliance with fire regulations and the scarcity of legal short-term lets. These explanations are not always false; they are, however, routinely used to justify rooms that would not survive a municipal inspection.</p></section>
+<h2>Adjacent channels</h2>
+<table>
+<thead><tr><th>pair</th><th>Δ?</th><th>formality</th><th>register</th><th>pronoun</th><th>contr</th><th>char3</th><th>topic</th><th>votes</th></tr></thead>
+<tbody>
+<tr><td>1→2</td><td class='hit'>YES</td><td><div class="bar"><span style="width:18.6%;background:#4a7c3a"></span><em>0.22</em></div></td><td><div class="bar"><span style="width:14.5%;background:#2c6e8a"></span><em>0.17</em></div></td><td><div class="bar"><span style="width:50.0%;background:#6b4c9a"></span><em>1.00</em></div></td><td><div class="bar"><span style="width:10.4%;background:#8a4b2c"></span><em>0.02</em></div></td><td><div class="bar"><span style="width:71.7%;background:#8a6a2c"></span><em>0.72</em></div></td><td><div class="bar"><span style="width:93.3%;background:#666"></span><em>0.93</em></div></td><td>formality=0.22≥0.22; person=1.00≥1.00</td></tr><tr><td>2→3</td><td class='hit'>YES</td><td><div class="bar"><span style="width:46.6%;background:#4a7c3a"></span><em>0.56</em></div></td><td><div class="bar"><span style="width:38.6%;background:#2c6e8a"></span><em>0.46</em></div></td><td><div class="bar"><span style="width:50.0%;background:#6b4c9a"></span><em>1.00</em></div></td><td><div class="bar"><span style="width:13.2%;background:#8a4b2c"></span><em>0.03</em></div></td><td><div class="bar"><span style="width:77.1%;background:#8a6a2c"></span><em>0.77</em></div></td><td><div class="bar"><span style="width:97.4%;background:#666"></span><em>0.97</em></div></td><td>formality=0.56≥0.40 (strong); person=1.00≥1.00; pronoun=0.11≥0.09; register=0.46≥0.46 (strong); marker=0.05≥0.05 (strong)</td></tr><tr><td>3→4</td><td class='hit'>YES</td><td><div class="bar"><span style="width:55.1%;background:#4a7c3a"></span><em>0.66</em></div></td><td><div class="bar"><span style="width:44.9%;background:#2c6e8a"></span><em>0.54</em></div></td><td><div class="bar"><span style="width:50.0%;background:#6b4c9a"></span><em>1.00</em></div></td><td><div class="bar"><span style="width:13.2%;background:#8a4b2c"></span><em>0.03</em></div></td><td><div class="bar"><span style="width:68.9%;background:#8a6a2c"></span><em>0.69</em></div></td><td><div class="bar"><span style="width:100.0%;background:#666"></span><em>1.00</em></div></td><td>formality=0.66≥0.40 (strong); person=1.00≥1.00; pronoun=0.11≥0.09; register=0.54≥0.46 (strong); marker=0.08≥0.05 (strong)</td></tr>
+</tbody>
+</table>
+<h2>CUSUM paths</h2>
+<div class="figs"><svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140"><rect x="0" y="0" width="420" height="140" fill="#f7f4ee"/><line x1="12" y1="72.6" x2="408" y2="72.6" stroke="#cbbba0" stroke-dasharray="3 3"/><polyline fill="none" stroke="#255f8a" stroke-width="2" points="12.0,128.0 144.0,12.0 276.0,102.2 408.0,72.6"/><text x="12" y="10" font-size="10" fill="#255f8a">mean_word_len CUSUM</text><text x="12.0" y="138" font-size="9" text-anchor="middle">1</text><text x="144.0" y="138" font-size="9" text-anchor="middle">2</text><text x="276.0" y="138" font-size="9" text-anchor="middle">3</text><text x="408.0" y="138" font-size="9" text-anchor="middle">4</text></svg><svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140"><rect x="0" y="0" width="420" height="140" fill="#f7f4ee"/><line x1="12" y1="26.8" x2="408" y2="26.8" stroke="#cbbba0" stroke-dasharray="3 3"/><polyline fill="none" stroke="#255f8a" stroke-width="2" points="12.0,14.5 144.0,12.0 276.0,128.0 408.0,26.8"/><text x="12" y="10" font-size="10" fill="#255f8a">mean_sent_len CUSUM</text><text x="12.0" y="138" font-size="9" text-anchor="middle">1</text><text x="144.0" y="138" font-size="9" text-anchor="middle">2</text><text x="276.0" y="138" font-size="9" text-anchor="middle">3</text><text x="408.0" y="138" font-size="9" text-anchor="middle">4</text></svg><svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140"><rect x="0" y="0" width="420" height="140" fill="#f7f4ee"/><line x1="12" y1="46.8" x2="408" y2="46.8" stroke="#cbbba0" stroke-dasharray="3 3"/><polyline fill="none" stroke="#255f8a" stroke-width="2" points="12.0,62.7 144.0,12.0 276.0,128.0 408.0,46.8"/><text x="12" y="10" font-size="10" fill="#255f8a">formality CUSUM</text><text x="12.0" y="138" font-size="9" text-anchor="middle">1</text><text x="144.0" y="138" font-size="9" text-anchor="middle">2</text><text x="276.0" y="138" font-size="9" text-anchor="middle">3</text><text x="408.0" y="138" font-size="9" text-anchor="middle">4</text></svg></div>
+</body>
+</html>

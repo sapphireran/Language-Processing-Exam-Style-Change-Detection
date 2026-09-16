@@ -1,0 +1,9 @@
+Each player begins with seven cards. On a turn, a player must either play a card whose colour or value matches the card on the discard pile, or draw one card from the deck. Play proceeds clockwise unless a reverse card is resolved.
+
+hi so we tried this last night and the reverse card is broken? like if two people play it back to back nobody knows whose turn it is and we just argued for ten minutes. rules don't say what happens if the deck is empty either lol
+
+Thank you for writing. The empty-deck case is covered in appendix B: shuffle the discard pile, leaving the top card in place, and continue. Consecutive reverse cards do invert the direction twice, which returns play to the original orientation; we will add an example to the next printing.
+
+I still think appendix B is hiding. None of us saw it and the icon on the box is tiny. Maybe put the empty-deck rule on the player aid? Otherwise people are going to house-rule it and then review-bomb you.
+
+The next printing will move the empty-deck reminder onto the player aid. We appreciate the report; ambiguity of this kind is exactly what a second edition is for.
