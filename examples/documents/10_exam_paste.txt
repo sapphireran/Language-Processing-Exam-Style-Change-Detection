@@ -1,0 +1,5 @@
+Style change detection is the task of finding positions in a document where the author switches. In the paragraph-level version, each paragraph has one author, and the system emits a binary label for every pair of neighbours.
+
+Style-change detection (also known as multi-author writing style analysis) is an intrinsic authorship problem in which a system must identify the positions at which authorship changes within a single document, typically at paragraph boundaries, without access to a reference corpus of candidate authors.
+
+ok time was almost up so this last bit is just me: the hard split is the one where topic stays put, so if your model is actually a topic model it falls over. that's the answer they want. sorry for the mess.

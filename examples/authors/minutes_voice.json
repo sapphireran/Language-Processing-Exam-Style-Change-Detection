@@ -1,0 +1,11 @@
+{
+  "name": "minutes_voice",
+  "register": "minutes",
+  "notes": "Attendees, actions, third person.",
+  "paragraphs": [
+    "Attendees: Lin, Omar, Priya. The group approved the March budget with one abstention.",
+    "Action: Omar to circulate the revised appendix by Friday 16:00.",
+    "A correction is recorded. The Friday deadline is contingent on finance releasing the underlying figures.",
+    "Priya will contact legal regarding the indemnity clause; this action was omitted from the first draft."
+  ]
+}

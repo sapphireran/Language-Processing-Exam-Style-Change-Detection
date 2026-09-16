@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Exam answer with a pasted middle paragraph</title>
+<style>
+body { font: 16px/1.45 Georgia, serif; margin: 2rem auto; max-width: 980px; color: #222; }
+h1,h2 { font-family: Palatino, Georgia, serif; }
+.para { border: 1px solid #ddd4c4; padding: 0.8rem 1rem; margin: 0.7rem 0; background: #fffdf8; }
+.para.change { border-left: 6px solid #a33; background: #fff6f2; }
+.para header { font: 12px/1.3 Menlo, Consolas, monospace; color: #555; margin-bottom: 0.4rem; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { border-bottom: 1px solid #eadfcf; padding: 0.35rem 0.4rem; vertical-align: middle; }
+th { text-align: left; font-family: Menlo, Consolas, monospace; }
+.hit { color: #a33; font-weight: 700; }
+.miss { color: #888; }
+.bar { position: relative; height: 14px; background: #f0e8dc; min-width: 70px; }
+.bar span { display: block; height: 100%; }
+.bar em { position: absolute; inset: 0; font: 11px Menlo, Consolas, monospace; text-align: center; }
+.score { background: #eef5ea; padding: 0.6rem 0.8rem; }
+.figs svg { margin: 0.4rem 0.4rem 0.4rem 0; }
+.note { color: #555; font-size: 0.95rem; }
+</style>
+</head>
+<body>
+<h1>Exam answer with a pasted middle paragraph</h1>
+<p class="note">Personal exam lab report · method <code>ensemble</code> ·
+3 paragraphs · changes [1, 1]</p>
+<p class="score">Gold [1, 1] · Pred [1, 1] · P 1.00 · R 1.00 · F1 1.00</p>
+<h2>Paragraphs</h2>
+<section class="para"><header>P1 · 38 words · sent 19.0 · formality 0.91 · contr 0.00</header><p>Style change detection is the task of finding positions in a document where the author switches. In the paragraph-level version, each paragraph has one author, and the system emits a binary label for every pair of neighbours.</p></section><section class="para change"><header>P2 style change ↑ · 45 words · sent 45.0 · formality 1.56 · contr 0.00</header><p>Style-change detection (also known as multi-author writing style analysis) is an intrinsic authorship problem in which a system must identify the positions at which authorship changes within a single document, typically at paragraph boundaries, without access to a reference corpus of candidate authors.</p></section><section class="para change"><header>P3 style change ↑ · 43 words · sent 14.3 · formality 0.58 · contr 0.02</header><p>ok time was almost up so this last bit is just me: the hard split is the one where topic stays put, so if your model is actually a topic model it falls over. that&#x27;s the answer they want. sorry for the mess.</p></section>
+<h2>Adjacent channels</h2>
+<table>
+<thead><tr><th>pair</th><th>Δ?</th><th>formality</th><th>register</th><th>pronoun</th><th>contr</th><th>char3</th><th>topic</th><th>votes</th></tr></thead>
+<tbody>
+<tr><td>1→2</td><td class='hit'>YES</td><td><div class="bar"><span style="width:53.8%;background:#4a7c3a"></span><em>0.65</em></div></td><td><div class="bar"><span style="width:26.9%;background:#2c6e8a"></span><em>0.32</em></div></td><td><div class="bar"><span style="width:0.0%;background:#6b4c9a"></span><em>0.00</em></div></td><td><div class="bar"><span style="width:0.0%;background:#8a4b2c"></span><em>0.00</em></div></td><td><div class="bar"><span style="width:51.9%;background:#8a6a2c"></span><em>0.52</em></div></td><td><div class="bar"><span style="width:77.8%;background:#666"></span><em>0.78</em></div></td><td>formality=0.65≥0.40 (strong); register=0.32≥0.26; sentlen=0.81≥0.80</td></tr><tr><td>2→3</td><td class='hit'>YES</td><td><div class="bar"><span style="width:81.1%;background:#4a7c3a"></span><em>0.97</em></div></td><td><div class="bar"><span style="width:50.2%;background:#2c6e8a"></span><em>0.60</em></div></td><td><div class="bar"><span style="width:100.0%;background:#6b4c9a"></span><em>2.00</em></div></td><td><div class="bar"><span style="width:11.6%;background:#8a4b2c"></span><em>0.02</em></div></td><td><div class="bar"><span style="width:83.5%;background:#8a6a2c"></span><em>0.83</em></div></td><td><div class="bar"><span style="width:100.0%;background:#666"></span><em>1.00</em></div></td><td>formality=0.97≥0.40 (strong); person=2.00≥2.00 (strong); register=0.60≥0.46 (strong); marker=0.05≥0.03; char=0.83≥0.82; sentlen=1.03≥0.80</td></tr>
+</tbody>
+</table>
+<h2>CUSUM paths</h2>
+<div class="figs"><svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140"><rect x="0" y="0" width="420" height="140" fill="#f7f4ee"/><line x1="12" y1="128.0" x2="408" y2="128.0" stroke="#cbbba0" stroke-dasharray="3 3"/><polyline fill="none" stroke="#255f8a" stroke-width="2" points="12.0,115.2 210.0,12.0 408.0,128.0"/><text x="12" y="10" font-size="10" fill="#255f8a">mean_word_len CUSUM</text><text x="12.0" y="138" font-size="9" text-anchor="middle">1</text><text x="210.0" y="138" font-size="9" text-anchor="middle">2</text><text x="408.0" y="138" font-size="9" text-anchor="middle">3</text></svg><svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140"><rect x="0" y="0" width="420" height="140" fill="#f7f4ee"/><line x1="12" y1="84.3" x2="408" y2="84.3" stroke="#cbbba0" stroke-dasharray="3 3"/><polyline fill="none" stroke="#255f8a" stroke-width="2" points="12.0,128.0 210.0,12.0 408.0,84.3"/><text x="12" y="10" font-size="10" fill="#255f8a">mean_sent_len CUSUM</text><text x="12.0" y="138" font-size="9" text-anchor="middle">1</text><text x="210.0" y="138" font-size="9" text-anchor="middle">2</text><text x="408.0" y="138" font-size="9" text-anchor="middle">3</text></svg><svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140"><rect x="0" y="0" width="420" height="140" fill="#f7f4ee"/><line x1="12" y1="105.2" x2="408" y2="105.2" stroke="#cbbba0" stroke-dasharray="3 3"/><polyline fill="none" stroke="#255f8a" stroke-width="2" points="12.0,128.0 210.0,12.0 408.0,105.2"/><text x="12" y="10" font-size="10" fill="#255f8a">formality CUSUM</text><text x="12.0" y="138" font-size="9" text-anchor="middle">1</text><text x="210.0" y="138" font-size="9" text-anchor="middle">2</text><text x="408.0" y="138" font-size="9" text-anchor="middle">3</text></svg></div>
+</body>
+</html>

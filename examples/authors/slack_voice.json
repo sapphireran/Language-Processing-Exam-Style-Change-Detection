@@ -1,0 +1,11 @@
+{
+  "name": "slack_voice",
+  "register": "chat",
+  "notes": "Lowercase, questions, channel-speak.",
+  "paragraphs": [
+    "okay wait so we actually said friday if the numbers land, not friday no matter what?",
+    "i don't want omar getting yelled at because finance is slow.",
+    "yeah that tracks. i'll put a reminder in the channel so it doesn't vanish into another tidy pdf",
+    "also priya was going to ping legal, that never made the minutes."
+  ]
+}

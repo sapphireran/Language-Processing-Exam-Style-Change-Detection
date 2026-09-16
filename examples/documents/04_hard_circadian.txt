@@ -1,0 +1,7 @@
+We record dim-light melatonin onset ninety minutes before habitual bedtime and treat that marker as the phase reference. When the schedule is delayed by four hours, the marker tracks the delay, which is consistent with a light-sensitive oscillator rather than a fixed clock time.
+
+One may nevertheless hesitate before identifying melatonin onset with circadian phase itself. The assay is peripheral; it is also sensitive to posture, to residual light, and to the subject's recent caffeine history, so a single delayed sample does not, by itself, licence a strong claim about the suprachiasmatic nucleus.
+
+We therefore keep the light history log and discard sessions in which the subject reports evening screens without filters. The remaining onsets still shift with the imposed delay, and the group mean remains stable across two repeats.
+
+If one prefers a more conservative reading, the same numbers support only this: whatever process generates the evening melatonin rise is, under these lighting conditions, movable. That is a narrower conclusion, and it is the one the methods section can actually carry.
