@@ -41,7 +41,7 @@ pip install -e ".[dev]"
 pytest
 ```
 
-If you do not want to install the package, the same commands work with `PYTHONPATH=src` from the repo root.
+If you do not want to install the package, the same commands work with `PYTHONPATH=src` from the repo root, or as `python -m stylechange …` after an editable install.
 
 ## 30-second demo
 

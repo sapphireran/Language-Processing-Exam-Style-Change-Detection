@@ -40,3 +40,17 @@ def test_generate_emits_truth(capsys):
     out = capsys.readouterr().out
     assert '"changes"' in out
     assert "voices:" in out
+
+
+def test_module_entrypoint_help(capsys):
+    import subprocess
+    import sys
+
+    result = subprocess.run(
+        [sys.executable, "-m", "stylechange", "detect", "--help"],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode == 0
+    assert "style-change" in result.stdout.lower() or "detect" in result.stdout

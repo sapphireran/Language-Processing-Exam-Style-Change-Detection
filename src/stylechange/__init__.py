@@ -1,12 +1,12 @@
 """Intrinsic writing-style change detection.
 
-This package is a personal exam / study project. It implements a
-dependency-free baseline that:
+Personal exam / study baseline. The default model:
 
 1. splits a document into sentences or paragraphs
 2. extracts a stylometric profile for each unit
-3. scores every boundary between consecutive units
-4. emits PAN-style binary ``changes`` labels
+3. projects those profiles onto personal / academic / telegram axes
+4. binary-segments contiguous author blocks
+5. emits PAN-style binary ``changes`` labels
 """
 
 from .detector import StyleChangeDetector, StyleChangePrediction
