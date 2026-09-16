@@ -43,6 +43,13 @@ class EvaluateTests(unittest.TestCase):
         self.assertEqual(result.mean_macro_f1, 1.0)
         self.assertEqual(result.pooled_macro_f1, 1.0)
 
+    def test_absent_positive_class_is_perfect_when_unused(self) -> None:
+        self.assertEqual(macro_f1([0, 0, 0], [0, 0, 0]), 1.0)
+        self.assertEqual(macro_f1([1, 1], [1, 1]), 1.0)
+
+    def test_false_alarm_on_single_author_is_not_perfect(self) -> None:
+        self.assertLess(macro_f1([0, 0], [0, 1]), 1.0)
+
     def test_missing_prediction_raises(self) -> None:
         with self.assertRaises(ValueError):
             evaluate_changes({"a": [0]}, {})

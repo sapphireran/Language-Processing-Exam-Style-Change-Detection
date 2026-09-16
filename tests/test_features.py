@@ -5,7 +5,7 @@ from __future__ import annotations
 import math
 import unittest
 
-from style_change.features import StylometricProfile, extract_profile
+from style_change.features import FEATURE_SCALES, StylometricProfile, extract_profile
 from style_change.tokenize import sentences, words
 
 
@@ -24,6 +24,8 @@ class FeatureTests(unittest.TestCase):
     def test_profile_length_matches_names(self) -> None:
         profile = extract_profile(CASUAL)
         self.assertEqual(len(profile.vector()), len(StylometricProfile.names()))
+        self.assertEqual(set(FEATURE_SCALES), set(StylometricProfile.names()))
+        self.assertEqual(len(profile.scaled_vector()), len(profile.vector()))
 
     def test_all_values_finite(self) -> None:
         for text in (CASUAL, FORMAL, "Hi.", ""):

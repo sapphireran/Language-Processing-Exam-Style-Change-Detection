@@ -33,8 +33,9 @@ confounding, not “to have more numbers”.
 4. Sentence and word length
 5. Punctuation and contractions
 
-Then: “I z-score features inside the document so scales do not dominate
-cosine distance.”
+Then: “I scale features with fixed typical magnitudes so Honoré's R
+cannot dominate cosine, and I do not z-score inside a three-paragraph
+document.”
 
 ## Metric to name out loud
 
@@ -43,8 +44,9 @@ single-author control so always-predict-1 cannot pose as a system.
 
 ## Adaptive threshold, one line
 
-Change iff distance is high *relative to that document*. If the range is
-tiny, predict no changes.
+Change iff distance is high *relative to that document* **and** above an
+absolute floor. A tight high cluster is all changes; a tight low cluster
+is no changes.
 
 ## Classic traps
 
@@ -92,3 +94,7 @@ python3 -m style_change evaluate --gold <dir> --pred <dir>
    the detection signal.
 4. Calibration on a validation split per difficulty, not one global
    threshold forever.
+
+A reminder from the toy corpus: a feature family that wins on hard
+documents can still fail the single-author control. Quote that tradeoff
+before quoting a single F1.

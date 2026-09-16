@@ -19,8 +19,12 @@ plus why each family is in the code.
 | Honoré's R | Rewards hapax-heavy vocabularies. |
 
 These move when a chatty paragraph sits next to a memo full of repeated
-technical nouns. They also twitch on paragraph length, so the detectors
-z-score columns *inside the document* before taking cosine distance.
+technical nouns. They also twitch on paragraph length. The detectors
+therefore **do not z-score inside one document**. Three paragraphs of the
+same writer would still be stretched apart on whichever columns happen
+to vary. Instead each feature is divided by a fixed typical scale
+(`FEATURE_SCALES` in `features.py`) so Honoré's R cannot own the cosine
+and a hiking/chat pair stays close in absolute terms.
 
 ## 2. Length and rhythm
 
@@ -94,10 +98,15 @@ Adjacent paragraphs become three scores:
 
 The ensemble is a weighted sum (0.45 / 0.35 / 0.20 by default). A
 threshold then binarizes the list. If no fixed threshold is given, the
-cut is adaptive: inside a document, only distances that sit a given
-fraction of the way from that document's min to its max count as
-changes. If the range is tiny, the detector predicts all zeros. That
-last clause is what keeps single-author controls from being shredded.
+cut is adaptive with an absolute floor (default 0.34):
+
+- distances all below the floor → no changes (single-author control)
+- a tight cluster all above the floor → all changes (every boundary jumps)
+- otherwise, cut at a fraction of that document's range, never below the
+  floor
+
+A tiny range is not by itself evidence of one author. If every boundary
+is a change, the distances are all high and close together.
 
 ## What this does not include
 

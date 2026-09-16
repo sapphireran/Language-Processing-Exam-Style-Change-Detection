@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from .distances import cosine_distance, jensen_shannon, zscore_columns
+from .distances import cosine_distance, jensen_shannon
 from .features import extract_profile
 from .lexicons import FUNCTION_WORDS
 from .ngrams import aligned_vectors, char_ngrams, normalized_profile
@@ -25,8 +25,7 @@ def _function_word_vector(text: str) -> list[float]:
 def stylometric_distances(paragraphs: list[str]) -> list[float]:
     if len(paragraphs) < 2:
         return []
-    raw = [extract_profile(p).vector() for p in paragraphs]
-    scaled = zscore_columns(raw)
+    scaled = [extract_profile(p).scaled_vector() for p in paragraphs]
     return [
         cosine_distance(scaled[i], scaled[i + 1])
         for i in range(len(scaled) - 1)
@@ -50,19 +49,31 @@ def function_word_distances(paragraphs: list[str]) -> list[float]:
     ]
 
 
-def adaptive_threshold(distances: list[float], sensitivity: float = 0.42) -> float:
-    """Pick a cut that ignores a tight cluster of similar paragraphs.
+def adaptive_threshold(
+    distances: list[float],
+    sensitivity: float = 0.42,
+    floor: float = 0.34,
+    tight_range: float = 0.08,
+) -> float:
+    """Pick a cut using an absolute floor plus the document's own range.
 
-    Homogeneous documents have a small range; mixed documents have a
-    visible gap. Sensitivity is the fraction of the range above the
-    minimum that counts as a change.
+    A tiny range used to mean "predict all zeros". That is wrong when every
+    boundary is a change: the distances are all high and close together.
+    Rules:
+
+    - if the whole document sits below `floor`, predict no changes
+    - if the range is tight and the cluster is above `floor`, predict all
+      changes
+    - otherwise cut at a fraction of the range, never below `floor`
     """
     if not distances:
         return 1.0
     lo, hi = min(distances), max(distances)
-    if hi - lo < 0.08:
-        return hi + 1.0
-    return lo + sensitivity * (hi - lo)
+    if hi < floor:
+        return floor
+    if (hi - lo) < tight_range:
+        return lo if lo >= floor else floor
+    return max(floor, lo + sensitivity * (hi - lo))
 
 
 def apply_threshold(distances: list[float], threshold: float) -> list[int]:
@@ -74,6 +85,7 @@ class StyleChangeDetector:
     name: str
     sensitivity: float = 0.42
     threshold: float | None = None
+    floor: float = 0.34
 
     def distances(self, paragraphs: list[str]) -> list[float]:
         raise NotImplementedError
@@ -81,7 +93,7 @@ class StyleChangeDetector:
     def predict(self, paragraphs: list[str]) -> list[int]:
         scores = self.distances(paragraphs)
         cut = self.threshold if self.threshold is not None else adaptive_threshold(
-            scores, self.sensitivity
+            scores, self.sensitivity, floor=self.floor
         )
         return apply_threshold(scores, cut)
 

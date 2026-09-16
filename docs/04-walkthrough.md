@@ -104,6 +104,13 @@ is a heuristic. Qualitatively:
 - `hard` may be incomplete. That is acceptable teaching data: the
   documents exist to show the remaining gap, not to claim a solved task.
 
+On the current ensemble those bullets look like this: easy 1.00, medium
+1.00, single-author 1.00, hard about 0.17. `compare_baselines.py` also
+shows why not to celebrate a hard-only score: `char3` and
+`function_word` can look perfect on hard while shredding the
+single-author control. The ensemble is the compromise that keeps the
+control intact.
+
 If `easy` is already near chance, start with `inspect_features.py` and
 check that paragraph segmentation produced the number of blocks the gold
 file expects. Almost every surprising score I have seen began as a

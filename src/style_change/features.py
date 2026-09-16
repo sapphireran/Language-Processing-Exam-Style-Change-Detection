@@ -100,12 +100,61 @@ class StylometricProfile:
     def vector(self) -> list[float]:
         return [getattr(self, field.name) for field in fields(self)]
 
+    def scaled_vector(self) -> list[float]:
+        """Feature vector divided by fixed typical scales.
+
+        Rates stay near [0, 1]. Length and richness stats are divided by
+        constants so Honoré's R cannot dominate cosine distance. Scales are
+        global, not estimated inside one short document: within-document
+        z-scoring makes even same-author neighbours look far apart.
+        """
+        return [
+            getattr(self, field.name) / FEATURE_SCALES[field.name]
+            for field in fields(self)
+        ]
+
     def as_dict(self) -> dict[str, float]:
         return asdict(self)
 
     @staticmethod
     def names() -> list[str]:
         return [field.name for field in fields(StylometricProfile)]
+
+
+# Typical magnitudes so a cosine is not owned by one unscaled column.
+FEATURE_SCALES: dict[str, float] = {
+    "type_token_ratio": 1.0,
+    "hapax_ratio": 1.0,
+    "avg_word_len": 6.0,
+    "std_word_len": 3.0,
+    "avg_sent_len": 20.0,
+    "std_sent_len": 8.0,
+    "comma_rate": 0.02,
+    "period_rate": 0.02,
+    "exclaim_rate": 0.01,
+    "question_rate": 0.01,
+    "semicolon_rate": 0.005,
+    "colon_rate": 0.005,
+    "dash_rate": 0.005,
+    "quote_rate": 0.01,
+    "contraction_rate": 0.05,
+    "function_word_rate": 0.5,
+    "pronoun_rate": 0.1,
+    "first_person_rate": 0.08,
+    "article_rate": 0.12,
+    "preposition_rate": 0.15,
+    "hedge_rate": 0.03,
+    "intensifier_rate": 0.03,
+    "connective_rate": 0.03,
+    "uppercase_word_rate": 0.12,
+    "digit_rate": 0.05,
+    "long_word_rate": 0.4,
+    "short_word_rate": 0.5,
+    "yules_k": 80.0,
+    "honores_r": 4000.0,
+    "avg_vowel_groups": 2.0,
+    "commas_per_sentence": 1.5,
+}
 
 
 def extract_profile(text: str) -> StylometricProfile:

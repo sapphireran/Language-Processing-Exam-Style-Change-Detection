@@ -30,8 +30,13 @@ F1_0        = 2 * precision_0 * recall_0 / (precision_0 + recall_0)
 macro-F1    = (F1_0 + F1_1) / 2
 ```
 
-Undefined ratios (zero denominator) are treated as 0. An empty vector
-(a one-paragraph document) scores 1: there was nothing to get wrong.
+Undefined ratios are *not* always zero. If a class is missing from both
+gold and prediction (a single-author document with no predicted
+changes, or a document whose every boundary is a change and the model
+agrees), that class scores 1.0. A false alarm on a class that has no
+gold support still scores 0. Without that rule, a perfect single-author
+prediction would look like 0.5 macro-F1 because F1(class 1) would be
+undefined and collapsed to 0.
 
 ## Document mean vs pooled
 

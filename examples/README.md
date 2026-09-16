@@ -67,3 +67,8 @@ the first easy document.
 - Single-author documents exist so “always predict change” cannot look
   like a serious baseline.
 - Gold labels were written with the documents, not inferred from a model.
+- `compare_baselines.py` is meant to be read as a tradeoff table, not a
+  leaderboard. A detector that is perfect on `hard` and dead on
+  `single_author` is firing on ordinary paragraph noise. The default
+  ensemble is the opposite compromise: it keeps the control at macro-F1
+  1.0 on this toy set and leaves hard documents as the open problem.

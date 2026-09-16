@@ -63,6 +63,11 @@ class DetectorTests(unittest.TestCase):
         labels = apply_threshold(distances, cut)
         self.assertEqual(labels, [0, 1])
 
+    def test_adaptive_threshold_high_tight_cluster_is_all_changes(self) -> None:
+        distances = [0.41, 0.43, 0.44]
+        cut = adaptive_threshold(distances)
+        self.assertEqual(apply_threshold(distances, cut), [1, 1, 1])
+
     def test_named_detectors_run(self) -> None:
         paras = [CASUAL, FORMAL]
         for name in ("ensemble", "stylometric", "char3", "function_word"):

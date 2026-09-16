@@ -35,19 +35,25 @@ def confusion(gold: list[int], pred: list[int]) -> BinaryCounts:
     return BinaryCounts(tp=tp, fp=fp, tn=tn, fn=fn)
 
 
-def _safe_div(num: float, den: float) -> float:
-    return 0.0 if den == 0.0 else num / den
+def _prf(true_pos: int, predicted_pos: int, gold_pos: int) -> tuple[float, float, float]:
+    """Precision, recall, F1 for one class.
+
+    If that class is absent from both gold and prediction, the score is
+    1.0: a single-author document should not be punished for having no
+    positive boundaries. A false alarm on an absent class still scores 0.
+    """
+    if predicted_pos == 0 and gold_pos == 0:
+        return 1.0, 1.0, 1.0
+    prec = 0.0 if predicted_pos == 0 else true_pos / predicted_pos
+    rec = 0.0 if gold_pos == 0 else true_pos / gold_pos
+    f1 = 0.0 if prec + rec == 0.0 else 2.0 * prec * rec / (prec + rec)
+    return prec, rec, f1
 
 
 def precision_recall_f1(counts: BinaryCounts, positive: int) -> tuple[float, float, float]:
     if positive == 1:
-        prec = _safe_div(counts.tp, counts.tp + counts.fp)
-        rec = _safe_div(counts.tp, counts.tp + counts.fn)
-    else:
-        prec = _safe_div(counts.tn, counts.tn + counts.fn)
-        rec = _safe_div(counts.tn, counts.tn + counts.fp)
-    f1 = _safe_div(2 * prec * rec, prec + rec)
-    return prec, rec, f1
+        return _prf(counts.tp, counts.tp + counts.fp, counts.tp + counts.fn)
+    return _prf(counts.tn, counts.tn + counts.fn, counts.tn + counts.fp)
 
 
 def macro_f1(gold: list[int], pred: list[int]) -> float:

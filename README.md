@@ -82,9 +82,9 @@ show how the `changes` array relates to speaker turns.
 | `function_word` | Jensen–Shannon divergence on function-word distributions |
 | `ensemble` | Weighted mix of the three (default) |
 
-Thresholds can be fixed or chosen adaptively per document. The walkthrough
-in `docs/04-walkthrough.md` shows both, including the case where a
-homogeneous document should stay all zeros.
+Thresholds can be fixed or chosen adaptively per document with an
+absolute floor. The walkthrough in `docs/04-walkthrough.md` shows both,
+including the case where a homogeneous document should stay all zeros.
 
 ## Tests
 
