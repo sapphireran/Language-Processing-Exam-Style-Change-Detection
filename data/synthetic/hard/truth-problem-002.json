@@ -1,0 +1,26 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0
+  ],
+  "author_ids": [
+    "nell",
+    "nell",
+    "nell",
+    "hale",
+    "hale",
+    "hale",
+    "nell",
+    "nell"
+  ],
+  "difficulty": "hard",
+  "split": "train",
+  "topic": "pour-over coffee",
+  "n_sentences": 8
+}

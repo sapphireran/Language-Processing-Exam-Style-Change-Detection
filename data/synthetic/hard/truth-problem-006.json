@@ -1,0 +1,24 @@
+{
+  "authors": 3,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    1,
+    0
+  ],
+  "author_ids": [
+    "jules",
+    "jules",
+    "jules",
+    "hale",
+    "hale",
+    "nell",
+    "nell"
+  ],
+  "difficulty": "hard",
+  "split": "test",
+  "topic": "pour-over coffee",
+  "n_sentences": 7
+}

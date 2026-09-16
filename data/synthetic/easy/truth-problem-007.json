@@ -1,0 +1,26 @@
+{
+  "authors": 3,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0
+  ],
+  "author_ids": [
+    "nell",
+    "nell",
+    "nell",
+    "jules",
+    "jules",
+    "jules",
+    "mira",
+    "mira"
+  ],
+  "difficulty": "easy",
+  "split": "train",
+  "topic": "greenhouse \u2192 basil \u2192 water potential",
+  "n_sentences": 8
+}

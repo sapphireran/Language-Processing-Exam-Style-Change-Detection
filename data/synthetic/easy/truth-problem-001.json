@@ -1,0 +1,26 @@
+{
+  "authors": 3,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0
+  ],
+  "author_ids": [
+    "mira",
+    "mira",
+    "mira",
+    "jules",
+    "jules",
+    "jules",
+    "hale",
+    "hale"
+  ],
+  "difficulty": "easy",
+  "split": "train",
+  "topic": "reef ecology \u2192 ruined dinner \u2192 gear inches",
+  "n_sentences": 8
+}

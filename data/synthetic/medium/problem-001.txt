@@ -1,0 +1,8 @@
+Frame geometry is often discussed as if trail and wheelbase were independent levers, although their combined effect on low-speed stability remains relatively entangled.
+A somewhat steeper head angle appears associated with quicker steering, yet the observational literature is generally cautious about declaring a preferred city setup.
+These remarks are therefore offered as a reading of trade-offs, not as a fitting prescription.
+I take the painted lane until it vanishes, which it always does right where the vans like to park.
+This morning a driver opened a door and I didn't have a speech prepared, so I just made a noise.
+I'm still going to bike it tomorrow, I'm just going to be slightly more dramatic about the gloves.
+Head angle was 72.5 deg. Trail was 58 mm. Wheelbase was 1045 mm.
+Tire width was 35 mm. Rolling circumference was 2160 mm.

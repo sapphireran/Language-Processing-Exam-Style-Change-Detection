@@ -1,0 +1,26 @@
+{
+  "authors": 3,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0
+  ],
+  "author_ids": [
+    "nell",
+    "nell",
+    "nell",
+    "mira",
+    "mira",
+    "mira",
+    "jules",
+    "jules"
+  ],
+  "difficulty": "medium",
+  "split": "train",
+  "topic": "city cycling \u2014 red light, infrastructure, lock",
+  "n_sentences": 8
+}

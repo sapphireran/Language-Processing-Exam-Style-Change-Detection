@@ -1,0 +1,22 @@
+{
+  "authors": 3,
+  "changes": [
+    0,
+    1,
+    0,
+    1,
+    0
+  ],
+  "author_ids": [
+    "mira",
+    "mira",
+    "jules",
+    "jules",
+    "nell",
+    "nell"
+  ],
+  "difficulty": "medium",
+  "split": "test",
+  "topic": "city cycling \u2014 cargo, groceries, alley",
+  "n_sentences": 6
+}

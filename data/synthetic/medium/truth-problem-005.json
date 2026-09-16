@@ -1,0 +1,24 @@
+{
+  "authors": 3,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    1,
+    0
+  ],
+  "author_ids": [
+    "jules",
+    "jules",
+    "jules",
+    "nell",
+    "nell",
+    "hale",
+    "hale"
+  ],
+  "difficulty": "medium",
+  "split": "val",
+  "topic": "city cycling \u2014 night ride, scene, lamp spec",
+  "n_sentences": 7
+}

@@ -1,0 +1,8 @@
+Kettle set point was 96 C. Gooseneck inner diameter was 5 mm.
+Pulse pours were 50 g each. Interval was 15 s.
+Final drawdown ended at 3:05. Bypass was 0 g.
+Pulse pouring is often described as a relatively controllable way to manage bed height, although it can also introduce a somewhat staged extraction.
+The safer laboratory-style claim is simply that consistent pulses reduce one source of between-mug variance.
+Taste talk should probably remain separate from that bookkeeping, unless a triangle test is actually run.
+Triangle tests were not run. Preference was not scored.
+Notes were limited to time, mass, and grind mark.

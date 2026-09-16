@@ -1,0 +1,28 @@
+{
+  "authors": 3,
+  "changes": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0
+  ],
+  "author_ids": [
+    "hale",
+    "hale",
+    "hale",
+    "nell",
+    "nell",
+    "nell",
+    "jules",
+    "jules",
+    "jules"
+  ],
+  "difficulty": "easy",
+  "split": "test",
+  "topic": "GPS survey \u2192 ridge walk \u2192 getting lost",
+  "n_sentences": 9
+}

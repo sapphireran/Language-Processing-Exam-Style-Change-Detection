@@ -1,0 +1,22 @@
+{
+  "authors": 2,
+  "changes": [
+    0,
+    1,
+    0,
+    1,
+    0
+  ],
+  "author_ids": [
+    "nell",
+    "nell",
+    "jules",
+    "jules",
+    "nell",
+    "nell"
+  ],
+  "difficulty": "medium",
+  "split": "test",
+  "topic": "city cycling \u2014 Nell, Jules, Nell again",
+  "n_sentences": 6
+}
