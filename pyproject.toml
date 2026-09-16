@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "style-change"
+version = "0.1.0"
+description = "Personal study toolkit for intrinsic paragraph-level style-change detection."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Sapphire Ran" }]
+keywords = [
+    "authorship-analysis",
+    "stylometry",
+    "style-change-detection",
+    "language-processing",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+style-change = "style_change.cli:main"
+
+[project.urls]
+Repository = "https://github.com/sapphireran/Language-Processing-Exam-Style-Change-Detection"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
