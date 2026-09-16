@@ -30,7 +30,7 @@ def main() -> None:
     print("paragraph avg_sent_len:", " ".join(f"{v:.1f}" for v in para.values))
     print("paragraph CUSUM:       ", ascii_sparkline(para.cusum))
     print()
-    print("Minutes-then-chat should drop sentence length after the cut.")
+    print("Minutes-then-chat should jump sentence length after the cut.")
     print("Do not testify from the sparkline. Score it with labels.")
 
 
