@@ -1,0 +1,7 @@
+Style change detection is intrinsic because the system does not see candidate authors. It only sees one document and must mark the paragraph pairs where the writing habit changes. PAN 2023 asks for a binary vector and scores it with F1. Easy documents let topic help; hard documents take topic away.
+
+A reasonable baseline is to turn each paragraph into rates: sentence length, function words, contractions, character n-grams. Compare neighbours with a distance. Pick a threshold on development data. Always-zero is the dummy you have to beat on F1, not on accuracy.
+
+Authorship attribution is when you have a closed set of authors and you pick the nearest one. Verification is a yes/no against a single claimed person. People mix these up in answers. Also bag of words is fine if the topics are different which they often are so I would just use TFIDF and cosine and not overthink the function words.
+
+I did not finish the last part. The hard split exists so that TF-IDF cannot pretend it measured style. If I only had time for one sentence it would be that.

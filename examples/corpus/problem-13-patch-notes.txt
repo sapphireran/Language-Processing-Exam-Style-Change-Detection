@@ -1,0 +1,7 @@
+v1.4.2. Fixed a crash when the lantern inventory overflowed during rain. Reduced fog density in the salt marsh by 12%. The kite vendor no longer sells duplicate strings. Known issue: crabs still clip through the pier if the tide flag is set at dusk.
+
+v1.4.3. Added a sleep prompt after three in-game nights without a save. The prompt can be dismissed twice. On the third dismissal the lantern blows out. This is working as intended. Localization: the Danish string for "blow out" no longer reads as "explode".
+
+I wanted to like the marsh. The fog patch helped. The crabs still feel like a joke the designer told once and then could not stop repeating. The sleep prompt is the first time the game has admitted that it is a game, and I resented it, which probably means it is doing the job.
+
+Also the vendor thing: I had fourteen strings. I was building a theory of strings. Now I have one string and a cleaner inventory and a smaller story. Balance is not the same as kindness. I still walk the pier at dusk to watch the crabs fail.

@@ -1,0 +1,7 @@
+{
+  "authors": 2,
+  "changes": [1, 1, 1],
+  "difficulty": "medium",
+  "title": "plot-holder, secretary, plot-holder, secretary",
+  "notes": "Returning author A in paragraph 3. Detector must not assume a single cut."
+}
